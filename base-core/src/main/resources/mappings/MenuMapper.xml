@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.gov.gsport.system.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="cn.gov.gsport.system.entity.Menu" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="pid" property="pid" jdbcType="BIGINT" />
+        <result column="pids" property="pids" jdbcType="VARCHAR" />
+        <result column="sort" property="sort" jdbcType="INTEGER" />
+        <result column="href" property="href" jdbcType="VARCHAR" />
+        <result column="target" property="target" jdbcType="VARCHAR" />
+        <result column="icon" property="icon" jdbcType="VARCHAR" />
+        <result column="is_show" property="isShow" jdbcType="BIT" />
+        <result column="permission" property="permission" jdbcType="VARCHAR" />
+        <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="create_by" property="createBy" jdbcType="BIGINT" />
+        <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+
+        <association column="pid" property="parent" select="cn.gov.gsport.system.mapper.MenuMapper.selectById"
+                     javaType="cn.gov.gsport.system.entity.Menu" >
+        </association>
+    </resultMap>
+
+
+    <!--根据主键ID选择-->
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT * FROM sys_menu WHERE id = #{id}
+    </select>
+
+
+    <select id="findAll" resultType="cn.gov.gsport.system.entity.Menu">
+        SELECT * FROM sys_menu WHERE del_flag = 0
+    </select>
+
+
+    <!--分页查询默认使用接口，条件查询语句-->
+    <select id="findList" resultType="cn.gov.gsport.system.entity.Menu">
+        SELECT *
+        FROM sys_menu opt
+        <where>
+            and opt.del_flag = #{DELFLAG_NORMAL}
+        </where>
+    </select>
+
+    <!--根据主键ID逻辑删除-->
+    <update id="deleteLogic">
+        UPDATE sys_menu SET del_flag = 1 WHERE id = #{id}
+    </update>
+
+    
+    <!--根据角色ID获得菜单列表-->
+    <select id="selectMenuListByRoleId" parameterType="java.lang.Long" resultType="cn.gov.gsport.system.entity.Menu">
+        SELECT *
+        FROM sys_menu opt
+        LEFT JOIN sys_role_menu srm ON srm.menu_id = opt.id
+        WHERE
+            srm.role_id = #{id}
+    </select>
+
+</mapper>

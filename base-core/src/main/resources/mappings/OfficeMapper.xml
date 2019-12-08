@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.gov.gsport.system.mapper.OfficeMapper">
+
+    <resultMap id="BaseResultMap" type="cn.gov.gsport.system.entity.Office" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+
+        <association column="parent" property="parent" select="cn.gov.gsport.system.mapper.OfficeMapper.selectById"
+                     javaType="cn.gov.gsport.system.entity.Office" >
+        </association>
+    </resultMap>
+
+
+    <!--根据主键ID选择-->
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT * FROM sys_office WHERE id = #{id}
+    </select>
+
+
+    <select id="findAll" resultType="cn.gov.gsport.system.entity.Office">
+        SELECT * FROM sys_office WHERE del_flag = 0
+    </select>
+
+
+    <!--分页查询默认使用接口，条件查询语句-->
+    <select id="findList" resultType="cn.gov.gsport.system.entity.Office">
+        SELECT *
+        FROM sys_office opt
+        <where>
+            and opt.del_flag = #{DELFLAG_NORMAL}
+        </where>
+    </select>
+
+
+    <!--根据主键ID逻辑删除-->
+    <update id="deleteLogic">
+        UPDATE sys_office SET del_flag = 1 WHERE id = #{id}
+    </update>
+
+
+
+</mapper>

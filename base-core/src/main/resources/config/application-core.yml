@@ -1,0 +1,39 @@
+# 温馨提示：不建议直接修改此文件，建议将需要修改的参数值，复制到application.yml里进行覆盖该参数值。
+
+#======================================#
+#========== Database sttings ==========#
+#======================================#
+
+# mybatis配置
+mybatis:
+  config-location: classpath:config/mybatis-config.xml
+  mapper-locations: classpath*:mappings/*.xml
+
+#======================================#
+#========== Spring settings ===========#
+#======================================#
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  
+#======================================#
+#========== System settings ===========#
+#======================================#
+
+# 管理基础路径
+adminPath: /manage
+
+# 前端基础路径
+frontPath: /f
+
+#======================================#
+#========= Framework settings =========#
+#======================================#
+logging:
+    level:
+      cn.gov.gsport.system.mapper: DEBUG # 包路径为mapper文件包路径

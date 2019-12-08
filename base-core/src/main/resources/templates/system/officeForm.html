@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>部门编辑</title>
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                            <ul class="layui-tab-title">
+                                <li>
+                                    <a th:href="${adminPath} + '/office/list'" >部门列表</a>
+                                </li>
+                                <li class="layui-this">
+                                    <a href="javascript:void(0);">部门编辑</a>
+                                </li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <div class="container">
+                                        <div class="row" id="row" style="display: block;">
+                                            <form id="inputForm" class="layui-form layui-form-pane" th:action="${adminPath} + '/office/save'" method="post" lay-filter="component-form-group">
+                                                <input name="id" id="id" th:value="${office.id}" type="hidden" />
+
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label"><em class="gg-star">* </em>上级部门</label>
+                                                        <div class="layui-input-inline">
+                                                            <input name="pid" id="selected-office-id" th:value="${office.pid}" type="hidden"/>
+                                                            <input type="text" id="selected-office-name" lay-verify="required" class="layui-input input-width" readonly
+                                                                   th:value="${office.parent}?${office.parent.name}:''"  th:disabled="${office.id == 1}?'disabled'" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label"><em class="gg-star">* </em>部门名称</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="name" th:value="${office.name}" lay-verify="required" class="layui-input input-width" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">部门等级</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="grade" th:value="${office.grade}" class="layui-input input-width" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">联系方式</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="telephone" th:value="${office.telephone}" class="layui-input input-width" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="layui-form-item">
+                                                    <div class="layui-input-block">
+                                                        <button lay-submit class="layui-btn form-submit-btn" lay-filter="port-form-submit">立即提交</button>
+                                                        <input type="button" class="layui-btn  layui-btn-primary form-return-btn" onclick="history.go(-1)" value="返回">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="manage/incloude/common::common_js"></div>
+<div th:replace="manage/incloude/common::layui_config"></div>
+<script th:inline="javascript">
+    layui.use(['layer','form'], function(){
+        const layer = layui.layer;
+        const form = layui.form;
+
+        //表单验证
+        form.verify();
+        //监听提交
+        form.on('submit(port-form-submit)', function(data){
+            layer.confirm('确认提交数据？', function(index){
+                layer.close(index);
+                $('.layui-form').submit();
+            });
+            return false;
+        });
+
+        //初始判断是否为添加下级部门
+        const office = [[${office}]];
+        if (!isBlank( $('#selected-office-id').val()) && !$.isEmptyObject(office.parent)){
+            $('#selected-office-name').val(office.parent.name);
+        }
+
+        //点击选择上级部门，弹窗显示部门树形菜单
+        $(document).on('click','#selected-office-name',function () {
+            layer.open({
+                type: 2,
+                title:'上级部门选择',
+                area: ['400px', '600px'],
+                shadeClose: true, //点击遮罩关闭
+                content: adminPath + '/office/officeTree'
+            });
+        })
+
+    });
+</script>
+
+</body>
+
+</html>

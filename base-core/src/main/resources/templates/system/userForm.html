@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>用户编辑</title>
+    <link rel="stylesheet" type="text/css" th:href="@{~/layuiadmin/plugins/formSelects-v4.css}" media="all">
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                            <ul class="layui-tab-title">
+                                <li>
+                                    <a th:href="${adminPath} + '/user/list'" >用户列表</a>
+                                </li>
+                                <li class="layui-this">
+                                    <a href="javascript:void(0);">用户编辑</a>
+                                </li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <div class="container">
+                                        <div class="row" id="row" style="display: block;">
+                                            <form id="inputForm" class="layui-form layui-form-pane" th:action="${adminPath} + '/user/save'" method="post" lay-filter="component-form-group">
+                                                <input name="id" id="id" th:value="${user.id}" type="hidden" />
+
+                                                <fieldset class="layui-elem-field layui-field-title">
+                                                    <legend class="port-font-bolder">基本信息</legend>
+                                                </fieldset>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label"><em class="gg-star">* </em>用户名</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="username" th:value="${user.username}" lay-verify="required"
+                                                                   class="layui-input"  th:readonly="${user.username}?'readonly'"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label"><em class="gg-star">* </em>姓名</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="name" th:value="${user.name}" lay-verify="required" class="layui-input" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">手机号</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="mobile" th:value="${user.mobile}" class="layui-input" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">状态</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" lay-filter="status"
+                                                                   th:value="${user.status}?${user.status}:'0'" th:checked="${user.status}?(${user.status eq '0'} ?'':'false'):''">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <fieldset class="layui-elem-field layui-field-title">
+                                                    <legend class="port-font-bolder">其他信息</legend>
+                                                </fieldset>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">座机</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="telephone" th:value="${user.telephone}" class="layui-input" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">邮箱</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="email" th:value="${user.email}"  class="layui-input" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">手机号</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="mobile" th:value="${user.mobile}" class="layui-input" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">性别</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="sex" th:value="${user.sex}" class="layui-input" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <fieldset class="layui-elem-field layui-field-title">
+                                                    <legend class="port-font-bolder">职务信息</legend>
+                                                </fieldset>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label"><em class="gg-star">* </em>所属部门</label>
+                                                        <div class="layui-input-inline">
+                                                            <input name="officeId" id="selected-office-id" th:value="${user.office}?${user.office.id}:''" type="hidden"/>
+                                                            <input type="text" id="selected-office-name" lay-verify="required" class="layui-input input-width600" readonly
+                                                                   th:value="${user.office}?${user.office.name}:''" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label"><em class="gg-star">* </em>职务角色</label>
+                                                        <div class="layui-input-inline input-width600">
+                                                            <select name="roleIds" id="roleIds" th:value="${user.roleIds}" xm-select="roleSelect" lay-verify="required" >
+                                                                <option th:each="item : ${roleList}" th:value="${item.id}" th:text="${item.name}"></option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-form-item layui-layout-admin">
+                                                    <div class="layui-input-block">
+                                                        <div class="layui-footer" style="left: 0;">
+                                                            <button lay-submit class="layui-btn" lay-filter="port-form-submit">立即提交</button>
+                                                            <input type="button" class="layui-btn  layui-btn-primary" onclick="history.go(-1)" value="返回">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="incloude/common::common_js"></div>
+<script th:inline="javascript">
+    layui.config({
+        base: '/layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+        formSelects: 'plugins/formSelects-v4.min'
+    }).use(['layer','form','formSelects'], function(){
+        var layer = layui.layer;
+        var form = layui.form;
+        var formSelects = layui.formSelects;
+
+        //表单验证
+        form.verify();
+        //监听修改switch
+        form.on('switch(status)', function(data) {
+            $(data.elem).attr('type', 'hidden').val(this.checked ? 0 : 1);
+        });
+        //监听提交
+        form.on('submit(port-form-submit)', function(data){
+            layer.confirm('确认提交数据？', function(index){
+                layer.close(index);
+                $('.layui-form').submit();
+            });
+            return false;
+        });
+
+        //初始判断是否为添加下级部门
+        var user = [[${user}]];
+        if (!isBlank( $('#selected-office-id').val()) && !$.isEmptyObject(user.office)){
+            $('#selected-office-name').val(user.office.name);
+        }
+        // 默认选中角色
+        if (!$.isEmptyObject(user) && !isBlank(user.roleIds)){
+            formSelects.value('roleSelect', user.roleIds.split(","));
+        }
+
+        //点击选择上级部门，弹窗显示部门树形菜单
+        $(document).on('click','#selected-office-name',function () {
+            layer.open({
+                type: 2,
+                title:'所属部门选择',
+                area: ['400px', '600px'],
+                shadeClose: true, //点击遮罩关闭
+                content: adminPath + '/office/officeTree'
+            });
+        })
+
+    });
+</script>
+
+</body>
+
+</html>

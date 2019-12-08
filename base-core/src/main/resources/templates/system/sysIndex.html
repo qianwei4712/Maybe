@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+	<title>甘肃电子口岸</title>
+	<style>
+		.layui-nav-child{padding: 0 !important}
+	</style>
+</head>
+<body class="layui-layout-body">
+
+	<div id="LAY_app">
+		<div class="layui-layout layui-layout-admin">
+			<!-- 头部区域 -->
+			<div class="layui-header">
+				<ul class="layui-nav layui-layout-left">
+					<li class="layui-nav-item layadmin-flexible" lay-unselect><a
+						href="javascript:void(0);" layadmin-event="flexible" title="侧边伸缩"> <i
+							class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
+					</a></li>
+					<li class="layui-nav-item layui-hide-xs" lay-unselect><a
+						href="/index" target="_blank" title="客户界面">
+							<i class="layui-icon layui-icon-website"></i>
+					</a></li>
+					<li class="layui-nav-item" lay-unselect><a href="javascript:;"
+						layadmin-event="refresh" title="刷新"> <i
+							class="layui-icon layui-icon-refresh-3"></i>
+					</a></li>
+				</ul>
+				<ul class="layui-nav layui-layout-right"
+					lay-filter="layadmin-layout-right">
+
+					<li class="layui-nav-item" lay-unselect><a
+						lay-href="app/message/index.html" layadmin-event="message"
+						lay-text="消息中心"> <i class="layui-icon layui-icon-notice"></i>
+
+							<!-- 如果有新消息，则显示小圆点 --> <span class="layui-badge-dot"></span>
+					</a></li>
+
+					<li class="layui-nav-item layui-hide-xs" lay-unselect><a
+						href="javascript:void(0);" layadmin-event="fullscreen"> <i
+							class="layui-icon layui-icon-screen-full"></i>
+					</a></li>
+					<li class="layui-nav-item" lay-unselect>
+						<a href="javascript:void(0);">
+							<cite th:text="${user.name}"></cite>
+						</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a lay-href="set/user/info.html">基本资料</a>
+							</dd>
+							<dd>
+								<a lay-href="/user/modifyPwdPage">修改密码</a>
+							</dd>
+							<hr>
+							<dd style="text-align: center;">
+								<a href="/logout">退出</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item layui-hide-xs" lay-unselect>
+						<a href="javascript:void(0);" layadmin-event="theme"><i class="layui-icon layui-icon-more-vertical"></i></a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 侧边菜单 -->
+			<div class="layui-side layui-side-menu">
+				<div class="layui-side-scroll">
+					<div class="layui-logo" lay-href="/manage/console">
+						<span>甘肃电子口岸</span>
+					</div>
+
+					<ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+
+					</ul>
+				</div>
+			</div>
+
+			<!-- 页面标签 -->
+			<div class="layadmin-pagetabs" id="LAY_app_tabs">
+				<div class="layui-icon layadmin-tabs-control layui-icon-prev"
+					layadmin-event="leftPage"></div>
+				<div class="layui-icon layadmin-tabs-control layui-icon-next"
+					layadmin-event="rightPage"></div>
+				<div class="layui-icon layadmin-tabs-control layui-icon-down">
+					<ul class="layui-nav layadmin-tabs-select"
+						lay-filter="layadmin-pagetabs-nav">
+						<li class="layui-nav-item" lay-unselect><a
+							href="javascript:void(0);"></a>
+							<dl class="layui-nav-child layui-anim-fadein">
+								<dd layadmin-event="closeThisTabs">
+									<a href="javascript:void(0);">关闭当前标签页</a>
+								</dd>
+								<dd layadmin-event="closeOtherTabs">
+									<a href="javascript:void(0);">关闭其它标签页</a>
+								</dd>
+								<dd layadmin-event="closeAllTabs">
+									<a href="javascript:void(0);">关闭全部标签页</a>
+								</dd>
+							</dl></li>
+					</ul>
+				</div>
+				<div class="layui-tab" lay-unauto lay-allowClose="true"
+					lay-filter="layadmin-layout-tabs">
+					<ul class="layui-tab-title" id="LAY_app_tabsheader">
+						<li lay-id="console" lay-attr="console"
+							class="layui-this"><i class="layui-icon layui-icon-home"></i></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<!-- 主体内容 -->
+			<div class="layui-body" id="LAY_app_body">
+				<div class="layadmin-tabsbody-item layui-show">
+					<iframe src="/manage/console" frameborder="0"
+						class="layadmin-iframe"></iframe>
+				</div>
+			</div>
+
+			<!-- 辅助元素，一般用于移动设备下遮罩 -->
+			<div class="layadmin-body-shade" layadmin-event="shade"></div>
+		</div>
+	</div>
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+
+
+
+<script th:inline="javascript">
+	/*后台返回菜单数据map<id,menu>*/
+    var menus =[[${menus}]];
+
+	var menuhtml = '';
+	for (var i=0; i<menus.length; i++){
+		if(menus[i].pid == -1){
+            menuhtml += '<li class="layui-nav-item port-menu-item " data-id="' + menus[i].id + '"><a href="javascript:void(0);" lay-tips="'+ menus[i].name +'" lay-direction="2">' +
+				            '<i class="layui-icon '+ menus[i].icon +'"></i><cite>'+ menus[i].name +'</cite></a></li>'
+		}
+	}
+    $('#LAY-system-side-menu').append(menuhtml);
+
+    for (var i=0; i<menus.length; i++){
+        var preMenu = $(".port-menu-item[data-id='" + menus[i].pid + "']");
+        preMenu.append('<dl class="layui-nav-child"><dd><a lay-href="' + menus[i].href + '">' + menus[i].name+ '</a></dd></dl>')
+    }
+    $(".port-menu-item:eq(0)").addClass('layui-nav-itemed');
+
+
+</script>
+</body>
+</html>
