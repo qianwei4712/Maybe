@@ -142,6 +142,7 @@ public class UserController extends BaseController{
             String newMd5Pwd =  CommonUtils.md5HashWithusername(user.getUsername(), newPassword);
             user.setPassword(newMd5Pwd);
             userService.saveOrUpdate(user);
+            SysUtils.clearUserCache(user.getId());
             return "redirect:/logout";
         }
     }

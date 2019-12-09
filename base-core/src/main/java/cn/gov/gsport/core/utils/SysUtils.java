@@ -76,4 +76,12 @@ public class SysUtils {
         }
         return new User();
     }
+
+    /**
+     * 根据用户id, 清理用户缓存
+     */
+    public static void clearUserCache(Long id) {
+       CacheUtils.remove(CacheUtils.SYS_CACHE, PRE_ID + id);
+    }
+
 }

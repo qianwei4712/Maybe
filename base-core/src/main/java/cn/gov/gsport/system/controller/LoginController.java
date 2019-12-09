@@ -27,7 +27,7 @@ public class LoginController extends BaseController{
     public String login(HttpServletRequest request, Map<String, Object> map) {
         User user = SysUtils.getUser();
         // 如果已经登录，则跳转到管理首页
-        if(user != null && user.getId() != null){
+        if(user.getId() != null){
             return "redirect:" + adminPath + "/index";
         }
 

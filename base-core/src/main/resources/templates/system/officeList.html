@@ -149,17 +149,17 @@
         });
 
 
-        const $ = layui.$, active = {
+        var $ = layui.$, active = {
             search: function(){
                 var keyword = $('#name').val();
                 var searchCount = 0;
-                $('#'+Office.TableId).next('.treetable').find('.layui-table-body tbody tr td').each(function () {
+                $('#table').next('.treeTable').find('.layui-table-body tbody tr td').each(function () {
                     $(this).css('background-color', 'transparent');
                     var text = $(this).text();
                     if (keyword != '' && text.indexOf(keyword) >= 0) {
                         $(this).css('background-color', 'rgba(250,230,160,0.5)');
                         if (searchCount == 0) {
-                            treetable.expandAll('#'+Office.TableId);
+                            treetable.expandAll('#table');
                             $('html,body').stop(true);
                             $('html,body').animate({scrollTop: $(this).offset().top - 150}, 500);
                         }
