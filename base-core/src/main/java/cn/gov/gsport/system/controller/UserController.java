@@ -129,7 +129,7 @@ public class UserController extends BaseController{
     @RequestMapping("/modifyPwd")
     public String modifyPwd(String oldPassword, String newPassword, RedirectAttributes model) {
         User user = SysUtils.getUser();
-        if(user != null && user.getId() != null){
+        if(user.getId() == null){
             return "redirect:/logout";
         }
         String md5Pwd = CommonUtils.md5HashWithusername(user.getUsername(), oldPassword);

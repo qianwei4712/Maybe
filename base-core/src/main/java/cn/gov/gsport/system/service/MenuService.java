@@ -1,6 +1,7 @@
 package cn.gov.gsport.system.service;
 
 import cn.gov.gsport.core.base.BaseService;
+import cn.gov.gsport.core.constant.BaseConstant;
 import cn.gov.gsport.system.entity.Menu;
 import cn.gov.gsport.system.mapper.MenuMapper;
 import org.springframework.stereotype.Service;
@@ -16,17 +17,17 @@ public class MenuService extends BaseService<Menu, MenuMapper> {
     @Transactional(readOnly = false)
     public void saveMenu(Menu menu) {
         //获取上级节点
-//        Menu parent = getById(menu.getPid());
-//        if (parent == null){
-//            menu.setPid(-1);
-//            menu.setPids("-1,");
-//        }else {
-//            // 设置新的父节点串
-//            menu.setPids(parent.getPids() + parent.getId()+",");
-//        }
+        Menu parent = getById(menu.getPid());
+        if (parent != null){
+            // 设置新的父节点串
+            menu.setPids(parent.getPids() + parent.getId()+",");
+        }else {
+            menu.setPid(BaseConstant.SUPER_MENU_ID);
+            menu.setPids(BaseConstant.SUPER_MENU_IDS);
+        }
 
         //保存或更新
-//        saveOrUpdate(menu);
+        saveOrUpdate(menu);
 
         //TODO 更新子节点 parentIds
 //        List<Menu> list = menuMapper.findByPidsArray(menu.getId());
