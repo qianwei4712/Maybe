@@ -25,7 +25,7 @@
     </resultMap>
 
     <insert id="insert" parameterType="cn.gov.gsport.system.entity.Office" >
-        insert into sys_office (id, pid, pids, name, sort,
+        insert into sys_menu (id, pid, pids, name, sort,
             href, target, icon, isShow, permission,
             create_date, create_by, remarks)
         values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{pids,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
@@ -35,7 +35,7 @@
 
     <!--根据ID更新-->
     <update id="updateById" parameterType="cn.gov.gsport.system.entity.Office" >
-        update sys_office
+        update sys_menu
         set
             pid = #{pid,jdbcType=BIGINT},
             pids = #{pids,jdbcType=VARCHAR},
@@ -44,7 +44,7 @@
             href = #{href,jdbcType=VARCHAR},
             target = #{target,jdbcType=VARCHAR},
             icon = #{icon,jdbcType=VARCHAR},
-            isShow = #{isShow,jdbcType=BIT},
+            is_show = #{isShow,jdbcType=BIT},
             permission = #{permission,jdbcType=VARCHAR},
             del_flag = #{delFlag,jdbcType=VARCHAR},
             create_date = #{createDate,jdbcType=TIMESTAMP},
