@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 08/12/2019 20:01:20
+ Date: 09/12/2019 10:19:36
 */
 
 SET NAMES utf8mb4;
@@ -95,7 +95,7 @@ CREATE TABLE `sys_office`  (
   `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-部门表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-部门表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_office
@@ -104,6 +104,8 @@ INSERT INTO `sys_office` VALUES (1, -1, '-1,', '甘肃电子口岸有限公司',
 INSERT INTO `sys_office` VALUES (5, 1, NULL, '运营维护部', 0, 1, '123', 0, NULL, NULL, NULL);
 INSERT INTO `sys_office` VALUES (6, 1, NULL, '客服部', 0, 1, '', 0, NULL, NULL, NULL);
 INSERT INTO `sys_office` VALUES (7, 5, NULL, '单一窗口项目组', 0, 1, '', 0, NULL, NULL, NULL);
+INSERT INTO `sys_office` VALUES (8, 1, NULL, '财务部', NULL, NULL, '', 0, '2019-12-08 13:24:35', 1, NULL);
+INSERT INTO `sys_office` VALUES (9, 1, NULL, '总经办', NULL, NULL, '', 0, '2019-12-08 13:24:52', 1, NULL);
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -176,7 +178,7 @@ CREATE TABLE `sys_user`  (
   `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_user

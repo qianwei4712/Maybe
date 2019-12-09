@@ -1,6 +1,7 @@
 /**
  * 树形表格 1.x
  * date:2018-07-22   License By https://easyweb.vip
+ * date:20191209,添加自定义图标
  */
 layui.define(['layer', 'table'], function (exports) {
     var $ = layui.jquery;
@@ -73,15 +74,16 @@ layui.define(['layer', 'table'], function (exports) {
                 var mId = d.id;
                 var mPid = d.pid;
                 var isDir = d.isParent;
+                var icon = d.icon;
                 var emptyNum = treetable.getEmptyNum(mPid, mData);
                 var iconHtml = '';
                 for (var i = 0; i < emptyNum; i++) {
                     iconHtml += '<span class="treeTable-empty"></span>';
                 }
                 if (isDir) {
-                    iconHtml += '<i class="layui-icon layui-icon-triangle-d"></i> <i class="layui-icon layui-icon-layer"></i>';
+                    iconHtml += '<i class="layui-icon layui-icon-triangle-d"></i> <i class="layui-icon '+ icon +'"></i>';
                 } else {
-                    iconHtml += '<i class="layui-icon layui-icon-file"></i>';
+                    iconHtml += '<i class="layui-icon ' + icon + '"></i>';
                 }
                 iconHtml += '&nbsp;&nbsp;';
                 var ttype = isDir ? 'dir' : 'file';
@@ -94,9 +96,6 @@ layui.define(['layer', 'table'], function (exports) {
                 $('.treeTable .layui-table-page').css('display', 'none');
                 $(param.elem).next().attr('treeLinkage', param.treeLinkage);
                 // 绑定事件换成对body绑定
-                /*$('.treeTable .treeTable-icon').click(function () {
-                    treetable.toggleRows($(this), param.treeLinkage);
-                });*/
                 if (param.treeDefaultClose) {
                     treetable.foldAll(param.elem);
                 }
