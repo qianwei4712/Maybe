@@ -40,13 +40,11 @@ public class OfficeController extends BaseController {
         return "system/officeList";
     }
 
-
     @ResponseBody
     @RequestMapping(value = "findList")
     public Resp findList() {
-        //获得全部部门
-        List<Office> all = officeService.findAll();
-        return Resp.success(null, all);
+        List<Office> lists = officeService.findAll();
+        return Resp.success(null, lists);
     }
 
 
@@ -88,7 +86,7 @@ public class OfficeController extends BaseController {
     @RequestMapping(value = "save")
     public String save(Office office, RedirectAttributes model) {
         try {
-//            officeService.saveOrUpdate(office);
+            officeService.saveOrUpdate(office);
             model.addFlashAttribute("resMsg", Resp.success("保存成功！",null));
             return "redirect:" + adminPath + "/office";
         } catch (Exception e) {

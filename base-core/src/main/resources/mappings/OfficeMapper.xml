@@ -5,12 +5,47 @@
 
     <resultMap id="BaseResultMap" type="cn.gov.gsport.system.entity.Office" >
         <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="pid" property="pid" jdbcType="BIGINT" />
+        <result column="pids" property="pids" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="sort" property="sort" jdbcType="INTEGER" />
+        <result column="grade" property="grade" jdbcType="INTEGER" />
+        <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+        <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="create_by" property="createBy" jdbcType="BIGINT" />
+        <result column="remarks" property="remarks" jdbcType="VARCHAR" />
 
-        <association column="parent" property="parent" select="cn.gov.gsport.system.mapper.OfficeMapper.selectById"
+        <association column="pid" property="parent" select="cn.gov.gsport.system.mapper.OfficeMapper.selectById"
                      javaType="cn.gov.gsport.system.entity.Office" >
         </association>
     </resultMap>
 
+    <insert id="insert" parameterType="cn.gov.gsport.system.entity.Office" >
+        insert into sys_office (id, pid, pids, name, sort,
+            grade, telephone,
+            create_date, create_by, remarks)
+        values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{pids,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
+            #{grade,jdbcType=INTEGER}, #{telephone,jdbcType=VARCHAR},
+            #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
+    </insert>
+
+    <!--根据ID更新-->
+    <update id="updateById" parameterType="cn.gov.gsport.system.entity.Office" >
+        update sys_office
+        set
+            pid = #{pid,jdbcType=BIGINT},
+            pids = #{pids,jdbcType=VARCHAR},
+            name = #{name,jdbcType=VARCHAR},
+            sort = #{sort,jdbcType=INTEGER},
+            grade = #{grade,jdbcType=INTEGER},
+            telephone = #{telephone,jdbcType=VARCHAR},
+            del_flag = #{delFlag,jdbcType=VARCHAR},
+            create_date = #{createDate,jdbcType=TIMESTAMP},
+            create_by = #{createBy,jdbcType=BIGINT},
+            remarks = #{remarks,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
 
     <!--根据主键ID选择-->
     <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">

@@ -38,24 +38,20 @@
                                                         <label class="layui-form-label"><em class="gg-star">* </em>上级菜单</label>
                                                         <div class="layui-input-inline">
                                                             <input name="pid" id="selected-menu-id" th:value="${menu.pid}" type="hidden"/>
-                                                            <input type="text" id="selected-menu-name" lay-verify="required" class="layui-input input-width" readonly
+                                                            <input type="text" id="selected-menu-name" lay-verify="required" class="layui-input" readonly
                                                                    th:value="${menu.parent}?${menu.parent.name}:'顶级菜单'" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="layui-form-item">
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label"><em class="gg-star">* </em>菜单名称</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="name" th:value="${menu.name}" lay-verify="required" class="layui-input input-width" />
+                                                            <input type="text" name="name" th:value="${menu.name}" lay-verify="required" class="layui-input" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="layui-form-item">
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">链接地址</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="href" th:value="${menu.href}" class="layui-input input-width" />
+                                                            <input type="text" name="href" th:value="${menu.href}" class="layui-input" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -63,22 +59,26 @@
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">目标</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="target" th:value="${menu.target}" class="layui-input input-width" />
+                                                            <input type="text" name="target" th:value="${menu.target}" class="layui-input" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">是否显示</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="sort" th:value="${menu.sort}" lay-verify="required" class="layui-input" />
+                                                        </div>
+                                                    </div>
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label"><em class="gg-star">* </em>排序</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="sort" th:value="${menu.sort}" lay-verify="required" class="layui-input input-width" />
+                                                            <input type="text" name="sort" th:value="${menu.sort}" lay-verify="required" class="layui-input" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="layui-form-item">
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">小图标</label>
-                                                        <div class="layui-input-inline">
+                                                        <div class="layui-input-block">
                                                             <input type="hidden" id="icon" name="icon" th:value="${menu.icon}"  />
                                                             <div class="icon-div">
                                                                 <i class="layui-icon" th:classappend="${menu.icon}"  style="margin-left: 30px;"></i>
@@ -88,19 +88,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="layui-form-item">
-                                                    <div class="layui-inline">
-                                                        <label class="layui-form-label">是否显示</label>
-                                                        <div class="layui-input-inline">
-                                                            <input type="text" name="sort" th:value="${menu.sort}" lay-verify="required" class="layui-input input-width" />
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="layui-form-item">
+                                                <div class="layui-form-item layui-layout-admin">
                                                     <div class="layui-input-block">
-                                                        <button lay-submit class="layui-btn form-submit-btn" lay-filter="port-form-submit">立即提交</button>
-                                                        <input type="button" class="layui-btn  layui-btn-primary form-return-btn" onclick="history.go(-1)" value="返回">
+                                                        <div class="layui-footer" style="left: 0;">
+                                                            <button lay-submit class="layui-btn" lay-filter="port-form-submit">立即提交</button>
+                                                            <input type="button" class="layui-btn  layui-btn-primary" onclick="history.go(-1)" value="返回">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>

@@ -28,8 +28,7 @@ public class MenuController extends BaseController {
     @ModelAttribute
     public Menu get(@RequestParam(required=false) Long id) {
         if (id != null){
-//            return menuService.getById(id);
-            return new Menu();
+            return menuService.getById(id);
         }else{
             return new Menu();
         }
@@ -64,7 +63,7 @@ public class MenuController extends BaseController {
     @RequestMapping(value = "form")
     public String form(Menu menu, Model model){
         model.addAttribute("menu",menu);
-        return "manage/sys/menuForm";
+        return "system/menuForm";
     }
 
     /**
@@ -73,7 +72,7 @@ public class MenuController extends BaseController {
     @RequestMapping(value = "addChildMenu")
     public String addChildMenu(Menu menu, Model model){
         if (menu.getPid() != null){
-//            menu.setParent(menuService.getById(menu.getPid()));
+            menu.setParent(menuService.getById(menu.getPid()));
         }
         model.addAttribute("menu",menu);
         return "system/menuForm";

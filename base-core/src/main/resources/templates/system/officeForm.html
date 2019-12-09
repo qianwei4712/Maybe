@@ -51,24 +51,23 @@
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">部门等级</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="grade" th:value="${office.grade}" class="layui-input input-width" />
+                                                            <input type="text" name="grade" th:value="${office.grade}" class="layui-input" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="layui-form-item">
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">联系方式</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="telephone" th:value="${office.telephone}" class="layui-input input-width" />
+                                                            <input type="text" name="telephone" th:value="${office.telephone}" class="layui-input" />
                                                         </div>
                                                     </div>
                                                 </div>
 
-
-                                                <div class="layui-form-item">
+                                                <div class="layui-form-item layui-layout-admin">
                                                     <div class="layui-input-block">
-                                                        <button lay-submit class="layui-btn form-submit-btn" lay-filter="port-form-submit">立即提交</button>
-                                                        <input type="button" class="layui-btn  layui-btn-primary form-return-btn" onclick="history.go(-1)" value="返回">
+                                                        <div class="layui-footer" style="left: 0;">
+                                                            <button lay-submit class="layui-btn" lay-filter="port-form-submit">立即提交</button>
+                                                            <input type="button" class="layui-btn  layui-btn-primary" onclick="history.go(-1)" value="返回">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>
@@ -85,8 +84,8 @@
 </div>
 
 
-<div th:replace="manage/incloude/common::common_js"></div>
-<div th:replace="manage/incloude/common::layui_config"></div>
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
 <script th:inline="javascript">
     layui.use(['layer','form'], function(){
         const layer = layui.layer;

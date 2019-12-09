@@ -79,6 +79,9 @@
     };
     /*后台返回数据*/
     const zNodes =[[${list}]];
+    for (let i = 0; i < zNodes.length; i++) {
+        zNodes[i].icon = null;
+    }
     /*初始化zTree*/
     $(document).ready(function(){
         var treeObj = $.fn.zTree.init($("#tree"), setting, zNodes);

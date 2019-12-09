@@ -6,7 +6,6 @@
 </head>
 
 <body>
-
 <div>
     <div class="layui-fluid">
         <div class="layui-row layui-col-space15">
@@ -25,41 +24,38 @@
                             </ul>
                             <div class="layui-tab-content">
                                 <div class="layui-tab-item layui-show">
+                                    <!--内容-->
+                                    <div class="layui-card-body">
+                                        <div class="table-reload-btn" style="margin-bottom: 10px;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label"> 部门名称：</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" id="name" class="layui-input laydate-date" placeholder="输入关键字" autocomplete="off">
+                                                    </div>
+                                                </div>
 
-                                <!--内容-->
-                                <div class="layui-card-body">
-                                    <div class="table-reload-btn" style="margin-bottom: 10px;">
-                                        <div class="layui-form-item">
-                                            <div class="layui-inline">
-                                                <label class="layui-form-label"> 部门名称：</label>
-                                                <div class="layui-input-inline">
-                                                    <input type="text" id="name" class="layui-input laydate-date" placeholder="输入关键字" autocomplete="off">
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn" data-type="search"><i class="layui-icon layui-icon-search layuiadmin-button-btn"></i></button>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="layui-inline">
-                                                <button class="layui-btn" data-type="search"><i class="layui-icon layui-icon-search layuiadmin-button-btn"></i></button>
+                                        <table class="layui-hide" id="table" lay-filter="table"></table>
+
+                                        <script type="text/html" id="table-operate-bar">
+                                            <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                                            <a class="layui-btn  layui-btn-normal layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加下级部门</a>
+                                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                                        </script>
+
+                                        <script type="text/html" id="table-toolbar">
+                                            <div class="layui-btn-container">
+                                                <button class="layui-btn layui-btn-sm" lay-event="expandAll">全部展开</button>
+                                                <button class="layui-btn layui-btn-sm" lay-event="foldAll">全部折叠</button>
                                             </div>
-                                        </div>
+                                        </script>
                                     </div>
-
-                                    <table class="layui-hide" id="table" lay-filter="table"></table>
-
-                                    <script type="text/html" id="table-operate-bar">
-                                        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
-                                        <a class="layui-btn  layui-btn-normal layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加下级部门</a>
-                                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
-                                    </script>
-
-                                    <script type="text/html" id="table-toolbar">
-                                        <div class="layui-btn-container">
-                                            <button class="layui-btn layui-btn-sm" lay-event="expandAll">全部展开</button>
-                                            <button class="layui-btn layui-btn-sm" lay-event="foldAll">全部折叠</button>
-                                        </div>
-                                    </script>
-
-                                </div>
-
                                 </div>
                             </div>
                         </div>
@@ -72,6 +68,7 @@
 
 
 <div th:replace="incloude/common::common_js"></div>
+
 <script type="text/javascript" th:inline="none">
     layui.config({
         base: '/layuiadmin/' //静态资源所在路径
@@ -96,7 +93,7 @@
         };
 
         // 渲染表格
-        const renderTable = function () {
+        var renderTable = function () {
             layer.load(2);
             treetable.render({
                 treeColIndex: 1,
@@ -106,14 +103,10 @@
                 treeDefaultClose: false,
                 treeLinkage: false,
                 elem: Office.TableId,
-                id:'id',
+                id: 'id',
                 toolbar: '#table-toolbar',//工具栏
                 url: adminPath + '/office/findList',
                 cellMinWidth: 100,
-                request: {
-                    pageName: 'pageNo',
-                    limitName: 'pageSize'
-                },
                 page: false,
                 cols: Office.InitColumn(),
                 done: function () {
@@ -160,13 +153,13 @@
             search: function(){
                 var keyword = $('#name').val();
                 var searchCount = 0;
-                $('#table').next('.treeTable').find('.layui-table-body tbody tr td').each(function () {
+                $('#'+Office.TableId).next('.treetable').find('.layui-table-body tbody tr td').each(function () {
                     $(this).css('background-color', 'transparent');
                     var text = $(this).text();
                     if (keyword != '' && text.indexOf(keyword) >= 0) {
                         $(this).css('background-color', 'rgba(250,230,160,0.5)');
                         if (searchCount == 0) {
-                            treetable.expandAll('#table');
+                            treetable.expandAll('#'+Office.TableId);
                             $('html,body').stop(true);
                             $('html,body').animate({scrollTop: $(this).offset().top - 150}, 500);
                         }

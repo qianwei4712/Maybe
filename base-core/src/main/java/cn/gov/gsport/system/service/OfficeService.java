@@ -10,4 +10,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OfficeService extends BaseService<Office, OfficeMapper> {
+
 }

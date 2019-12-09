@@ -764,7 +764,6 @@
         base: '/layuiadmin/' //静态资源所在路径
     }).extend({
         index: 'lib/index' //主入口模块
-        ,treetable:'plugins/treetable'
     }).use(['layer','index'], function(){
         var layer = layui.layer,
             index = parent.layer.getFrameIndex(window.name); //获取窗口索引
