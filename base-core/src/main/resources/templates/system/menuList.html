@@ -59,6 +59,10 @@
                                         </div>
                                     </script>
 
+                                    <script type="text/html" id="statusTpl">
+                                       <input type="checkbox" lay-filter="isShow" value="{{d.id}}" lay-skin="switch" lay-text="显示|禁用" disabled {{ d.isShow==true?'checked':''  }} />
+                                    </script>
+
                                 </div>
 
                                 </div>
@@ -93,7 +97,8 @@
                 {field: 'href', title: '链接地址'},
                 {field: 'target', title: '目标'},
                 {field: 'sort', title: '排序'},
-                {field: 'isShow', title: '是否显示'},
+                {field: 'isShow', title: '是否显示', templet: '#statusTpl'},
+                {field: 'permission', title: '权限标识'},
                 {align:'center', title: '操作', fixed: 'right', width:'20%' , toolbar: '#table-operate-bar'}
             ]];
         };

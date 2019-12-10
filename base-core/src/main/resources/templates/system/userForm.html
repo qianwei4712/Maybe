@@ -81,13 +81,14 @@
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">生日</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="birthday" th:value="${user.birthday}" class="layui-input" />
+                                                            <input type="text" name="birthday" th:value="${#dates.format(user.birthday, 'yyyy-MM-dd')}" class="layui-input birthday" placeholder="yyyy-MM-dd" autocomplete="off">
                                                         </div>
                                                     </div>
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">性别</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="sex" th:value="${user.sex}" class="layui-input" />
+                                                            <input type="radio" name="sex" value="0" title="男" th:checked="${user.sex} eq '0'" />
+                                                            <input type="radio" name="sex" value="1" title="女"  th:checked="${user.sex} eq '1'" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,10 +146,11 @@
     }).extend({
         index: 'lib/index', //主入口模块
         formSelects: 'plugins/formSelects-v4.min'
-    }).use(['layer','form','formSelects'], function(){
-        var layer = layui.layer;
-        var form = layui.form;
-        var formSelects = layui.formSelects;
+    }).use(['layer','form','formSelects', 'laydate'], function(){
+        var layer = layui.layer,
+            form = layui.form,
+            formSelects = layui.formSelects,
+            laydate = layui.laydate;
 
         //表单验证
         form.verify();
@@ -163,6 +165,11 @@
                 $('.layui-form').submit();
             });
             return false;
+        });
+        //时间组件初始化
+        laydate.render({
+            elem: '.birthday',
+            type: 'date'
         });
 
         //初始判断是否为添加下级部门

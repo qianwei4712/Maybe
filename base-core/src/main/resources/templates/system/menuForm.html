@@ -55,6 +55,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="layui-form-item">
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">目标</label>
@@ -76,6 +77,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div class="layui-form-item">
+                                                    <div class="layui-inline">
+                                                        <label class="layui-form-label">权限标识</label>
+                                                        <div class="layui-input-inline">
+                                                            <input type="text" name="permission" th:value="${menu.permission}" class="layui-input" />
+                                                        </div>
+                                                        <div class="layui-form-mid layui-word-aux">模块名:业务类名:功能名，例如bus:order:delete，多个用逗号拼接</div>
+                                                    </div>
+                                                </div>
+
                                                 <div class="layui-form-item">
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">小图标</label>

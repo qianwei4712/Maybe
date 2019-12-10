@@ -51,7 +51,11 @@
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">部门等级</label>
                                                         <div class="layui-input-inline">
-                                                            <input type="text" name="grade" th:value="${office.grade}" class="layui-input" />
+                                                            <select name="grade" lay-verify="required" th:value="${office.grade}">
+                                                                <option value="">请选择部门等级</option>
+                                                                <option value="1" th:selected="${office.grade == 1}">部门</option>
+                                                                <option value="2" th:selected="${office.grade == 2}">小组</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="layui-inline">

@@ -60,3 +60,7 @@
 .port-center{
     text-align: center;
 }
+
+form[id=inputForm] input[readonly]{
+    background-color: #f7f7f7;
+}
