@@ -82,8 +82,9 @@ public class MenuController extends BaseController {
     @RequestMapping(value = "save")
     public String save(Menu menu, RedirectAttributes model) {
         try {
-            menuService.saveMenu(menu);
-            model.addFlashAttribute("resMsg", Resp.success("保存成功！",null));
+
+            Resp resp = menuService.saveMenu(menu);
+            model.addFlashAttribute("resMsg", resp);
             return "redirect:" + adminPath + "/menu";
         } catch (Exception e) {
             e.printStackTrace();

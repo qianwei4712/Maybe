@@ -10,7 +10,6 @@
         <result column="pids" property="pids" jdbcType="VARCHAR" />
         <result column="sort" property="sort" jdbcType="INTEGER" />
         <result column="href" property="href" jdbcType="VARCHAR" />
-        <result column="target" property="target" jdbcType="VARCHAR" />
         <result column="icon" property="icon" jdbcType="VARCHAR" />
         <result column="is_show" property="isShow" jdbcType="BIT" />
         <result column="permission" property="permission" jdbcType="VARCHAR" />
@@ -26,10 +25,10 @@
 
     <insert id="insert" parameterType="cn.gov.gsport.system.entity.Office" >
         insert into sys_menu (id, pid, pids, name, sort,
-            href, target, icon, is_show, permission,
+            href, icon, is_show, permission,
             create_date, create_by, remarks)
         values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{pids,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
-            #{href,jdbcType=VARCHAR}, #{target,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{isShow,jdbcType=BIT}, #{permission,jdbcType=VARCHAR},
+            #{href,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{isShow,jdbcType=BIT}, #{permission,jdbcType=VARCHAR},
             #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
     </insert>
 
@@ -42,7 +41,6 @@
             name = #{name,jdbcType=VARCHAR},
             sort = #{sort,jdbcType=INTEGER},
             href = #{href,jdbcType=VARCHAR},
-            target = #{target,jdbcType=VARCHAR},
             icon = #{icon,jdbcType=VARCHAR},
             is_show = #{isShow,jdbcType=BIT},
             permission = #{permission,jdbcType=VARCHAR},

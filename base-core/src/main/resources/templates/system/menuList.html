@@ -27,44 +27,42 @@
                                 <div class="layui-tab-item layui-show">
 
                                 <!--内容-->
-                                <div class="layui-card-body">
+                                    <div class="layui-card-body">
 
-                                    <div class="table-reload-btn" style="margin-bottom: 10px;">
-                                        <div class="layui-form-item">
-                                            <div class="layui-inline">
-                                                <label class="layui-form-label"> 菜单名称：</label>
-                                                <div class="layui-input-inline">
-                                                    <input type="text" id="name" class="layui-input laydate-date" placeholder="输入关键字" autocomplete="off">
+                                        <div class="table-reload-btn" style="margin-bottom: 10px;">
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label"> 菜单名称：</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" id="name" class="layui-input laydate-date" placeholder="输入关键字" autocomplete="off">
+                                                    </div>
+                                                </div>
+
+                                                <div class="layui-inline">
+                                                    <button class="layui-btn" data-type="search"><i class="layui-icon layui-icon-search layuiadmin-button-btn"></i></button>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="layui-inline">
-                                                <button class="layui-btn" data-type="search"><i class="layui-icon layui-icon-search layuiadmin-button-btn"></i></button>
+                                        <table class="layui-hide" id="table" lay-filter="table"></table>
+
+                                        <script type="text/html" id="table-operate-bar">
+                                            <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                                            <a class="layui-btn  layui-btn-normal layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加下级菜单</a>
+                                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                                        </script>
+
+                                        <script type="text/html" id="table-toolbar">
+                                            <div class="layui-btn-container">
+                                                <button class="layui-btn layui-btn-sm" lay-event="expandAll">全部展开</button>
+                                                <button class="layui-btn layui-btn-sm" lay-event="foldAll">全部折叠</button>
                                             </div>
-                                        </div>
+                                        </script>
+
+                                        <script type="text/html" id="statusTpl">
+                                           <input type="checkbox" lay-filter="isShow" value="{{d.id}}" lay-skin="switch" lay-text="显示|禁用" disabled {{ d.isShow==true?'checked':''  }} />
+                                        </script>
                                     </div>
-
-                                    <table class="layui-hide" id="table" lay-filter="table"></table>
-
-                                    <script type="text/html" id="table-operate-bar">
-                                        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
-                                        <a class="layui-btn  layui-btn-normal layui-btn-xs" lay-event="add"><i class="layui-icon layui-icon-add-1"></i>添加下级菜单</a>
-                                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
-                                    </script>
-
-                                    <script type="text/html" id="table-toolbar">
-                                        <div class="layui-btn-container">
-                                            <button class="layui-btn layui-btn-sm" lay-event="expandAll">全部展开</button>
-                                            <button class="layui-btn layui-btn-sm" lay-event="foldAll">全部折叠</button>
-                                        </div>
-                                    </script>
-
-                                    <script type="text/html" id="statusTpl">
-                                       <input type="checkbox" lay-filter="isShow" value="{{d.id}}" lay-skin="switch" lay-text="显示|禁用" disabled {{ d.isShow==true?'checked':''  }} />
-                                    </script>
-
-                                </div>
-
                                 </div>
                             </div>
                         </div>
@@ -95,7 +93,6 @@
                 {type: 'numbers', title: '序号'},
                 {field: 'name', title: '菜单名称'},
                 {field: 'href', title: '链接地址'},
-                {field: 'target', title: '目标'},
                 {field: 'sort', title: '排序'},
                 {field: 'isShow', title: '是否显示', width:120, templet: '#statusTpl'},
                 {field: 'permission', title: '权限标识'},

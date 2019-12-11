@@ -55,6 +55,17 @@
                                                 <button class="layui-btn layui-btn-sm" lay-event="foldAll">全部折叠</button>
                                             </div>
                                         </script>
+
+                                        <script type="text/html" id="gradeTpl">
+                                            {{# if(d.grade ==0){ }}
+                                                <label>公司</label>
+                                            {{# }else if(d.grade ==1){  }}
+                                                <label>部门</label>
+                                            {{# }else if(d.grade ==2){  }}
+                                                <label>小组</label>
+                                            {{# } }}
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +97,7 @@
             return [[
                 {type: 'numbers', title: '序号'},
                 {field: 'name', title: '部门名称'},
-                {field: 'grade', title: '部门等级'},
+                {field: 'grade', title: '部门等级', templet: '#gradeTpl'},
                 {field: 'telephone', title: '联系方式'},
                 {align:'center', title: '操作', fixed: 'right', width:'20%' , toolbar: '#table-operate-bar'}
             ]];

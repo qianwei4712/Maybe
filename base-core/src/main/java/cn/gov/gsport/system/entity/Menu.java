@@ -28,12 +28,6 @@ public class Menu extends TreeEntity<Menu> {
     private String href;
 
     /**
-     * 目标，_blank..空
-     */
-    @JsonIgnore
-    private String target;
-
-    /**
      * 小图标
      */
     private String icon;

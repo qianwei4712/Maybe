@@ -1,6 +1,7 @@
 package cn.gov.gsport.system.service;
 
 import cn.gov.gsport.core.base.BaseService;
+import cn.gov.gsport.core.basic.Resp;
 import cn.gov.gsport.core.constant.BaseConstant;
 import cn.gov.gsport.system.entity.Menu;
 import cn.gov.gsport.system.mapper.MenuMapper;
@@ -15,10 +16,13 @@ public class MenuService extends BaseService<Menu, MenuMapper> {
 
 
     @Transactional(readOnly = false)
-    public void saveMenu(Menu menu) {
+    public Resp saveMenu(Menu menu) {
         //获取上级节点
         Menu parent = getById(menu.getPid());
         if (parent != null){
+            if ( parent.getPids().split(BaseConstant.SPLIT_SYMBOL).length >= 3){
+                return Resp.error("最多允许三级菜单！", null);
+            }
             // 设置新的父节点串
             menu.setPids(parent.getPids() + parent.getId()+",");
         }else {
@@ -28,6 +32,8 @@ public class MenuService extends BaseService<Menu, MenuMapper> {
 
         //保存或更新
         saveOrUpdate(menu);
+
+        return Resp.success("保存成功！", null);
 
         //TODO 更新子节点 parentIds
 //        List<Menu> list = menuMapper.findByPidsArray(menu.getId());
