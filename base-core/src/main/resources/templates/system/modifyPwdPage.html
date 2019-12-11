@@ -13,7 +13,7 @@
           <div class="layui-card-header">修改密码</div>
           <div class="layui-card-body" pad15>
 
-            <form class="port-form" action="/manage/user/modifyPwd">
+            <form class="port-form" th:action="${adminPath} + '/user/modifyPwd'">
               <div class="layui-form" lay-filter="">
                 <div class="layui-form-item">
                   <label class="layui-form-label">当前密码</label>
