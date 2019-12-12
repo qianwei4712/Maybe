@@ -86,7 +86,7 @@ public class OfficeController extends BaseController {
     @RequestMapping(value = "save")
     public String save(Office office, RedirectAttributes model) {
         try {
-            officeService.saveOrUpdate(office);
+            officeService.saveOffice(office);
             model.addFlashAttribute("resMsg", Resp.success("保存成功！",null));
             return "redirect:" + adminPath + "/office";
         } catch (Exception e) {

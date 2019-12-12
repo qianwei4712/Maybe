@@ -21,12 +21,12 @@ public class BaseConstant {
     public static final Long SUPER_ADMIN_ID = 1L;
 
     /**
-     * 顶级菜单ID，-1L
+     * 顶级菜单（部门）ID，-1L
      */
-    public static final Long SUPER_MENU_ID = -1L;
+    public static final Long SUPER_TREE_ID = -1L;
 
     /**
-     * 顶级菜单ID，字符串拼接
+     * 顶级菜单（部门）ID，字符串拼接
      */
-    public static final String SUPER_MENU_IDS = "-1,";
+    public static final String SUPER_TREE_IDS = "-1,";
 }

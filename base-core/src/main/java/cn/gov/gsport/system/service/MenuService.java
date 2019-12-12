@@ -26,8 +26,8 @@ public class MenuService extends BaseService<Menu, MenuMapper> {
             // 设置新的父节点串
             menu.setPids(parent.getPids() + parent.getId()+",");
         }else {
-            menu.setPid(BaseConstant.SUPER_MENU_ID);
-            menu.setPids(BaseConstant.SUPER_MENU_IDS);
+            menu.setPid(BaseConstant.SUPER_TREE_ID);
+            menu.setPids(BaseConstant.SUPER_TREE_IDS);
         }
 
         //保存或更新

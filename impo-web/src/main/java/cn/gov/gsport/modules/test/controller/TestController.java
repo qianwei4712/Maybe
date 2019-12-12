@@ -13,7 +13,7 @@ public class TestController extends BaseController{
 
     @RequestMapping(value = "test")
     public String test(){
-        return "system/userForm";
+        return "modules/test/testList";
     }
 
 }

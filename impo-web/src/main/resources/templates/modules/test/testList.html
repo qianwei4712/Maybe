@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>用户列表</title>
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+
+            <div class="layui-col-sm12 layui-col-md3 layui-col-lg2">
+                <div class="layui-card">
+                    <div class="layui-card-body mini-bar">
+                        <div>
+                            <ul id="tree" class="ztree"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-sm12 layui-col-md12 layui-col-lg10">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">
+                                    <a th:href="${adminPath} + '/user/list'">用户列表</a>
+                                </li>
+                                <li>
+                                    <a th:href="${adminPath} + '/user/form'">用户添加</a>
+                                </li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+
+                                <!--内容-->
+                                <div class="layui-card-body">
+                                    <div class="table-reload-btn" style="margin-bottom: 10px;">
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"> 姓名：</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="name" id="name" class="layui-input" autocomplete="off">
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-inline">
+                                                <button class="layui-btn" data-type="reload"><i class="layui-icon layui-icon-search layuiadmin-button-btn"></i></button>
+                                                <button class="layui-btn" data-type="reset">重置</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="layui-hide" id="table" lay-filter="table"></table>
+
+                                    <script type="text/html" id="table-operate-bar">
+                                        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                                        <a class="layui-btn layui-btn-xs" lay-event="resetPwd"><i class="layui-icon layui-icon-survey"></i>重置密码</a>
+                                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                                    </script>
+
+                                    <script type="text/html" id="statusTpl">
+                                        <input type="checkbox" lay-filter="status" value="{{d.id}}"
+                                               lay-skin="switch" lay-text="启用|禁用" {{d.status=='0'?'checked':''}} />
+                                    </script>
+
+                                </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
