@@ -60,7 +60,7 @@
           form.verify({
               pass: [/(.+){6,12}$/, '密码必须6到12位'],
               repass: function (value) {
-                  if (value != $('#newPassword').val()){
+                  if (value !== $('#newPassword').val()){
                       return '两次输入密码不一致';
                   }
               }

@@ -37,7 +37,7 @@
         values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{office.id,jdbcType=BIGINT}, #{officeIds,jdbcType=VARCHAR}, #{username,jdbcType=TIMESTAMP},
             #{password,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR},
             #{email,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR},
-            #{photo,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{delFlag,jdbcType=VARCHAR},
+            #{photo,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{delFlag,jdbcType=INTEGER},
             #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
     </insert>
 
@@ -57,7 +57,7 @@
             sex = #{sex,jdbcType=VARCHAR},
             photo = #{photo,jdbcType=VARCHAR},
             status = #{status,jdbcType=VARCHAR},
-            del_flag = #{delFlag,jdbcType=VARCHAR},
+            del_flag = #{delFlag,jdbcType=INTEGER},
             create_date = #{createDate,jdbcType=TIMESTAMP},
             create_by = #{createBy,jdbcType=BIGINT},
             remarks = #{remarks,jdbcType=VARCHAR}

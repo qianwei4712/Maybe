@@ -26,10 +26,10 @@
     <insert id="insert" parameterType="cn.gov.gsport.system.entity.Office" >
         insert into sys_menu (id, pid, pids, name, sort,
             href, icon, is_show, permission,
-            create_date, create_by, remarks)
+            del_flag, create_date, create_by, remarks)
         values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{pids,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
             #{href,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{isShow,jdbcType=BIT}, #{permission,jdbcType=VARCHAR},
-            #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
+            #{delFlag,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
     </insert>
 
     <!--根据ID更新-->
@@ -44,7 +44,7 @@
             icon = #{icon,jdbcType=VARCHAR},
             is_show = #{isShow,jdbcType=BIT},
             permission = #{permission,jdbcType=VARCHAR},
-            del_flag = #{delFlag,jdbcType=VARCHAR},
+            del_flag = #{delFlag,jdbcType=INTEGER},
             create_date = #{createDate,jdbcType=TIMESTAMP},
             create_by = #{createBy,jdbcType=BIGINT},
             remarks = #{remarks,jdbcType=VARCHAR}

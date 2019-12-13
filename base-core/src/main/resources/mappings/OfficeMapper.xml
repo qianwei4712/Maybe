@@ -24,10 +24,10 @@
     <insert id="insert" parameterType="cn.gov.gsport.system.entity.Office" >
         insert into sys_office (id, pid, pids, name, sort,
             grade, telephone,
-            create_date, create_by, remarks)
+            del_flag, create_date, create_by, remarks)
         values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{pids,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
             #{grade,jdbcType=INTEGER}, #{telephone,jdbcType=VARCHAR},
-            #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
+            #{delFlag,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
     </insert>
 
     <!--根据ID更新-->
@@ -40,7 +40,7 @@
             sort = #{sort,jdbcType=INTEGER},
             grade = #{grade,jdbcType=INTEGER},
             telephone = #{telephone,jdbcType=VARCHAR},
-            del_flag = #{delFlag,jdbcType=VARCHAR},
+            del_flag = #{delFlag,jdbcType=INTEGER},
             create_date = #{createDate,jdbcType=TIMESTAMP},
             create_by = #{createBy,jdbcType=BIGINT},
             remarks = #{remarks,jdbcType=VARCHAR}

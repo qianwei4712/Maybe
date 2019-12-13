@@ -17,9 +17,9 @@
 
     <insert id="insert" parameterType="cn.gov.gsport.system.entity.User" >
         insert into sys_role (id, name, enname, status,
-            create_date, create_by, remarks)
+            del_flag, create_date, create_by, remarks)
         values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{enname,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
-            #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
+            #{delFlag,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
     </insert>
 
     <!--根据ID更新-->
@@ -29,7 +29,7 @@
             name = #{name,jdbcType=VARCHAR},
             enname = #{enname,jdbcType=VARCHAR},
             status = #{status,jdbcType=VARCHAR},
-            del_flag = #{delFlag,jdbcType=VARCHAR},
+            del_flag = #{delFlag,jdbcType=INTEGER},
             create_date = #{createDate,jdbcType=TIMESTAMP},
             create_by = #{createBy,jdbcType=BIGINT},
             remarks = #{remarks,jdbcType=VARCHAR}

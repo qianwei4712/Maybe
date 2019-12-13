@@ -1,7 +1,6 @@
 package cn.gov.gsport.system.entity;
 
 import cn.gov.gsport.core.base.TreeEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 

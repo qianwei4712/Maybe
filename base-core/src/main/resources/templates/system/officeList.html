@@ -167,9 +167,9 @@
                 $('#table').next('.treeTable').find('.layui-table-body tbody tr td').each(function () {
                     $(this).css('background-color', 'transparent');
                     var text = $(this).text();
-                    if (keyword != '' && text.indexOf(keyword) >= 0) {
+                    if (keyword !== '' && text.indexOf(keyword) >= 0) {
                         $(this).css('background-color', 'rgba(250,230,160,0.5)');
-                        if (searchCount == 0) {
+                        if (searchCount === 0) {
                             treetable.expandAll('#table');
                             $('html,body').stop(true);
                             $('html,body').animate({scrollTop: $(this).offset().top - 150}, 500);
@@ -177,9 +177,9 @@
                         searchCount++;
                     }
                 });
-                if (keyword == '') {
+                if (keyword === '') {
                     layer.msg("请输入搜索内容", {icon: 5});
-                } else if (searchCount == 0) {
+                } else if (searchCount === 0) {
                     layer.msg("没有匹配结果", {icon: 5});
                 }
             }

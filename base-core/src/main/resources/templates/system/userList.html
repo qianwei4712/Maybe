@@ -106,7 +106,7 @@
                     url: adminPath + "/user/delete",
                     data: { "id": data.id },
                     success: function(res){
-                        if(res.code == 0){
+                        if(res.code === 0){
                             table.reload(User.TableId);
                         }else{ layer.msg('删除失败'); }
                     }
@@ -173,7 +173,7 @@
                 url: adminPath + "/user/changeStatus",
                 data: { "id": id, "status":status },
                 success: function(res){
-                    if(res.code == 0){
+                    if(res.code === 0){
                         layer.msg('操作成功');
                     }else{
                         layer.msg('操作失败');
@@ -233,7 +233,7 @@
                     url: adminPath + "/user/resetPwd",
                     data: { "id": data.id },
                     success: function(res){
-                        if(res.code == 0){
+                        if(res.code === 0){
                             layer.msg('重置成功');
                             reloadTable();
                         }else{

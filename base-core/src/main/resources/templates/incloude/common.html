@@ -28,7 +28,7 @@
         layui.use(['layer'], function(){
             var resObj = [[${resMsg}]];
             if(resObj != null){
-                if(resObj.code == 0){
+                if(resObj.code === 0){
                     //表示成功信息
                     layer.msg(resObj.msg, {icon: 6});
                 }else {
