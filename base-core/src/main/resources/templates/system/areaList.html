@@ -32,24 +32,23 @@
                                                     <div class="layui-inline">
                                                         <label class="layui-form-label">地区选择：</label>
                                                         <div class="layui-input-inline">
-                                                            <select id="pro" class="area-select" lay-filter="selected">
+                                                            <select class="area-select" lay-filter="selected">
                                                                 <option value="">请选择</option>
                                                             </select>
                                                         </div>
                                                         <div class="layui-input-inline">
-                                                            <select id="city" class="area-select" lay-filter="selected">
+                                                            <select class="area-select" lay-filter="selected">
                                                                 <option value="">请选择</option>
                                                             </select>
                                                         </div>
                                                         <div class="layui-input-inline">
-                                                            <select id="distr" class="area-select">
+                                                            <select class="area-select">
                                                                 <option value="">请选择</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="layui-inline">
                                                         <button type="button" class="layui-btn" data-type="reload"><i class="layui-icon layui-icon-search layuiadmin-button-btn"></i></button>
-                                                        <button type="button" class="layui-btn" data-type="reset">重置</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,6 +59,18 @@
                                         <script type="text/html" id="table-operate-bar">
                                             <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
                                             <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                                        </script>
+
+                                        <script type="text/html" id="levelTypeTpl">
+                                            {{# if(d.levelType ==0){ }}
+                                                <label>国家</label>
+                                            {{# }else if(d.levelType ==1){  }}
+                                                <label>省份</label>
+                                            {{# }else if(d.levelType ==2){  }}
+                                                <label>地级市</label>
+                                            {{# }else if(d.levelType ==3){  }}
+                                                <label>区/县</label>
+                                            {{# } }}
                                         </script>
                                     </div>
                                 </div>
@@ -127,6 +138,7 @@
         //重载表格
         Area.Search = function (){
             var queryData = {};
+            queryData['pid'] = null;
             var items = $('.area-select');
             for (let i = 0; i < items.length; i++) {
                 if (!isBlank(items[i].value)){
@@ -139,8 +151,9 @@
         //初始化表格列
         Area.InitColumn = function(){
             return [[
+                {field:'id', title: 'id'},
                 {field:'name', title: '地区名'},
-                {field:'levelType', title: '等级'},
+                {field:'levelType', title: '等级', templet: '#levelTypeTpl'},
                 {field:'shortName', title: '简称'},
                 {field:'lng', title: '经度'},
                 {field:'lat', title: '维度'},
@@ -163,10 +176,6 @@
         $ = layui.$;
         var active = {
             reload: function () {
-                Area.Search();
-            },
-            reset: function () {
-                $('#name').val('');
                 Area.Search();
             }
         };
