@@ -3,6 +3,7 @@ package cn.gov.gsport.system.controller;
 import cn.gov.gsport.core.base.BaseController;
 import cn.gov.gsport.core.basic.Page;
 import cn.gov.gsport.core.basic.Resp;
+import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Role;
 import cn.gov.gsport.system.service.MenuService;
 import cn.gov.gsport.system.service.RoleService;
@@ -67,7 +68,7 @@ public class RoleController extends BaseController {
     @RequestMapping(value = "form")
     public String form(Role role, Model model){
         role.menuIdsInit();
-        model.addAttribute("list", menuService.findAll());
+        model.addAttribute("list", SysUtils.getAllMenuList());
         model.addAttribute("role",role);
         return "system/roleForm";
     }

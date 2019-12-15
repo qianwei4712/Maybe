@@ -5,7 +5,6 @@ import cn.gov.gsport.core.base.BaseController;
 import cn.gov.gsport.core.basic.Page;
 import cn.gov.gsport.core.basic.Resp;
 import cn.gov.gsport.core.utils.SysUtils;
-import cn.gov.gsport.system.entity.Office;
 import cn.gov.gsport.system.entity.User;
 import cn.gov.gsport.system.service.OfficeService;
 import cn.gov.gsport.system.service.RoleService;
@@ -21,7 +20,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @author shiva   2019/7/9 23:11
@@ -51,8 +49,7 @@ public class UserController extends BaseController{
      */
     @RequestMapping(value = {"list",""})
     public String list(Model model) {
-        List<Office> list = officeService.findAll();
-        model.addAttribute("list",list);
+        model.addAttribute("list",SysUtils.getAllOfficeList());
         return "system/userList";
     }
 

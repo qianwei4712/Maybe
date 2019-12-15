@@ -2,6 +2,7 @@ package cn.gov.gsport.system.controller;
 
 import cn.gov.gsport.core.base.BaseController;
 import cn.gov.gsport.core.basic.Resp;
+import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Menu;
 import cn.gov.gsport.system.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.List;
 
 /**
  * @author shiva   2019/8/7 19:45
@@ -45,8 +44,7 @@ public class MenuController extends BaseController {
     @RequestMapping(value = "findList")
     public Resp findList() {
         //获得全部菜单
-        List<Menu> all = menuService.findAll();
-        return Resp.success(null, all);
+        return Resp.success(null, SysUtils.getAllMenuList());
     }
 
     @RequestMapping(value = "delete")
@@ -99,8 +97,7 @@ public class MenuController extends BaseController {
      */
     @RequestMapping(value = "menuTree")
     public String menuTree(Model model){
-        List<Menu> list = menuService.findAll();
-        model.addAttribute("list",list);
+        model.addAttribute("list", SysUtils.getAllMenuList());
         return "system/menuTree";
     }
 

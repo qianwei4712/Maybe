@@ -2,6 +2,7 @@ package cn.gov.gsport.system.service;
 
 import cn.gov.gsport.core.base.BaseService;
 import cn.gov.gsport.core.constant.BaseConstant;
+import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Office;
 import cn.gov.gsport.system.mapper.OfficeMapper;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,6 @@ public class OfficeService extends BaseService<Office, OfficeMapper> {
         }
 
         saveOrUpdate(office);
+        SysUtils.clearOfficeCache();
     }
 }

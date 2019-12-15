@@ -3,6 +3,7 @@ package cn.gov.gsport.system.service;
 import cn.gov.gsport.core.base.BaseService;
 import cn.gov.gsport.core.basic.Resp;
 import cn.gov.gsport.core.constant.BaseConstant;
+import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Menu;
 import cn.gov.gsport.system.mapper.MenuMapper;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class MenuService extends BaseService<Menu, MenuMapper> {
 
         //保存或更新
         saveOrUpdate(menu);
+        SysUtils.clearMenuCache();
 
         return Resp.success("保存成功！", null);
 

@@ -101,11 +101,11 @@ public class ShiroConfig {
         //设置缓存管理器
         systemAuthorizingRealm.setCacheManager(ehCacheManager());
         //缓存AuthenticationInfo信息的缓存名称 在ehcache-shiro.xml中有对应缓存的配置
-        systemAuthorizingRealm.setAuthenticationCacheName(CacheUtils.USER_CACHE);
+        systemAuthorizingRealm.setAuthenticationCacheName(CacheUtils.SYS_CACHE);
         //启用授权缓存，即缓存AuthorizationInfo信息，默认false
         systemAuthorizingRealm.setAuthorizationCachingEnabled(true);
         //缓存AuthorizationInfo信息的缓存名称  在ehcache-shiro.xml中有对应缓存的配置
-        systemAuthorizingRealm.setAuthorizationCacheName(CacheUtils.USER_CACHE);
+        systemAuthorizingRealm.setAuthorizationCacheName(CacheUtils.SYS_CACHE);
 
         return systemAuthorizingRealm;
     }

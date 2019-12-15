@@ -3,6 +3,7 @@ package cn.gov.gsport.system.service;
 import cn.gov.gsport.common.others.CommonUtils;
 import cn.gov.gsport.core.base.BaseService;
 import cn.gov.gsport.core.constant.BaseConstant;
+import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Role;
 import cn.gov.gsport.system.mapper.MenuMapper;
 import cn.gov.gsport.system.mapper.RoleMapper;
@@ -29,7 +30,7 @@ public class RoleService extends BaseService<Role, RoleMapper> {
         if (role == null){
             return role;
         }
-        role.setMenuList(menuMapper.selectMenuListByRoleId(id));
+        role.setMenuList(SysUtils.getMenuListByRoleId(id));
         role.menuIdsInit();
         return role;
     }
@@ -51,6 +52,8 @@ public class RoleService extends BaseService<Role, RoleMapper> {
             String[] split = menuIds.split(BaseConstant.SPLIT_SYMBOL);
             roleMapper.insertRoleMenu(role.getId(), split);
         }
+
+        SysUtils.clearMenuCache();
     }
 
 

@@ -2,6 +2,7 @@ package cn.gov.gsport.system.controller;
 
 import cn.gov.gsport.core.base.BaseController;
 import cn.gov.gsport.core.basic.Resp;
+import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Office;
 import cn.gov.gsport.system.service.OfficeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.List;
 
 /**
  * @author shiva   2019/7/11 22:28
@@ -43,8 +42,7 @@ public class OfficeController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "findList")
     public Resp findList() {
-        List<Office> lists = officeService.findAll();
-        return Resp.success(null, lists);
+        return Resp.success(null, SysUtils.getAllOfficeList());
     }
 
 
@@ -101,8 +99,7 @@ public class OfficeController extends BaseController {
      */
     @RequestMapping(value = "officeTree")
     public String officeTree(Model model){
-        List<Office> list = officeService.findAll();
-        model.addAttribute("list",list);
+        model.addAttribute("list",SysUtils.getAllOfficeList());
         return "system/officeTree";
     }
 

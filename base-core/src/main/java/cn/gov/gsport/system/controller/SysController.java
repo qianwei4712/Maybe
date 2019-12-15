@@ -91,8 +91,7 @@ public class SysController extends BaseController {
 	 * 查询全部菜单
 	 */
 	private List<Menu> adminMenu(){
-		List<Menu> menus = menuService.findAll();
-		return comparatorMenu(menus);
+		return comparatorMenu(SysUtils.getAllMenuList());
 	}
 
 	/**

@@ -25,7 +25,7 @@
 						</a>
 					</li>
 					<li class="layui-nav-item" lay-unselect>
-						<a href="javascript:;" layadmin-event="refresh" title="刷新">
+						<a href="javascript:void(0);" layadmin-event="refresh" title="刷新">
 							<i class="layui-icon layui-icon-refresh-3"></i>
 						</a>
 					</li>
@@ -33,17 +33,18 @@
 				<ul class="layui-nav layui-layout-right"
 					lay-filter="layadmin-layout-right">
 
-					<li class="layui-nav-item" lay-unselect><a
-						lay-href="app/message/index.html" layadmin-event="message"
-						lay-text="消息中心"> <i class="layui-icon layui-icon-notice"></i>
-
+					<li class="layui-nav-item" lay-unselect>
+						<a lay-href="app/message/index.html" layadmin-event="message" lay-text="消息中心">
+							<i class="layui-icon layui-icon-notice"></i>
 							<!-- 如果有新消息，则显示小圆点 --> <span class="layui-badge-dot"></span>
-					</a></li>
+						</a>
+					</li>
 
-					<li class="layui-nav-item layui-hide-xs" lay-unselect><a
-						href="javascript:void(0);" layadmin-event="fullscreen"> <i
-							class="layui-icon layui-icon-screen-full"></i>
-					</a></li>
+					<li class="layui-nav-item layui-hide-xs" lay-unselect>
+						<a href="javascript:void(0);" layadmin-event="fullscreen">
+							<i class="layui-icon layui-icon-screen-full"></i>
+						</a>
+					</li>
 					<li class="layui-nav-item" lay-unselect>
 						<a href="javascript:void(0);">
 							<cite th:text="${user.name}"></cite>
@@ -76,7 +77,7 @@
 
 					<ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
 						<!--第一级菜单-->
-						<li th:each="menu:${menus}" class="layui-nav-item port-menu-item" th:data-id="${menu.id}" th:if="${menu.pid == -1}">
+						<li th:each="menu:${menus}" class="layui-nav-item port-menu-item" th:data-id="${menu.id}" th:if="${menu.pid == -1 && menu.isShow}">
 							<a th:lay-href="${menu.href}" th:text="${menu.name}" th:if="${!#strings.isEmpty(menu.href)}"></a>
 
 							<a href="javascript:void(0);"  th:lay-tips="${menu.name}"  lay-direction="2" th:if="${#strings.isEmpty(menu.href)}">
@@ -85,14 +86,14 @@
 							</a>
 							<!--第二级菜单-->
 							<dl class="layui-nav-child" th:each="menu2:${menus}" th:if="${#strings.isEmpty(menu.href)}">
-								<dd th:data-id="${menu2.id}" th:if="${menu2.pid == menu.id }">
+								<dd th:data-id="${menu2.id}" th:if="${menu2.pid == menu.id && menu2.isShow}">
 									<i class="layui-icon" th:classappend="${menu2.icon}"></i>
 									<a th:lay-href="${menu2.href}" th:text="${menu2.name}" th:if="${!#strings.isEmpty(menu2.href)}"></a>
 
 									<a href="javascript:void(0);" th:text="${menu2.name}" th:if="${#strings.isEmpty(menu2.href)}"></a>
 									<dl class="layui-nav-child"  th:if="${#strings.isEmpty(menu2.href)}">
 										<!--第三级菜单-->
-										<dd th:each="menu3:${menus}" th:if="${menu3.pid == menu2.id }">
+										<dd th:each="menu3:${menus}" th:if="${menu3.pid == menu2.id && menu3.isShow}">
 											<i class="layui-icon" th:classappend="${menu3.icon}"></i>
 											<a th:lay-href="${menu3.href}" th:text="${menu3.name}"></a>
 										</dd>

@@ -14,20 +14,24 @@ public class CacheUtils {
     private static CacheManager cacheManager = SpringContextHolder.getBean(CacheManager.class);;
 
     /**
+     * 系统缓存：部门、字典、地区信息
+     */
+    public static final String SYS_CACHE = "sysCache";
+    /**
      * 系统缓存：用户
      */
-    public static final String USER_CACHE = "sysCache";
+    public static final String USER_CACHE = "userCache";
     /**
-     * 系统缓存：字典
+     * 系统缓存：菜单
      */
-    public static final String DICT_MAP_CACHE = "dictMap";
+    public static final String MENU_CACHE = "menuCache";
 
     /**
      * 获取SYS_CACHE缓存
      * @param key
      */
     public static Object get(String key) {
-        return get(USER_CACHE, key);
+        return get(SYS_CACHE, key);
     }
 
     /**
@@ -46,7 +50,7 @@ public class CacheUtils {
      * @return
      */
     public static void put(String key, Object value) {
-        put(USER_CACHE, key, value);
+        put(SYS_CACHE, key, value);
     }
 
     /**
@@ -55,7 +59,7 @@ public class CacheUtils {
      * @return
      */
     public static void remove(String key) {
-        remove(USER_CACHE, key);
+        remove(SYS_CACHE, key);
     }
 
     /**

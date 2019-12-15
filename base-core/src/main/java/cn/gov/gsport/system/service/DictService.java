@@ -19,6 +19,13 @@ public class DictService extends BaseService<Dict, DictMapper> {
     @Autowired
     private DictMapper dictMapper;
 
+    @Override
+    public boolean saveOrUpdate(Dict dict) {
+        boolean result = super.saveOrUpdate(dict);
+        SysUtils.clearDictCache();
+        return result;
+    }
+
     /**
      * 获得字典类型列表
      */
