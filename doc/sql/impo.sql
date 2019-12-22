@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 12/12/2019 23:38:48
+ Date: 15/12/2019 14:19:01
 */
 
 SET NAMES utf8mb4;
@@ -36,12 +36,12 @@ CREATE TABLE `sys_area`  (
   `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 900052 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-地区表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 900002 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-地区表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_area
 -- ----------------------------
-INSERT INTO `sys_area` VALUES (100000, '中国', 0, '中国', 0, '中国', 116.368324, 39.915085, 'China', 0, '2019-12-12 23:30:59', 1, NULL);
+INSERT INTO `sys_area` VALUES (100000, '中国', 0, '中国', 0, '中国', 116.368324, 39.915085, 'china', 0, '2019-12-12 23:30:59', 1, NULL);
 INSERT INTO `sys_area` VALUES (110000, '北京', 100000, '北京', 1, '中国,北京', 116.405285, 39.904989, 'Beijing', 0, '2019-12-12 23:30:59', 1, NULL);
 INSERT INTO `sys_area` VALUES (110100, '北京市', 110000, '北京', 2, '中国,北京,北京市', 116.405285, 39.904989, 'Beijing', 0, '2019-12-12 23:30:59', 1, NULL);
 INSERT INTO `sys_area` VALUES (110101, '东城区', 110100, '东城', 3, '中国,北京,北京市,东城区', 116.410050, 39.931570, 'Dongcheng', 0, '2019-12-12 23:30:59', 1, NULL);
@@ -3799,12 +3799,28 @@ INSERT INTO `sys_area` VALUES (900001, ' ', NULL, NULL, NULL, NULL, NULL, NULL, 
 DROP TABLE IF EXISTS `sys_dict`;
 CREATE TABLE `sys_dict`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `type` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '类型',
+  `value` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '数据值',
+  `label` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标签名',
+  `description` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
+  `sort` int(10) NULL DEFAULT 30 COMMENT '排序（升序）',
   `del_flag` int(1) NULL DEFAULT 0 COMMENT '逻辑删除，0-正常，1-删除',
   `create_date` datetime(0) NULL DEFAULT NULL COMMENT '时间',
   `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-字典表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-字典表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sys_dict
+-- ----------------------------
+INSERT INTO `sys_dict` VALUES (1, 'area_type', '0', '国家', '地区级别', 10, 0, '2019-12-14 11:11:50', 1, NULL);
+INSERT INTO `sys_dict` VALUES (2, 'area_type', '1', '省份', '地区级别', 30, 0, '2019-12-14 11:12:13', 1, NULL);
+INSERT INTO `sys_dict` VALUES (3, 'area_type', '2', '地级市', '地区级别', 60, 0, '2019-12-14 11:12:13', 1, NULL);
+INSERT INTO `sys_dict` VALUES (4, 'area_type', '3', '区/县', '地区级别', 90, 0, '2019-12-14 20:06:04', 1, NULL);
+INSERT INTO `sys_dict` VALUES (5, 'office_type', '0', '公司', '部门级别', 30, 0, '2019-12-14 20:14:07', 1, NULL);
+INSERT INTO `sys_dict` VALUES (6, 'office_type', '1', '部门', '部门级别', 60, 0, '2019-12-14 20:14:10', 1, NULL);
+INSERT INTO `sys_dict` VALUES (7, 'office_type', '2', '小组', '部门级别', 90, 0, '2019-12-14 20:14:12', 1, NULL);
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -3825,7 +3841,7 @@ CREATE TABLE `sys_menu`  (
   `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-菜单表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-菜单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -3837,11 +3853,13 @@ INSERT INTO `sys_menu` VALUES (8, 16, '-1,7,16,', '用户管理', 30, '/manage/u
 INSERT INTO `sys_menu` VALUES (9, 16, '-1,7,16,', '部门管理', 60, '/manage/office', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (12, 17, '-1,7,17,', '菜单管理', 0, '/manage/menu', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (13, 17, '-1,7,17,', '角色管理', 30, '/manage/role', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
-INSERT INTO `sys_menu` VALUES (14, -1, '-1,', '系统设置', 9999, '', 'layui-icon-engine', 0, 'sys:set:check', 0, '2019-12-12 23:32:45', 1, NULL);
-INSERT INTO `sys_menu` VALUES (15, 14, '-1,14,', '系统监控', 0, '/manage/supervisory', '', 0, '', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_menu` VALUES (14, -1, '-1,', '系统设置', 9999, '', 'layui-icon-engine', 1, 'sys:set:check', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_menu` VALUES (15, 14, '-1,14,', '系统监控', 0, '/manage/supervisory', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (16, 7, '-1,7,', '组织架构', 30, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
-INSERT INTO `sys_menu` VALUES (17, 7, '-1,7,', '菜单角色', 60, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_menu` VALUES (17, 7, '-1,7,', '系统基础', 60, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (18, 14, '-1,14,', '测试', 60, '/manage/test/test', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_menu` VALUES (19, 17, '-1,7,17,', '数据字典', 90, '/manage/dict', '', 1, '', 0, '2019-12-13 06:06:00', 1, NULL);
+INSERT INTO `sys_menu` VALUES (20, 17, '-1,7,17,', '地区数据', 120, '/manage/area', '', 1, '', 0, '2019-12-13 06:07:20', 1, NULL);
 
 -- ----------------------------
 -- Table structure for sys_office

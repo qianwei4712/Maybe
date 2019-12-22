@@ -100,14 +100,7 @@
         </dependency>
         <!--shiro以及缓存依赖结束-->
 
-        <!-- lombok插件依赖开始 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- lombok插件依赖结束 -->
+
 
 
     </dependencies>

@@ -11,7 +11,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * @author shiva
  * @version 2019-12-03
  */
-@MapperScan({"cn.gov.gsport.system.mapper"})
+@MapperScan({"cn.gov.gsport.system.mapper","cn.gov.gsport.modules.*.mapper"})
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 

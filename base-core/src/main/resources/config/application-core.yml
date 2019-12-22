@@ -7,7 +7,7 @@
 # mybatis配置
 mybatis:
   config-location: classpath:config/mybatis-config.xml
-  mapper-locations: classpath*:mappings/*.xml
+  mapper-locations: classpath*:mappings/*.xml, classpath:mappings/**/*.xml
 
 #======================================#
 #========== Spring settings ===========#
