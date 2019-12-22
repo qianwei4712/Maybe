@@ -1,5 +1,6 @@
 package cn.gov.gsport.core.config;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import cn.gov.gsport.core.utils.CacheUtils;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
@@ -30,6 +31,14 @@ public class ShiroConfig {
      */
     @Value("${frontPath}")
     private String frontPath;
+
+    /**
+     * 加入thymeleaf页面权限配置
+     */
+    @Bean(name = "shiroDialect")
+    public ShiroDialect shiroDialect(){
+        return new ShiroDialect();
+    }
 
     /**
      * 配置shiro过滤器

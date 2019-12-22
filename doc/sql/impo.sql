@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 15/12/2019 14:19:01
+ Date: 22/12/2019 18:20:19
 */
 
 SET NAMES utf8mb4;
@@ -3857,7 +3857,7 @@ INSERT INTO `sys_menu` VALUES (14, -1, '-1,', '系统设置', 9999, '', 'layui-i
 INSERT INTO `sys_menu` VALUES (15, 14, '-1,14,', '系统监控', 0, '/manage/supervisory', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (16, 7, '-1,7,', '组织架构', 30, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (17, 7, '-1,7,', '系统基础', 60, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
-INSERT INTO `sys_menu` VALUES (18, 14, '-1,14,', '测试', 60, '/manage/test/test', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_menu` VALUES (18, 14, '-1,14,', '演示模块', 60, '/manage/test/demo', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (19, 17, '-1,7,17,', '数据字典', 90, '/manage/dict', '', 1, '', 0, '2019-12-13 06:06:00', 1, NULL);
 INSERT INTO `sys_menu` VALUES (20, 17, '-1,7,17,', '地区数据', 120, '/manage/area', '', 1, '', 0, '2019-12-13 06:07:20', 1, NULL);
 
@@ -3984,5 +3984,23 @@ CREATE TABLE `sys_user_role`  (
 -- ----------------------------
 INSERT INTO `sys_user_role` VALUES (1, 1);
 INSERT INTO `sys_user_role` VALUES (6, 1);
+
+-- ----------------------------
+-- Table structure for test_demo
+-- ----------------------------
+DROP TABLE IF EXISTS `test_demo`;
+CREATE TABLE `test_demo`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `del_flag` int(1) NULL DEFAULT 0 COMMENT '逻辑删除，0-正常，1-删除',
+  `create_date` datetime(0) NULL DEFAULT NULL COMMENT '时间',
+  `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
+  `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '测试-演示表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of test_demo
+-- ----------------------------
+INSERT INTO `test_demo` VALUES (1, 0, '2019-12-16 01:09:29', 1, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
