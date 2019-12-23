@@ -1,4 +1,4 @@
-/*
+check/*
  Navicat MySQL Data Transfer
 
  Source Server         : localhost
@@ -3853,7 +3853,7 @@ INSERT INTO `sys_menu` VALUES (8, 16, '-1,7,16,', '用户管理', 30, '/manage/u
 INSERT INTO `sys_menu` VALUES (9, 16, '-1,7,16,', '部门管理', 60, '/manage/office', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (12, 17, '-1,7,17,', '菜单管理', 0, '/manage/menu', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (13, 17, '-1,7,17,', '角色管理', 30, '/manage/role', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
-INSERT INTO `sys_menu` VALUES (14, -1, '-1,', '系统设置', 9999, '', 'layui-icon-engine', 1, 'sys:set:check', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_menu` VALUES (14, -1, '-1,', '系统设置', 9999, '', 'layui-icon-engine', 1, 'sys-set-check', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (15, 14, '-1,14,', '系统监控', 0, '/manage/supervisory', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (16, 7, '-1,7,', '组织架构', 30, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (17, 7, '-1,7,', '系统基础', 60, '', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
