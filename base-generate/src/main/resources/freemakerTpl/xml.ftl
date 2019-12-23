@@ -17,7 +17,7 @@
     </resultMap>
 
 
-    <insert id="insert" parameterType="cn.gov.gsport.modules.test.entity.Demo" >
+    <insert id="insert" parameterType="${packageName}.${moduleName}.entity.${ClassName}" >
         insert into ${tableName} (id,
     <#if columnClass?exists>
         <#list columnClass as item>
@@ -35,7 +35,7 @@
     </insert>
 
     <!--根据ID更新-->
-    <update id="updateById" parameterType="cn.gov.gsport.modules.test.entity.Demo" >
+    <update id="updateById" parameterType="${packageName}.${moduleName}.entity.${ClassName}" >
         update ${tableName}
         set
     <#if columnClass?exists>
