@@ -45,6 +45,10 @@ public class SysUtils {
      * 地区信息缓存中的key名，全部地区信息
      */
     private static final String AREA_ALL_KEY = "areaAllKey";
+    /**
+     * 权限缓存key
+     */
+    public static final String AUTH_INFO_KEY = "authInfoKey";
 
 
 
@@ -208,6 +212,7 @@ public class SysUtils {
      */
     public static void clearMenuCache(){
         CacheUtils.removeAll(CacheUtils.MENU_CACHE);
+        CacheUtils.remove(CacheUtils.SYS_CACHE, AUTH_INFO_KEY);
     }
 
     /*
