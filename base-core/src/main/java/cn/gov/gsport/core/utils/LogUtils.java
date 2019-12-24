@@ -113,8 +113,18 @@ public class LogUtils {
      * 获取菜单名称路径（如：系统设置-机构用户-用户管理-编辑）
      */
     public static String getMenuNamePath(String requestUri, String titleSuffix){
+        //获取菜单MAP<href, 菜单名称拼接>
         Map<String, String> menuMap = SysUtils.getMenuMap();
         String menuNamePath = menuMap.get(requestUri);
+        //菜单控制器下属子方法，根据‘/’循环切割获取菜单拼接
+        while (StringUtils.isBlank(menuNamePath)){
+            if (requestUri.length() < 2){
+                break;
+            }
+            requestUri = requestUri.substring(0, requestUri.lastIndexOf(BaseConstant.URL_SYMBOL));
+            menuNamePath = menuMap.get(requestUri);
+        }
+        //加入最后的结尾
         if (!StringUtils.isBlank(titleSuffix)){
             menuNamePath = menuNamePath + BaseConstant.SPLIT_SYMBOL_DASH + titleSuffix;
         }

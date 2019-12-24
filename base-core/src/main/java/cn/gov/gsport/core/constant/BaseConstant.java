@@ -34,4 +34,9 @@ public class BaseConstant {
      * 拼接符号
      */
     public static final String SPLIT_SYMBOL_DASH = "-";
+
+    /**
+     * url上下文分割符号
+     */
+    public static final String URL_SYMBOL = "/";
 }
