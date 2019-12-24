@@ -1,6 +1,11 @@
 package cn.gov.gsport.core.utils;
 
-import cn.gov.gsport.system.entity.*;
+import cn.gov.gsport.common.lang.StringUtils;
+import cn.gov.gsport.core.constant.BaseConstant;
+import cn.gov.gsport.system.entity.Dict;
+import cn.gov.gsport.system.entity.Menu;
+import cn.gov.gsport.system.entity.Office;
+import cn.gov.gsport.system.entity.User;
 import cn.gov.gsport.system.mapper.DictMapper;
 import cn.gov.gsport.system.mapper.MenuMapper;
 import cn.gov.gsport.system.mapper.OfficeMapper;
@@ -37,6 +42,10 @@ public class SysUtils {
      * 角色菜单缓存中的key名，全部菜单
      */
     private static final String MENU_ALL_KEY = "menuAllKey";
+    /**
+     * 角色菜单缓存中的key名，全部菜单
+     */
+    private static final String MENU_MAP_KEY = "menuMapKey";
     /**
      * 部门缓存中的key名，全部部门
      */
@@ -205,6 +214,50 @@ public class SysUtils {
             CacheUtils.put(CacheUtils.MENU_CACHE, MENU_ALL_KEY, menuList);
         }
         return menuList;
+    }
+
+    /**
+     * @return 获得菜单 MAP<href, 系统设置-机构用户-用户管理>
+     */
+    public static Map<String, String> getMenuMap(){
+        @SuppressWarnings("unchecked")
+        Map<String, String> menuMap = (Map<String, String>)CacheUtils.get(CacheUtils.MENU_CACHE, MENU_MAP_KEY);
+        if (menuMap == null){
+            menuMap = new HashMap<>();
+            List<Menu> menuList = getAllMenuList();
+            for (Menu menu : menuList){
+                // 获取菜单名称路径（如：系统设置-机构用户-用户管理）
+                String namePath = "";
+                if (menu.getPids() != null){
+                    List<String> namePathList = new ArrayList<>();
+                    for (String id : StringUtils.split(menu.getPids(), BaseConstant.SPLIT_SYMBOL)){
+                        if (String.valueOf(BaseConstant.SUPER_TREE_ID).equals(id)){
+                            // 过滤根节点
+                            continue;
+                        }
+                        for (Menu m : menuList){
+                            if (String.valueOf(m.getId()).equals(id)){
+                                namePathList.add(m.getName());
+                                break;
+                            }
+                        }
+                    }
+                    namePathList.add(menu.getName());
+                    namePath = StringUtils.join(namePathList, BaseConstant.SPLIT_SYMBOL_DASH);
+                }
+                // 设置菜单名称路径
+                if (StringUtils.isNotBlank(menu.getHref())){
+                    menuMap.put(menu.getHref(), namePath);
+                }else if (StringUtils.isNotBlank(menu.getPermission())){
+                    for (String p : StringUtils.split(menu.getPermission())){
+                        menuMap.put(p, namePath);
+                    }
+                }
+
+            }
+            CacheUtils.put(CacheUtils.MENU_CACHE, MENU_MAP_KEY, menuMap);
+        }
+        return menuMap;
     }
 
     /**

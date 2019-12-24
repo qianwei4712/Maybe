@@ -43,6 +43,7 @@ public class ExceptionUtils {
 				break;
 			}else if ("com.jeesite.common.service.ServiceException"
 					.equals(e.getClass().getName())){
+				//TODO 自定义异常更改
 				message = e.getMessage();
 				break;
 			}
@@ -58,7 +59,7 @@ public class ExceptionUtils {
 	 */
 	public static String getStackTraceAsString(Throwable e) {
 		if (e == null){
-			return "";
+			return null;
 		}
 		StringWriter stringWriter = new StringWriter();
 		e.printStackTrace(new PrintWriter(stringWriter));

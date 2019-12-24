@@ -29,4 +29,9 @@ public class BaseConstant {
      * 顶级菜单（部门）ID，字符串拼接
      */
     public static final String SUPER_TREE_IDS = "-1,";
+
+    /**
+     * 拼接符号
+     */
+    public static final String SPLIT_SYMBOL_DASH = "-";
 }

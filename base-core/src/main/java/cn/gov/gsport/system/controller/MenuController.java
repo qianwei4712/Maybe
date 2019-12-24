@@ -80,7 +80,6 @@ public class MenuController extends BaseController {
     @RequestMapping(value = "save")
     public String save(Menu menu, RedirectAttributes model) {
         try {
-
             Resp resp = menuService.saveMenu(menu);
             model.addFlashAttribute("resMsg", resp);
             return "redirect:" + adminPath + "/menu";
