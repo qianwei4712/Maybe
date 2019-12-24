@@ -136,7 +136,7 @@ public class LogUtils {
             return null;
         }
         StringBuilder params = new StringBuilder();
-        for (Map.Entry<String, String[]> param : ((Map<String, String[]>)paramMap).entrySet()){
+        for (Map.Entry<String, String[]> param : paramMap.entrySet()){
             params.append("".equals(params.toString()) ? "" : "&").append(param.getKey()).append("=");
             String paramValue = (param.getValue() != null && param.getValue().length > 0 ? param.getValue()[0] : "");
             params.append(StringUtils.abbr(StringUtils.endsWithIgnoreCase(param.getKey(), "password") ? "" : paramValue, 100));
