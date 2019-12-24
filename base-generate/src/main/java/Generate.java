@@ -15,7 +15,7 @@ public class Generate {
     /**
      * 包名，例如：cn.gov.gsport.modules
      */
-    public static String packageName = "cn.gov.gsport.modules";
+    public static String packageName = "cn.gov.gsport.system";
     /**
      * 模块名，例：sys
      */
@@ -23,11 +23,11 @@ public class Generate {
     /**
      * 类名，例：User
      */
-    public static String  className = "Menu";
+    public static String  className = "Log";
     /**
      * 模块名称，例：用户
      */
-    public static String  functionName = "测试";
+    public static String  functionName = "系统日志";
     /**
      * 类作者，例：shiva
      */
@@ -55,7 +55,7 @@ public class Generate {
     /**
      * 表明，例：sys_user
      */
-    public static String  tableName = "sys_menu";
+    public static String  tableName = "sys_log";
     /**
      * 表明，例：sys_user
      */

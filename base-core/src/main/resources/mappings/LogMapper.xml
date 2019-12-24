@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.gov.gsport.system.mapper.LogMapper">
+
+    <resultMap id="BaseResultMap" type="cn.gov.gsport.system.entity.Log" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="userid" property="userid" jdbcType="BIGINT" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="log_type" property="logType" jdbcType="INTEGER" />
+        <result column="remote_addr" property="remoteAddr" jdbcType="VARCHAR" />
+        <result column="user_agent" property="userAgent" jdbcType="VARCHAR" />
+        <result column="request_url" property="requestUrl" jdbcType="VARCHAR" />
+        <result column="params" property="params" jdbcType="VARCHAR" />
+        <result column="exceptions" property="exceptions" jdbcType="VARCHAR" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+
+    <insert id="insert" parameterType="cn.gov.gsport.system.entity.Log" >
+        insert into sys_log (id,
+            title,
+            userid,
+            username,
+            log_type,
+            remote_addr,
+            user_agent,
+            request_url,
+            params,
+            exceptions,
+            create_date)
+        values (#{id,jdbcType=BIGINT},
+            #{title,jdbcType=VARCHAR},
+            #{userid,jdbcType=BIGINT},
+            #{username,jdbcType=VARCHAR},
+            #{logType,jdbcType=INTEGER},
+            #{remoteAddr,jdbcType=VARCHAR},
+            #{userAgent,jdbcType=VARCHAR},
+            #{requestUrl,jdbcType=VARCHAR},
+            #{params,jdbcType=VARCHAR},
+            #{exceptions,jdbcType=VARCHAR},
+            #{createDate,jdbcType=TIMESTAMP})
+    </insert>
+
+    <!--根据ID更新-->
+    <update id="updateById" parameterType="cn.gov.gsport.system.entity.Log" >
+        update sys_log
+        set
+            title = #{title,jdbcType=VARCHAR},
+            userid = #{userid,jdbcType=BIGINT},
+            username = #{username,jdbcType=VARCHAR},
+            log_type = #{logType,jdbcType=INTEGER},
+            remote_addr = #{remoteAddr,jdbcType=VARCHAR},
+            user_agent = #{userAgent,jdbcType=VARCHAR},
+            request_url = #{requestUrl,jdbcType=VARCHAR},
+            params = #{params,jdbcType=VARCHAR},
+            exceptions = #{exceptions,jdbcType=VARCHAR},
+            create_date = #{createDate,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+
+    <!--根据主键ID选择-->
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT * FROM sys_log WHERE id = #{id}
+    </select>
+
+
+    <!--分页查询默认使用接口，条件查询语句-->
+    <select id="findList" resultType="cn.gov.gsport.system.entity.Log">
+        SELECT *
+        FROM sys_log opt
+        <where>
+            <if test="createDateStart != null ">
+                and opt.create_date &gt;= #{createDateStart}
+            </if>
+            <if test="createDateEnd != null ">
+                and opt.create_date &lt;= DATE_SUB(DATE_ADD(#{createDateEnd}, INTERVAL 1 DAY),INTERVAL -1 SECOND)
+            </if>
+            <if test="username != null and username != ''">
+                and opt.username like CONCAT('%', #{username}, '%')
+            </if>
+            <if test="logType != null and logType != ''">
+                and opt.log_type = #{logType}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

@@ -1,8 +1,11 @@
 package cn.gov.gsport.system.controller;
 
 import cn.gov.gsport.common.others.CommonUtils;
+import cn.gov.gsport.common.web.Servelets;
 import cn.gov.gsport.core.base.BaseController;
+import cn.gov.gsport.core.utils.LogUtils;
 import cn.gov.gsport.core.utils.SysUtils;
+import cn.gov.gsport.system.entity.Log;
 import cn.gov.gsport.system.entity.User;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -30,9 +33,7 @@ public class LoginController extends BaseController{
         if(user.getId() != null){
             return "redirect:" + adminPath + "/index";
         }
-
         try {
-
             //获取登录名
             String username = request.getParameter("username");
             if(StringUtils.isBlank(username)){
@@ -48,6 +49,8 @@ public class LoginController extends BaseController{
 
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
+            //登录日志记录
+            LogUtils.logging(Servelets.getRequest(), Log.LOGIN_LOG);
             return "redirect:" + adminPath + "/index";
         } catch (Exception e) {
             e.printStackTrace();

@@ -46,7 +46,7 @@
             del_flag = ${r"#{delFlag,jdbcType=INTEGER}"},
             create_date = ${r"#{createDate,jdbcType=TIMESTAMP}"},
             create_by = ${r"#{createBy,jdbcType=BIGINT}"},
-            remarks = ${r"#{remarks,jdbcType=VARCHAR}"},
+            remarks = ${r"#{remarks,jdbcType=VARCHAR}"}
         where id = ${r"#{id,jdbcType=BIGINT}"}
     </update>
 

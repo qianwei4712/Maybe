@@ -29,20 +29,17 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
         //获取用户的输入的账号.
         String username = (String)token.getPrincipal();
-
         //通过工具类，先查缓存，再差数据库，获得用户
         User user = SysUtils.get(username);
-
         if(user == null){
             return null;
         }
         //直接将用户作为缓存，密码、realm name
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
+        return new SimpleAuthenticationInfo(
                 user,
                 user.getPassword(),
                 user.getName()
         );
-        return authenticationInfo;
     }
 
     /**

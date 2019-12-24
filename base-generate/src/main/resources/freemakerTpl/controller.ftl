@@ -44,7 +44,7 @@ public class ${ClassName}Controller extends BaseController {
 
     @ResponseBody
     @RequestMapping(value = "findByPage")
-    public Resp findByPage(HttpServletRequest request, HttpServletResponse response, Demo ${className}){
+    public Resp findByPage(HttpServletRequest request, HttpServletResponse response, ${ClassName} ${className}){
         try {
             Page<${ClassName}> page = ${className}Service.findByPage(request, response, ${className});
             return Resp.success(null, page.getTotal(), page.getList());
