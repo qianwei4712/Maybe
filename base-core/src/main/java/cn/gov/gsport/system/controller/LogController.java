@@ -59,10 +59,4 @@ public class LogController extends BaseController {
         return Resp.error();
     }
 
-    @RequestMapping(value = "form")
-    public String form(Log log, Model model){
-        model.addAttribute("log",log);
-        return "system/logForm";
-    }
-
 }

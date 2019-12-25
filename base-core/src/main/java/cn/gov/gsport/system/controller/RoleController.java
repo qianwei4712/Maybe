@@ -76,7 +76,7 @@ public class RoleController extends BaseController {
     /**
      * 保存
      */
-    @RequestMapping(value = "save")
+    @RequestMapping(value = "save", name = "编辑角色")
     public String save(Role role, RedirectAttributes model) {
         try {
             roleService.saveRole(role);
@@ -92,7 +92,7 @@ public class RoleController extends BaseController {
      * 删除
      */
     @ResponseBody
-    @RequestMapping(value = "delete")
+    @RequestMapping(value = "delete", name = "删除角色")
     public Resp delete(Long id) {
         try {
             if (roleService.deleteLogic(id)){
@@ -108,7 +108,7 @@ public class RoleController extends BaseController {
      * ajax切换角色登陆状态
      */
     @ResponseBody
-    @RequestMapping("/changeStatus")
+    @RequestMapping(value = "/changeStatus", name = "切换角色状态")
     public Resp changeStatus(Long id, String status) {
         if (roleService.changeStatus(id, status)){
             return Resp.success();

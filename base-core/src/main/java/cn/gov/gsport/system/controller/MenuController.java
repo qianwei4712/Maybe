@@ -47,7 +47,7 @@ public class MenuController extends BaseController {
         return Resp.success(null, SysUtils.getAllMenuList());
     }
 
-    @RequestMapping(value = "delete")
+    @RequestMapping(value = "delete", name = "删除菜单")
     public String delete(Long id, RedirectAttributes model){
         menuService.deleteLogic(id);
         model.addFlashAttribute("resMsg", Resp.success("删除成功！",null));
@@ -77,7 +77,7 @@ public class MenuController extends BaseController {
     }
 
 
-    @RequestMapping(value = "save")
+    @RequestMapping(value = "save", name = "编辑菜单")
     public String save(Menu menu, RedirectAttributes model) {
         try {
             Resp resp = menuService.saveMenu(menu);

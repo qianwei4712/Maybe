@@ -81,7 +81,7 @@
             <if test="username != null and username != ''">
                 and opt.username like CONCAT('%', #{username}, '%')
             </if>
-            <if test="logType != null and logType != ''">
+            <if test="logType != null">
                 and opt.log_type = #{logType}
             </if>
         </where>

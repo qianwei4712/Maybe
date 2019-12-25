@@ -83,7 +83,7 @@ public class UserController extends BaseController{
     /**
      * 保存
      */
-    @RequestMapping(value = "save")
+    @RequestMapping(value = "save", name = "编辑用户")
     public String save(User user, RedirectAttributes model) {
         try {
             userService.saveUser(user);
@@ -99,7 +99,7 @@ public class UserController extends BaseController{
      * 删除
      */
     @ResponseBody
-    @RequestMapping(value = "delete")
+    @RequestMapping(value = "delete", name = "删除用户")
     public Resp delete(Long id) {
         try {
             if (userService.deleteLogic(id)){
@@ -123,7 +123,7 @@ public class UserController extends BaseController{
     /**
      * 保存密码修改
      */
-    @RequestMapping("/modifyPwd")
+    @RequestMapping(value = "/modifyPwd", name = "修改密码")
     public String modifyPwd(String oldPassword, String newPassword, RedirectAttributes model) {
         User user = SysUtils.getUser();
         if(user.getId() == null){
@@ -160,7 +160,7 @@ public class UserController extends BaseController{
      * 重置密码为123456
      */
     @ResponseBody
-    @RequestMapping("/resetPwd")
+    @RequestMapping(value = "/resetPwd", name = "重置密码")
     public Resp resetPwd(Long id) {
         try {
             return userService.resetPwd(id);

@@ -46,7 +46,7 @@ public class OfficeController extends BaseController {
     }
 
 
-    @RequestMapping(value = "delete")
+    @RequestMapping(value = "delete", name = "删除部门")
     public String delete(Long id, RedirectAttributes model){
         //顶级部门不允许删除
         if (id==null || id == 1){
@@ -81,7 +81,7 @@ public class OfficeController extends BaseController {
     }
 
 
-    @RequestMapping(value = "save")
+    @RequestMapping(value = "save", name = "编辑部门")
     public String save(Office office, RedirectAttributes model) {
         try {
             officeService.saveOffice(office);
