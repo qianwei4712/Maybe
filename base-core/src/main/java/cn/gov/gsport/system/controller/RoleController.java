@@ -80,11 +80,9 @@ public class RoleController extends BaseController {
     public String save(Role role, RedirectAttributes model) {
         try {
             roleService.saveRole(role);
-            return "redirect:" + adminPath + "/role";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/role";
     }
 

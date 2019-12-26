@@ -82,11 +82,9 @@ public class MenuController extends BaseController {
         try {
             Resp resp = menuService.saveMenu(menu);
             model.addFlashAttribute("resMsg", resp);
-            return "redirect:" + adminPath + "/menu";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/menu";
     }
 

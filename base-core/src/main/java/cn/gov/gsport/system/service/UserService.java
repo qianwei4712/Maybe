@@ -77,6 +77,7 @@ public class UserService extends BaseService<User, UserMapper> {
             String[] split = roleIds.split(BaseConstant.SPLIT_SYMBOL);
             userMapper.insertUserRole(user.getId(), split);
         }
+        SysUtils.clearUserCache(user.getId());
     }
 
     /**

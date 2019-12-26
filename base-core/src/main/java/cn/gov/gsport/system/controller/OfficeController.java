@@ -86,11 +86,9 @@ public class OfficeController extends BaseController {
         try {
             officeService.saveOffice(office);
             model.addFlashAttribute("resMsg", Resp.success("保存成功！",null));
-            return "redirect:" + adminPath + "/office";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/office";
     }
 

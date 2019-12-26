@@ -75,11 +75,9 @@ public class AreaController extends BaseController {
     public String save(Area area, RedirectAttributes model) {
         try {
             areaService.saveOrUpdate(area);
-            return "redirect:" + adminPath + "/area";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/area";
     }
 

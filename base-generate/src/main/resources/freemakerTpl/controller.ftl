@@ -64,11 +64,9 @@ public class ${ClassName}Controller extends BaseController {
     public String save(${ClassName} ${className}, RedirectAttributes model) {
         try {
             ${className}Service.saveOrUpdate(${className});
-            return "redirect:" + adminPath + "/${className}";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/${className}";
     }
 

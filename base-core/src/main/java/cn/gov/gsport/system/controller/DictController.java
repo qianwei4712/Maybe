@@ -74,11 +74,9 @@ public class DictController extends BaseController {
     public String save(Dict dict, RedirectAttributes model) {
         try {
             dictService.saveOrUpdate(dict);
-            return "redirect:" + adminPath + "/dict";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/dict";
     }
 

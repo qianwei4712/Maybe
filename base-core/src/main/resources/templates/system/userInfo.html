@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>用户信息</title>
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <!--左侧-->
+            <div class="layui-col-sm12 layui-col-md3">
+                <div class="layui-card">
+                    <div class="layui-card-body" style="padding: 25px;">
+                        <div class="port-center layui-text">
+                            <div class="user-info-head" id="photo">
+                                <img id="avatarPreview" th:src="${user.photo}" />
+                            </div>
+                            <h2 style="padding-top: 20px;" th:text="${user.name}"></h2>
+                            <p style="padding-top: 8px;" th:text="${user.office.name}"></p>
+                        </div>
+                        <div class="layui-text" style="padding-top: 30px;">
+                            <div class="layui-text-top" style="padding-bottom: 8px;">
+                                <i class="layui-icon layui-icon-notice"></i>
+                                <span style="padding-left: 30px;" th:text="${user.email}"></span>
+                            </div>
+                            <div class="info-list-item" style="padding-bottom: 8px;">
+                                <i class="layui-icon layui-icon-cellphone"></i>
+                                <span style="padding-left: 30px;" th:text="${user.mobile}"></span>
+                            </div>
+                        </div>
+                        <div class="dash"></div>
+                        <h3>角色</h3>
+                        <div class="layui-badge-list" style="padding-top: 12px;">
+                            <span class="layui-badge-rim layui-bg-gray" th:each="role:${user.roleList}" th:text="${role.name}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右侧-->
+            <div class="layui-col-sm12 layui-col-md9">
+                <div class="layui-card">
+                    <div class="layui-card-body layui-text">
+                        <div class="layui-tab layui-tab-brief" lay-filter="userInfoTab">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">基本信息</li>
+                                <li class="">其他</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-form layui-tab-item layui-show" lay-filter="userInfoForm">
+                                    <form id="inputForm" class="layui-form" th:action="${adminPath} + '/user/updateUserInfo'">
+                                        <input type="hidden" name="id" th:value="${user.id}">
+                                        <div class="layui-form user-info-form" style="max-width: 400px;padding-top: 25px;">
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">账号:</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="account" class="layui-input" th:value="${user.username}" lay-verify="required" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">性别:</label>
+                                                <div class="layui-input-block">
+                                                    <input type="radio" name="sex" value="0" title="男" th:checked="${user.sex} eq '0'" />
+                                                    <input type="radio" name="sex" value="1" title="女"  th:checked="${user.sex} eq '1'" />
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">名称:<span style="color: red;">*</span></label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="name" th:value="${user.name}" class="layui-input" lay-verify="required"/>
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">邮箱:<span style="color: red;">*</span></label>
+                                                <div class="layui-input-block">
+                                                    <input type="email" name="email" class="layui-input" th:value="${user.email}" lay-verify="email" required="">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">手机:</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="mobile" th:value="${user.mobile}"  lay-verify="phone" class="layui-input">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">出生日期:</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="birthday" th:value="${#dates.format(user.birthday, 'yyyy-MM-dd')}" class="layui-input birthday" placeholder="yyyy-MM-dd" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">座机:</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="telephone" th:value="${user.telephone}" class="layui-input">
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-block">
+                                                    <button class="layui-btn" lay-filter="userInfoSubmit" lay-submit="">
+                                                        更新基本信息
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!--另一个标签-->
+                                <div class="layui-tab-item" style="padding: 6px 25px 30px 25px;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+<script th:inline="javascript" >
+    layui.use(['layer','form','laydate'], function(){
+        var layer = layui.layer,
+            form = layui.form,
+            laydate = layui.laydate;
+
+        //表单验证
+        form.verify();
+        //监听提交
+        form.on('submit(port-form-submit)', function(data){
+            layer.confirm('确认提交数据？', function(index){
+                layer.close(index);
+                $('.layui-form').submit();
+            });
+            return false;
+        });
+        //时间组件初始化
+        laydate.render({
+            elem: '.birthday',
+            type: 'date'
+        });
+    });
+</script>
+
+</body>
+</html>

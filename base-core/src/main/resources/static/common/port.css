@@ -61,6 +61,18 @@
     text-align: center;
 }
 
+.dash {
+    border-bottom: 1px dashed #ccc;
+    margin: 15px 0;
+}
+
+.user-info-head {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    display: inline-block;
+}
+
 form[id=inputForm] input[readonly]{
     background-color: #f7f7f7;
 }

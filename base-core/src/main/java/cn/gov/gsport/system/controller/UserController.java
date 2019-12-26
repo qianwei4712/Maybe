@@ -87,12 +87,10 @@ public class UserController extends BaseController{
     public String save(User user, RedirectAttributes model) {
         try {
             userService.saveUser(user);
-            return "redirect:" + adminPath + "/user";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
-        return "redirect:" + adminPath + "/timeline";
+        return "redirect:" + adminPath + "/user";
     }
 
     /**
@@ -111,6 +109,25 @@ public class UserController extends BaseController{
         return Resp.error();
     }
 
+    /**
+     * 用户信息界面
+     */
+    @RequestMapping("/userInfo")
+    public String userInfo(Model model) {
+        model.addAttribute("user", SysUtils.get(SysUtils.getUser().getId()));
+        return "system/userInfo";
+    }
+
+
+    @RequestMapping(value = "updateUserInfo", name = "用户更新信息")
+    public String updateUserInfo(User user, RedirectAttributes model) {
+        try {
+            userService.saveUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:" + adminPath + "/user/userInfo";
+    }
 
     /**
      * 修改密码界面
