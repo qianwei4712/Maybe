@@ -2,11 +2,13 @@ package cn.gov.gsport.system.entity;
 
 import cn.gov.gsport.core.base.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author shiva   2019/12/14 18:07
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class Dict extends BaseEntity<Dict> {
 
     /**

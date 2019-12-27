@@ -4,6 +4,7 @@ import cn.gov.gsport.common.others.CommonUtils;
 import cn.gov.gsport.core.base.BaseEntity;
 import cn.gov.gsport.core.constant.BaseConstant;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @author shiva   2019/7/6 20:29
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class Role extends BaseEntity<Role> {
 
     /**

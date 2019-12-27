@@ -2,6 +2,7 @@ package cn.gov.gsport.system.entity;
 
 import cn.gov.gsport.core.base.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
@@ -10,6 +11,7 @@ import java.util.Date;
 * @author shiva  2019-12-23
 */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class Log extends BaseEntity<Log> {
 
     /**

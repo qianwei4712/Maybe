@@ -5,6 +5,7 @@ import cn.gov.gsport.core.base.BaseEntity;
 import cn.gov.gsport.core.constant.BaseConstant;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +15,7 @@ import java.util.List;
  * @author shiva   2019/7/1 22:19
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
 public class User extends BaseEntity<User> {
 

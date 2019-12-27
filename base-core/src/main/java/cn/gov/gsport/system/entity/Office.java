@@ -3,11 +3,13 @@ package cn.gov.gsport.system.entity;
 import cn.gov.gsport.core.base.TreeEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author shiva   2019/7/1 22:52
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
 public class Office extends TreeEntity<Office> {
 

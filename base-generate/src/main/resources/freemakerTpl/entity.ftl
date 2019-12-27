@@ -2,12 +2,14 @@ package ${packageName}.${moduleName}.entity;
 
 import cn.gov.gsport.core.base.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
 * ${functionName}实体类
 * @author ${classAuthor}  ${createTime}
 */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class ${ClassName} extends BaseEntity<${ClassName}> {
 
 <#if columnClass?exists>
