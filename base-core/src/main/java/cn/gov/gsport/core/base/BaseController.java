@@ -1,12 +1,8 @@
 package cn.gov.gsport.core.base;
 
+import cn.gov.gsport.core.basic.Resp;
+import cn.gov.gsport.core.constant.BaseConstant;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
-import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-
-import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author shiva   2019/12/5 21:20
@@ -25,5 +21,14 @@ public abstract class BaseController {
     @Value("${frontPath}")
     protected String frontPath;
 
+    /**
+     * 操作成功，默认返回信息
+     */
+    protected static final Resp RESP_MSG_SUCCESS = Resp.success(BaseConstant.RESMSG_SUCCESS,null);
+
+    /**
+     * 操作失败，默认返回信息
+     */
+    protected static final Resp RESP_MSG_ERROR = Resp.success(BaseConstant.RESMSG_SUCCESS,null);
 
 }

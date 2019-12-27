@@ -120,7 +120,10 @@ public class SysUtils {
             Subject subject = SecurityUtils.getSubject();
             User user = (User)subject.getPrincipal();
             if (user != null){
-                return user;
+                user = get(user.getId());
+                if (user != null){
+                    return user;
+                }
             }
         }catch (Exception e) {
             e.printStackTrace();

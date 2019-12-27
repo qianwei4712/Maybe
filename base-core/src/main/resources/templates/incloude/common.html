@@ -30,10 +30,10 @@
             if(resObj != null){
                 if(resObj.code === 0){
                     //表示成功信息
-                    layer.msg(resObj.msg, {icon: 6});
+                    layer.msg(resObj.msg, {icon: 6,time:1000});
                 }else {
                     //失败信息
-                    layer.msg(resObj.msg, {icon: 5});
+                    layer.msg(resObj.msg, {icon: 5,time:1500});
                 }
             }
         });

@@ -87,8 +87,10 @@ public class UserController extends BaseController{
     public String save(User user, RedirectAttributes model) {
         try {
             userService.saveUser(user);
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/user";
     }
@@ -114,7 +116,7 @@ public class UserController extends BaseController{
      */
     @RequestMapping("/userInfo")
     public String userInfo(Model model) {
-        model.addAttribute("user", SysUtils.get(SysUtils.getUser().getId()));
+        model.addAttribute("user", SysUtils.getUser());
         return "system/userInfo";
     }
 
@@ -123,8 +125,10 @@ public class UserController extends BaseController{
     public String updateUserInfo(User user, RedirectAttributes model) {
         try {
             userService.saveUser(user);
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/user/userInfo";
     }

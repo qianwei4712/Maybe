@@ -51,10 +51,10 @@ public class OfficeController extends BaseController {
         //顶级部门不允许删除
         if (id==null || id == 1){
             model.addFlashAttribute("resMsg", Resp.error("顶级部门不允许删除！",null));
-            return "redirect:" + adminPath + "/office";
+        }else {
+            officeService.deleteLogic(id);
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         }
-        officeService.deleteLogic(id);
-        model.addFlashAttribute("resMsg", Resp.success("删除成功！",null));
         return "redirect:" + adminPath + "/office";
     }
 
@@ -85,9 +85,10 @@ public class OfficeController extends BaseController {
     public String save(Office office, RedirectAttributes model) {
         try {
             officeService.saveOffice(office);
-            model.addFlashAttribute("resMsg", Resp.success("保存成功！",null));
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/office";
     }

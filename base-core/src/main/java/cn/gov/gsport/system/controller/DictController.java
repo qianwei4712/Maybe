@@ -74,8 +74,10 @@ public class DictController extends BaseController {
     public String save(Dict dict, RedirectAttributes model) {
         try {
             dictService.saveOrUpdate(dict);
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/dict";
     }

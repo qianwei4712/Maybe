@@ -50,7 +50,7 @@ public class MenuController extends BaseController {
     @RequestMapping(value = "delete", name = "删除菜单")
     public String delete(Long id, RedirectAttributes model){
         menuService.deleteLogic(id);
-        model.addFlashAttribute("resMsg", Resp.success("删除成功！",null));
+        model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         return "redirect:" + adminPath + "/menu";
     }
 
@@ -84,6 +84,7 @@ public class MenuController extends BaseController {
             model.addFlashAttribute("resMsg", resp);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/menu";
     }

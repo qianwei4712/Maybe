@@ -75,8 +75,10 @@ public class AreaController extends BaseController {
     public String save(Area area, RedirectAttributes model) {
         try {
             areaService.saveOrUpdate(area);
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/area";
     }

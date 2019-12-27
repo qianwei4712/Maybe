@@ -64,8 +64,10 @@ public class ${ClassName}Controller extends BaseController {
     public String save(${ClassName} ${className}, RedirectAttributes model) {
         try {
             ${className}Service.saveOrUpdate(${className});
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/${className}";
     }

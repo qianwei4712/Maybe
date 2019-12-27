@@ -5,7 +5,6 @@ import cn.gov.gsport.core.basic.Page;
 import cn.gov.gsport.core.basic.Resp;
 import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Role;
-import cn.gov.gsport.system.service.MenuService;
 import cn.gov.gsport.system.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,8 +27,6 @@ public class RoleController extends BaseController {
 
     @Autowired
     private RoleService roleService;
-    @Autowired
-    private MenuService menuService;
 
     @ModelAttribute
     public Role get(@RequestParam(required=false) Long id) {
@@ -80,8 +77,10 @@ public class RoleController extends BaseController {
     public String save(Role role, RedirectAttributes model) {
         try {
             roleService.saveRole(role);
+            model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/role";
     }

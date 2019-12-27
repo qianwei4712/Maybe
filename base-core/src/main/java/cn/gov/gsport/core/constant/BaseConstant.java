@@ -39,4 +39,14 @@ public class BaseConstant {
      * url上下文分割符号
      */
     public static final String URL_SYMBOL = "/";
+
+    /**
+     * save操作反馈信息字段
+     */
+    public static final String  RESMSG_SUCCESS = "操作成功！";
+
+    /**
+     * save操作反馈信息字段
+     */
+    public static final String  RESMSG_ERROR = "操作失败！";
 }
