@@ -38,7 +38,7 @@ public class UserController extends BaseController{
     @ModelAttribute
     public User get(@RequestParam(required=false) Long id) {
         if (id != null){
-            return userService.getById(id);
+            return SysUtils.get(id);
         }else{
             return new User();
         }
