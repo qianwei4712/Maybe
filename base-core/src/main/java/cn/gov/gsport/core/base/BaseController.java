@@ -1,7 +1,6 @@
 package cn.gov.gsport.core.base;
 
 import cn.gov.gsport.core.basic.Resp;
-import cn.gov.gsport.core.constant.BaseConstant;
 import org.springframework.beans.factory.annotation.Value;
 
 /**
@@ -24,11 +23,11 @@ public abstract class BaseController {
     /**
      * 操作成功，默认返回信息
      */
-    protected static final Resp RESP_MSG_SUCCESS = Resp.success(BaseConstant.RESMSG_SUCCESS,null);
+    protected static final Resp RESP_MSG_SUCCESS = Resp.success("操作成功！",null);
 
     /**
      * 操作失败，默认返回信息
      */
-    protected static final Resp RESP_MSG_ERROR = Resp.success(BaseConstant.RESMSG_SUCCESS,null);
+    protected static final Resp RESP_MSG_ERROR = Resp.error("操作失败，请联系运维人员！",null);
 
 }
