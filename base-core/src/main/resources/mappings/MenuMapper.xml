@@ -59,7 +59,7 @@
 
 
     <select id="findAll" resultType="cn.gov.gsport.system.entity.Menu">
-        SELECT * FROM sys_menu WHERE del_flag = 0
+        SELECT * FROM sys_menu WHERE del_flag = 0 order by sort
     </select>
 
 
@@ -70,6 +70,7 @@
         <where>
             and opt.del_flag = #{DELFLAG_NORMAL}
         </where>
+        order by opt.sort
     </select>
 
     <!--根据主键ID逻辑删除-->
@@ -85,6 +86,7 @@
         LEFT JOIN sys_role_menu srm ON srm.menu_id = opt.id
         WHERE
             srm.role_id = #{id} and opt.del_flag = 0
+        order by opt.sort
     </select>
 
 </mapper>
