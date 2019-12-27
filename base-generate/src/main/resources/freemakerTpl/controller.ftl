@@ -69,7 +69,7 @@ public class ${ClassName}Controller extends BaseController {
             e.printStackTrace();
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
-        return "redirect:" + adminPath + "/${className}";
+        return "redirect:" + adminPath + "/${urlPrefix}";
     }
 
     @ResponseBody

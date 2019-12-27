@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache updateCheck="false" dynamicConfig="false">
-    <diskStore path="../temp/stella/ehcache"/>
+    <diskStore path="gsport/ehcache"/>
 
     <!--
     name:缓存名称。
