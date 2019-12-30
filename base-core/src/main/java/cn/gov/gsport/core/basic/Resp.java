@@ -5,18 +5,16 @@ package cn.gov.gsport.core.basic;
  */
 public class Resp {
 
-    public static final int success = 0;
-    public static final int error = 1;
+    private static final int SUCCESS = 0;
+    private static final int ERROR = 1;
 
     public static Resp success() {
-        Resp response = new Resp();
-        response.code = success;
-        return response;
+        return RespSingleton.RESP_COMMON_SUCCESS;
     }
 
     public static Resp success(String msg, Object data) {
         Resp response = new Resp();
-        response.code = success;
+        response.code = SUCCESS;
         response.msg = msg;
         response.data = data;
         return response;
@@ -24,7 +22,7 @@ public class Resp {
 
     public static Resp success(String msg, long count, Object data) {
         Resp response = new Resp();
-        response.code = success;
+        response.code = SUCCESS;
         response.count = count;
         response.msg = msg;
         response.data = data;
@@ -32,14 +30,12 @@ public class Resp {
     }
 
     public static Resp error() {
-        Resp response = new Resp();
-        response.code = error;
-        return response;
+        return RespSingleton.RESP_COMMON_ERROR;
     }
 
     public static Resp error(String msg, Object data) {
         Resp response = new Resp();
-        response.code = error;
+        response.code = ERROR;
         response.msg = msg;
         response.data = data;
         return response;
