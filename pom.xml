@@ -11,8 +11,8 @@
     </parent>
 
     
-    <groupId>cn.gov.gsport.sw</groupId>
-    <artifactId>impo</artifactId>
+    <groupId>cn.shiva</groupId>
+    <artifactId>maybe</artifactId>
     <packaging>pom</packaging>
 
     <version>1.0-SNAPSHOT</version>
@@ -106,8 +106,8 @@
 
 
     <organization>
-        <name>gsport</name>
-        <url>http://gsport.gov.cn</url>
+        <name>maybe</name>
+        <url>http://shiva.show</url>
     </organization>
 
 

@@ -1,7 +1,7 @@
 package core;
 
 
-import cn.gov.gsport.common.lang.StringUtils;
+import cn.shiva.common.lang.StringUtils;
 import freemarker.template.Template;
 
 import java.io.*;

@@ -1,5 +1,5 @@
-import cn.gov.gsport.common.lang.DateUtils;
-import cn.gov.gsport.common.lang.StringUtils;
+import cn.shiva.common.lang.DateUtils;
+import cn.shiva.common.lang.StringUtils;
 import core.DatabaseConn;
 import core.FreemarkerInit;
 
@@ -15,7 +15,7 @@ public class Generate {
     /**
      * 包名，例如：cn.gov.gsport.modules
      */
-    public static String packageName = "cn.gov.gsport.system";
+    public static String packageName = "cn.shiva.system";
     /**
      * 模块名，例：sys
      */
@@ -35,11 +35,11 @@ public class Generate {
     /**
      * 数据库连接串
      */
-    public static String dbCoon = "jdbc:mysql://127.0.0.1:3306/impo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC";
+    public static String dbCoon = "jdbc:mysql://127.0.0.1:3306/shiva-maybe?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC";
     /**
      * 数据库名
      */
-    public static String dbName = "impo";
+    public static String dbName = "shiva-maybe";
     /**
      * 数据库用户名
      */

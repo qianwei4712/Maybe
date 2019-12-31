@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>字典编辑</title>
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                            <ul class="layui-tab-title">
+                                <li>
+                                    <a th:href="${adminPath} + '/dict/list'" >字典列表</a>
+                                </li>
+                                <li class="layui-this">
+                                    <a href="javascript:void(0);">字典编辑</a>
+                                </li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+
+                                <form class="layui-form layui-form-pane" th:action="${adminPath} + '/dict/save'">
+                                    <input name="id" th:value="${dict.id}" type="hidden"/>
+                                    <div class="layui-form">
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"><em class="gg-star">* </em>类型:</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="type" th:value="${dict.type}" lay-verify="required" class="layui-input" autocomplete="off" />
+                                                </div>
+                                                <div class="layui-form-mid layui-word-aux">区分字典类型</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"><em class="gg-star">* </em>标签名:</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="label" th:value="${dict.label}" lay-verify="required" class="layui-input" autocomplete="off" />
+                                                </div>
+                                                <div class="layui-form-mid layui-word-aux">字典显示值，页面显示值</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"><em class="gg-star">* </em>数据值:</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="value" th:value="${dict.value}" lay-verify="required" class="layui-input" autocomplete="off" />
+                                                </div>
+                                                <div class="layui-form-mid layui-word-aux">字典实际数据值，数据库保存值</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label">描述:</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="description" th:value="${dict.description}" class="layui-input" autocomplete="off" />
+                                                </div>
+                                                <div class="layui-form-mid layui-word-aux">字典描述，防止遗忘</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label">排序:</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="sort" th:value="${dict.sort}" class="layui-input" autocomplete="off" />
+                                                </div>
+                                                <div class="layui-form-mid layui-word-aux">排序，升序</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="layui-form-item layui-layout-admin">
+                                        <div class="layui-input-block">
+                                            <div class="layui-footer" style="left: 0;">
+                                                <button class="layui-btn" lay-submit lay-filter="port-form-submit">立即提交</button>
+                                                <input type="button" class="layui-btn  layui-btn-primary" onclick="history.go(-1)" value="返回">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+<script th:inline="javascript">
+    layui.use(['layer','form'], function(){
+        const layer = layui.layer;
+        const form = layui.form;
+
+        //表单验证
+        form.verify();
+
+        //监听提交
+        form.on('submit(port-form-submit)', function(data){
+            layer.confirm('确认提交数据？', function(index){
+                layer.close(index);
+                $('.layui-form').submit();
+            });
+            return false;
+        });
+    });
+
+</script>
+
+</body>
+</html>

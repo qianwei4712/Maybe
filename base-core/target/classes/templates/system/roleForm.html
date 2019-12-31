@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>角色编辑</title>
+    <link rel="stylesheet" type="text/css" th:href="@{~/plugins/ztree/css/metroStyle/metroStyle.css}" media="all">
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                            <ul class="layui-tab-title">
+                                <li>
+                                    <a th:href="${adminPath} + '/role/list'" >角色列表</a>
+                                </li>
+                                <li class="layui-this">
+                                    <a href="javascript:void(0);">角色编辑</a>
+                                </li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+
+                                <form class="layui-form layui-form-pane" th:action="${adminPath} + '/role/save'">
+                                    <input name="id" th:value="${role.id}" type="hidden"/>
+                                    <input name="menuIds" id="menuIds" th:value="${role.menuIds}" type="hidden"/>
+                                    <div class="layui-form">
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"><em class="gg-star">* </em>名称</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="name" th:value="${role.name}" lay-verify="required" class="layui-input" autocomplete="off" />
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label"><em class="gg-star">* </em>英文名</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="text" name="enname" th:value="${role.enname}" lay-verify="required" class="layui-input" autocomplete="off" />
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label">状态</label>
+                                                <div class="layui-input-inline">
+                                                    <input type="checkbox" name="status" lay-skin="switch" lay-text="启用|禁用" lay-filter="status"
+                                                           th:value="${role.status}?${role.status}:'0'" th:checked="${role.status}?(${role.status eq '0'} ?'':'false'):''">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <ul id="tree" class="ztree" style="margin-left: 100px;"></ul>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="layui-form-item layui-layout-admin">
+                                        <div class="layui-input-block">
+                                            <div class="layui-footer" style="left: 0;">
+                                                <button class="layui-btn" lay-submit lay-filter="port-form-submit">立即提交</button>
+                                                <input type="button" class="layui-btn  layui-btn-primary" onclick="history.go(-1)" value="返回">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+<script th:src="@{~/plugins/ztree/js/jquery.ztree.all.min.js}"></script>
+<script th:inline="javascript">
+    layui.use(['layer','form'], function(){
+        const layer = layui.layer;
+        const form = layui.form;
+
+        //提交之前拼接并重置menuIds
+        resetMenuIds = function () {
+            const treeObj = $.fn.zTree.getZTreeObj("tree");
+            //获得选中的节点
+            const checkedNodes =treeObj.getCheckedNodes(true);
+
+            //拼接菜单信息字符串
+            var menuIds = "";
+            for (var i=0; i < checkedNodes.length; i++) {
+                menuIds = menuIds + checkedNodes[i].id + ",";
+            }
+            $('#menuIds').val(menuIds);
+        };
+
+        //初始化勾选树形菜单
+        initTreeChecked = function () {
+            const menuIds = $('#menuIds').val();
+            if(!isBlank(menuIds)){
+                //将后台返回的菜单id拼接字符串分割
+                var menuIdList = menuIds.split(",");
+                //获取全部树节点
+                var allNodes = treeObj.transformToArray(treeObj.getNodes());
+                //遍历勾选
+                for (var i=0; i < allNodes.length; i++) {
+                    if (menuIdList.contains(allNodes[i].id+"")){
+                        treeObj.checkNode(allNodes[i], true, false);
+                    }
+
+                }
+            }
+        };
+
+        //表单验证
+        form.verify();
+        //监听修改switch
+        form.on('switch(status)', function(data) {
+            $(data.elem).attr('type', 'hidden').val(this.checked ? 0 : 1);
+        });
+        //监听提交
+        form.on('submit(port-form-submit)', function(data){
+            layer.confirm('确认提交数据？', function(index){
+                resetMenuIds();
+                layer.close(index);
+                $('.layui-form').submit();
+            });
+            return false;
+        });
+
+
+        const setting = {
+            data: {
+                simpleData: {
+                    enable: true,
+                    pIdKey: "pid"
+                }
+            },
+            check:{
+                enable:true
+            }
+        };
+        /*后台返回数据*/
+        const zNodes =[[${list}]];
+        for (let i = 0; i < zNodes.length; i++) {
+            zNodes[i].icon = null;
+        }
+        /*初始化zTree*/
+        const treeObj = $.fn.zTree.init($("#tree"), setting, zNodes);
+        treeObj.expandAll(true);//默认展开所有
+        initTreeChecked();
+
+    });
+
+</script>
+
+</body>
+</html>
