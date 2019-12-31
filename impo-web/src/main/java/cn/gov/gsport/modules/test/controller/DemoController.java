@@ -68,7 +68,6 @@ public class DemoController extends BaseController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // TODO 异常界面，显示信息
         return "redirect:" + adminPath + "/demo";
     }
 

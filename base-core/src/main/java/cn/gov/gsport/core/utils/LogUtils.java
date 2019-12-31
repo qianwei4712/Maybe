@@ -40,6 +40,34 @@ public class LogUtils {
     }
 
     /**
+     * controller异常捕捉
+     */
+    public static void exceptionCatch(HttpServletRequest request, Exception ex){
+        User user = SysUtils.getUser();
+        if (user.getId() != null && request != null){
+            Log log = new Log();
+            log.setLogType(Log.ERROR_LOG);
+            log.setCreateDate(new Date());
+            log.setUserid(user.getId());
+            log.setUsername(user.getName());
+            log.setUserAgent(request.getHeader(USER_AGENT));
+            //错误日志和操作日志添加请求参数
+            log.setRequestUrl(request.getRequestURI());
+            log.setParams(getParams(request.getParameterMap()));
+            //TODO 线程创建方式改进
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    log.setExceptions(ExceptionUtils.getStackTraceAsString(ex));
+                    log.setTitle(getMenuNamePath(log.getRequestUrl(), null));
+                    // 保存日志信息
+                    logMapper.insert(log);
+                }
+            }).start();
+        }
+    }
+
+    /**
      * 日志记录
      * @param logType 日志类型 Log.常量，0-登陆日志，1-操作日志，2-异常日志
      * @param ex 异常

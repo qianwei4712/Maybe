@@ -3,6 +3,7 @@ package cn.gov.gsport.system.controller;
 import cn.gov.gsport.core.base.BaseController;
 import cn.gov.gsport.core.basic.Page;
 import cn.gov.gsport.core.basic.Resp;
+import cn.gov.gsport.core.utils.LogUtils;
 import cn.gov.gsport.system.entity.Area;
 import cn.gov.gsport.system.service.AreaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,7 @@ public class AreaController extends BaseController {
             return Resp.success(null, page.getTotal(), page.getList());
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.logging(request, null, e);
         }
         return Resp.error();
     }

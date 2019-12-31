@@ -3,6 +3,7 @@ package cn.gov.gsport.system.controller;
 import cn.gov.gsport.core.base.BaseController;
 import cn.gov.gsport.core.basic.Page;
 import cn.gov.gsport.core.basic.Resp;
+import cn.gov.gsport.core.utils.LogUtils;
 import cn.gov.gsport.core.utils.SysUtils;
 import cn.gov.gsport.system.entity.Role;
 import cn.gov.gsport.system.service.RoleService;
@@ -54,7 +55,7 @@ public class RoleController extends BaseController {
             Page<Role> page = roleService.findByPage(request, response, role);
             return Resp.success(null, page.getTotal(), page.getList());
         } catch (Exception e) {
-            e.printStackTrace();
+            LogUtils.logging(request, null, e);
         }
         return Resp.error();
     }
@@ -74,12 +75,12 @@ public class RoleController extends BaseController {
      * 保存
      */
     @RequestMapping(value = "save", name = "编辑角色")
-    public String save(Role role, RedirectAttributes model) {
+    public String save(HttpServletRequest request, Role role, RedirectAttributes model) {
         try {
             roleService.saveRole(role);
             model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
-            e.printStackTrace();
+            LogUtils.logging(request, null, e);
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/role";
