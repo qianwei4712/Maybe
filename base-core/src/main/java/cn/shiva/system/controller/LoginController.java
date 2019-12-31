@@ -54,6 +54,7 @@ public class LoginController extends BaseController{
             return "redirect:" + adminPath + "/index";
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
 
         return "system/sysLogin";

@@ -91,13 +91,14 @@ public class RoleController extends BaseController {
      */
     @ResponseBody
     @RequestMapping(value = "delete", name = "删除角色")
-    public Resp delete(Long id) {
+    public Resp delete(Long id, HttpServletRequest request) {
         try {
             if (roleService.deleteLogic(id)){
                 return Resp.success();
             }
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }

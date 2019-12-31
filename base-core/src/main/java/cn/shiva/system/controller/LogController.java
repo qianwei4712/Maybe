@@ -3,6 +3,7 @@ package cn.shiva.system.controller;
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.basic.Page;
 import cn.shiva.core.basic.Resp;
+import cn.shiva.core.utils.LogUtils;
 import cn.shiva.system.entity.Log;
 import cn.shiva.system.service.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,7 @@ public class LogController extends BaseController {
             return Resp.success(null, page.getTotal(), page.getList());
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }

@@ -4,6 +4,7 @@ import cn.shiva.common.others.CommonUtils;
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.basic.Page;
 import cn.shiva.core.basic.Resp;
+import cn.shiva.core.utils.LogUtils;
 import cn.shiva.core.utils.SysUtils;
 import cn.shiva.system.entity.User;
 import cn.shiva.system.service.OfficeService;
@@ -64,6 +65,7 @@ public class UserController extends BaseController{
             return Resp.success(null, page.getTotal(), page.getList());
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }
@@ -84,12 +86,13 @@ public class UserController extends BaseController{
      * 保存
      */
     @RequestMapping(value = "save", name = "编辑用户")
-    public String save(User user, RedirectAttributes model) {
+    public String save(User user, RedirectAttributes model, HttpServletRequest request) {
         try {
             userService.saveUser(user);
             model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/user";
@@ -100,13 +103,14 @@ public class UserController extends BaseController{
      */
     @ResponseBody
     @RequestMapping(value = "delete", name = "删除用户")
-    public Resp delete(Long id) {
+    public Resp delete(Long id, HttpServletRequest request) {
         try {
             if (userService.deleteLogic(id)){
                 return Resp.success();
             }
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }
@@ -122,12 +126,13 @@ public class UserController extends BaseController{
 
 
     @RequestMapping(value = "updateUserInfo", name = "用户更新信息")
-    public String updateUserInfo(User user, RedirectAttributes model) {
+    public String updateUserInfo(User user, RedirectAttributes model, HttpServletRequest request) {
         try {
             userService.saveUser(user);
             model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/user/userInfo";
@@ -182,11 +187,12 @@ public class UserController extends BaseController{
      */
     @ResponseBody
     @RequestMapping(value = "/resetPwd", name = "重置密码")
-    public Resp resetPwd(Long id) {
+    public Resp resetPwd(Long id, HttpServletRequest request) {
         try {
             return userService.resetPwd(id);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
             return Resp.error("重置密码出错",null);
         }
     }

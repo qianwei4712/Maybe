@@ -56,7 +56,7 @@ public class AreaController extends BaseController {
             return Resp.success(null, page.getTotal(), page.getList());
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtils.logging(request, null, e);
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }
@@ -74,12 +74,13 @@ public class AreaController extends BaseController {
      * 保存
      */
     @RequestMapping(value = "save")
-    public String save(Area area, RedirectAttributes model) {
+    public String save(Area area, RedirectAttributes model, HttpServletRequest request) {
         try {
             areaService.saveOrUpdate(area);
             model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/area";
@@ -90,13 +91,14 @@ public class AreaController extends BaseController {
      */
     @ResponseBody
     @RequestMapping(value = "delete")
-    public Resp delete(Long id) {
+    public Resp delete(Long id, HttpServletRequest request) {
         try {
             if (areaService.deleteLogic(id)){
                 return Resp.success();
             }
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }
@@ -106,12 +108,13 @@ public class AreaController extends BaseController {
      */
     @ResponseBody
     @RequestMapping(value = "getListByPid")
-    public Resp getListByPid(Long pid) {
+    public Resp getListByPid(Long pid, HttpServletRequest request) {
         try {
             List<Area> list = areaService.getListByPid(pid);
             return Resp.success(null, list);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }

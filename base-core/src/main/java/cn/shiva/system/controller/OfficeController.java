@@ -2,6 +2,7 @@ package cn.shiva.system.controller;
 
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.basic.Resp;
+import cn.shiva.core.utils.LogUtils;
 import cn.shiva.core.utils.SysUtils;
 import cn.shiva.system.entity.Office;
 import cn.shiva.system.service.OfficeService;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author shiva   2019/7/11 22:28
@@ -82,12 +85,13 @@ public class OfficeController extends BaseController {
 
 
     @RequestMapping(value = "save", name = "编辑部门")
-    public String save(Office office, RedirectAttributes model) {
+    public String save(Office office, RedirectAttributes model, HttpServletRequest request) {
         try {
             officeService.saveOffice(office);
             model.addFlashAttribute("resMsg", RESP_MSG_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/office";

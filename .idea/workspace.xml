@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="修改readme">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/AreaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/AreaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/DictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/DictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/LogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/LogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/OfficeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/OfficeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/AreaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/AreaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/DictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/DictController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/LogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/LogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/OfficeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/OfficeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/target/classes/cn/shiva/system/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-generate/src/main/resources/freemakerTpl/controller.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/base-generate/src/main/resources/freemakerTpl/controller.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/test/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/test/controller/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" beforeDir="false" afterPath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\HolyShit\openSources\maybe\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/JavaExp/Maven/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="E:\JavaExp\Maven\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8.0.25" />
+    <option name="vmOptions" value="-DarchetypeCatalog=local" />
+  </component>
+  <component name="ProjectId" id="1VkFFIuNSPw7LreXKQ0Cf9zJcQ0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/base-generate/src/main/resources/freemakerTpl" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\HolyShit\openSources\maybe\base-generate\src\main\resources\freemakerTpl" />
+      <recent name="E:\HolyShit\openSources\maybe\base-core\src\main\resources\static\images" />
+      <recent name="E:\HolyShit\openSources\maybe\doc\sql" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="maybe" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="maybe-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.shiva.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\qianw\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="" />
+      <created>1577789080731</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577789080731</updated>
+      <workItem from="1577789084498" duration="4063000" />
+      <workItem from="1577794038071" duration="5000" />
+      <workItem from="1577794063766" duration="79000" />
+      <workItem from="1577794148061" duration="1409000" />
+      <workItem from="1577802552009" duration="7000" />
+      <workItem from="1577802565370" duration="806000" />
+    </task>
+    <task id="LOCAL-00001" summary="更改包名">
+      <created>1577791332330</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577791332330</updated>
+    </task>
+    <task id="LOCAL-00002" summary="更改包名">
+      <created>1577794217842</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577794217842</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加Apache开源许可和readme，开始开源">
+      <created>1577795258426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577795258426</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改readme">
+      <created>1577795527337</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1577795527337</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="更改包名" />
+    <MESSAGE value="添加Apache开源许可和readme，开始开源" />
+    <MESSAGE value="修改readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改readme" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577790311719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577790311719" />
+    <state x="726" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1577790305043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="726" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577790305043" />
+    <state x="548" y="448" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1577789967410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="548" y="448" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577789967410" />
+    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1577803463851">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1577803463851" />
+    <state x="71" y="86" key="DiffContextDialog" timestamp="1577803329582">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577803329582" />
+    <state width="1877" height="175" key="GridCell.Tab.0.bottom" timestamp="1577803414816">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414816" />
+    <state width="1877" height="175" key="GridCell.Tab.0.center" timestamp="1577803414816">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414816" />
+    <state width="1877" height="175" key="GridCell.Tab.0.left" timestamp="1577803414816">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414816" />
+    <state width="1877" height="175" key="GridCell.Tab.0.right" timestamp="1577803414816">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414816" />
+    <state width="1877" height="175" key="GridCell.Tab.1.bottom" timestamp="1577803414640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414640" />
+    <state width="1877" height="175" key="GridCell.Tab.1.center" timestamp="1577803414639">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414639" />
+    <state width="1877" height="175" key="GridCell.Tab.1.left" timestamp="1577803414639">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414639" />
+    <state width="1877" height="175" key="GridCell.Tab.1.right" timestamp="1577803414640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414640" />
+    <state width="1877" height="175" key="GridCell.Tab.2.bottom" timestamp="1577803414640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414640" />
+    <state width="1877" height="175" key="GridCell.Tab.2.center" timestamp="1577803414640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414640" />
+    <state width="1877" height="175" key="GridCell.Tab.2.left" timestamp="1577803414640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414640" />
+    <state width="1877" height="175" key="GridCell.Tab.2.right" timestamp="1577803414640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="175" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577803414640" />
+    <state x="463" y="165" key="SettingsEditor" timestamp="1577794158698">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577794158698" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1577795528742">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577795528742" />
+    <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1577803151401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577803151401" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577803226098">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577803226098" />
+  </component>
+</project>

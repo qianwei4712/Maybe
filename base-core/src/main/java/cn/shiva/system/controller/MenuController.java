@@ -2,6 +2,7 @@ package cn.shiva.system.controller;
 
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.basic.Resp;
+import cn.shiva.core.utils.LogUtils;
 import cn.shiva.core.utils.SysUtils;
 import cn.shiva.system.entity.Menu;
 import cn.shiva.system.service.MenuService;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author shiva   2019/8/7 19:45
@@ -78,12 +81,13 @@ public class MenuController extends BaseController {
 
 
     @RequestMapping(value = "save", name = "编辑菜单")
-    public String save(Menu menu, RedirectAttributes model) {
+    public String save(Menu menu, RedirectAttributes model, HttpServletRequest request) {
         try {
             Resp resp = menuService.saveMenu(menu);
             model.addFlashAttribute("resMsg", resp);
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
             model.addFlashAttribute("resMsg", RESP_MSG_ERROR);
         }
         return "redirect:" + adminPath + "/menu";

@@ -3,6 +3,7 @@ package cn.shiva.modules.test.controller;
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.basic.Page;
 import cn.shiva.core.basic.Resp;
+import cn.shiva.core.utils.LogUtils;
 import cn.shiva.modules.test.entity.Demo;
 import cn.shiva.modules.test.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,7 @@ public class DemoController extends BaseController {
             return Resp.success(null, page.getTotal(), page.getList());
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }
@@ -61,25 +63,27 @@ public class DemoController extends BaseController {
     }
 
     @RequestMapping(value = "save")
-    public String save(Demo demo, RedirectAttributes model) {
+    public String save(Demo demo, RedirectAttributes model, HttpServletRequest request) {
         try {
             demoService.saveOrUpdate(demo);
             return "redirect:" + adminPath + "/demo";
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return "redirect:" + adminPath + "/demo";
     }
 
     @ResponseBody
     @RequestMapping(value = "delete")
-    public Resp delete(Long id) {
+    public Resp delete(Long id, HttpServletRequest request) {
         try {
             if (demoService.deleteLogic(id)){
                 return Resp.success();
             }
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.exceptionCatch(request, e);
         }
         return Resp.error();
     }
