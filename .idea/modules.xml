@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/base-common/base-common.iml" filepath="$PROJECT_DIR$/base-common/base-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-core/base-core.iml" filepath="$PROJECT_DIR$/base-core/base-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-generate/base-generate.iml" filepath="$PROJECT_DIR$/base-generate/base-generate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/impo-web/impo-web.iml" filepath="$PROJECT_DIR$/impo-web/impo-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/maybe.iml" filepath="$PROJECT_DIR$/maybe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maybe-web/maybe-web.iml" filepath="$PROJECT_DIR$/maybe-web/maybe-web.iml" />
     </modules>
   </component>
 </project>

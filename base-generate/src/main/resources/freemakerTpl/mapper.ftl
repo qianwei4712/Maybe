@@ -1,6 +1,6 @@
 package ${packageName}.${moduleName}.mapper;
 
-import cn.gov.gsport.core.base.BaseMapper;
+import cn.shiva.core.base.BaseMapper;
 import ${packageName}.${moduleName}.entity.${ClassName};
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;

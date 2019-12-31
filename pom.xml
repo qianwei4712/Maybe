@@ -21,7 +21,7 @@
         <module>base-common</module>
         <module>base-core</module>
         <module>base-generate</module>
-        <module>impo-web</module>
+        <module>maybe-web</module>
     </modules>
 
 
@@ -66,7 +66,7 @@
     <repositories>
         <repository>
             <id>aliyun-repos</id>
-            <name>gsport Repository</name>
+            <name>shiva Repository</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
         </repository>
     </repositories>
@@ -75,7 +75,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>aliyun-repos</id>
-            <name>gsport Repository</name>
+            <name>shiva Repository</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
         </pluginRepository>
     </pluginRepositories>

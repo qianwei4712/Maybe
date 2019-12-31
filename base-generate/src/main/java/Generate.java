@@ -13,7 +13,7 @@ import java.util.Map;
 public class Generate {
 
     /**
-     * 包名，例如：cn.gov.gsport.modules
+     * 包名，例如：cn.shiva.modules
      */
     public static String packageName = "cn.shiva.system";
     /**
@@ -103,7 +103,7 @@ public class Generate {
         model.put("moduleName", StringUtils.lowerCase(moduleName));
         model.put("className", StringUtils.uncapitalize(className));
         model.put("ClassName", StringUtils.capitalize(className));
-        model.put("classAuthor", StringUtils.isNotBlank(classAuthor)?classAuthor:"Generate Gsport");
+        model.put("classAuthor", StringUtils.isNotBlank(classAuthor)?classAuthor:"Generate Shiva");
         model.put("functionName", functionName);
         model.put("urlPrefix", model.get("moduleName") + "/" + model.get("className"));
         model.put("viewPrefix", model.get("urlPrefix"));

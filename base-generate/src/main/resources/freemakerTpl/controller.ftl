@@ -1,8 +1,8 @@
 package ${packageName}.${moduleName}.controller;
 
-import cn.gov.gsport.core.base.BaseController;
-import cn.gov.gsport.core.basic.Page;
-import cn.gov.gsport.core.basic.Resp;
+import cn.shiva.core.base.BaseController;
+import cn.shiva.core.basic.Page;
+import cn.shiva.core.basic.Resp;
 import ${packageName}.${moduleName}.entity.${ClassName};
 import ${packageName}.${moduleName}.service.${ClassName}Service;
 import org.springframework.beans.factory.annotation.Autowired;

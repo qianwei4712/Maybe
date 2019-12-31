@@ -1,6 +1,6 @@
 package ${packageName}.${moduleName}.entity;
 
-import cn.gov.gsport.core.base.BaseEntity;
+import cn.shiva.core.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

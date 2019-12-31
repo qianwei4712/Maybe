@@ -36,4 +36,4 @@ frontPath: /f
 #======================================#
 logging:
     level:
-      cn.gov.gsport.system.mapper: DEBUG # 包路径为mapper文件包路径
+      cn.shiva.system.mapper: DEBUG # 包路径为mapper文件包路径
