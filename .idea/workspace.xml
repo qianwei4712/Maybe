@@ -4,9 +4,8 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="根据阿里巴巴规约，更改变量名">
+    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" beforeDir="false" afterPath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +164,7 @@
       <workItem from="1577802552009" duration="7000" />
       <workItem from="1577802565370" duration="5964000" />
       <workItem from="1577846349643" duration="2957000" />
-      <workItem from="1577854749462" duration="652000" />
+      <workItem from="1577854749462" duration="720000" />
     </task>
     <task id="LOCAL-00001" summary="更改包名">
       <created>1577791332330</created>
@@ -230,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577853452088</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完善readme">
+      <created>1577855429947</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1577855429947</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +252,8 @@
     <MESSAGE value="清理target\classes" />
     <MESSAGE value="根据阿里巴巴规约，线程池添加线程工厂" />
     <MESSAGE value="根据阿里巴巴规约，更改变量名" />
-    <option name="LAST_COMMIT_MESSAGE" value="根据阿里巴巴规约，更改变量名" />
+    <MESSAGE value="完善readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577790311719">
@@ -329,17 +336,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577794158698" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1577853454363">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1577855432042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577853454363" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577855432042" />
     <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1577803151401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577803151401" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577855089730">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577855465126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577855089730" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577855465126" />
   </component>
 </project>

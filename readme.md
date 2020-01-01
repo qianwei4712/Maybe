@@ -10,7 +10,7 @@
 **从零开始搭建，代码尚未经受项目考验，估计漏洞百出，极力完善中ing**
  
   ### 开始使用
-  1. 创建数据库，更改 maybe-web/application.yml 数据库名
+  1. 创建数据库，sql位于doc文件下，更改 maybe-web/application.yml 数据库名
   2. 后台访问链接：localhost/manage
 
   
