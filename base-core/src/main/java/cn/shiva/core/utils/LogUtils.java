@@ -27,9 +27,10 @@ public class LogUtils {
     private static final String USER_AGENT = "user-agent";
 
     public static ExecutorService pool = new ThreadPoolExecutor(
-                                10, 10, 0L,
+                                            10, 10, 0L,
                                             TimeUnit.MILLISECONDS,
-                                            new LinkedBlockingQueue<Runnable>());
+                                            new LinkedBlockingQueue<>(),
+                                            new LoggingThreadFactory());
 
     /**
      * 登陆日志
@@ -61,14 +62,11 @@ public class LogUtils {
             log.setRequestUrl(request.getRequestURI());
             log.setParams(getParams(request.getParameterMap()));
             // 使用线程池插入日志
-            pool.execute(new Runnable() {
-                @Override
-                public void run() {
-                    log.setExceptions(ExceptionUtils.getStackTraceAsString(ex));
-                    log.setTitle(getMenuNamePath(log.getRequestUrl(), null));
-                    // 保存日志信息
-                    logMapper.insert(log);
-                }
+            pool.execute(() -> {
+                log.setExceptions(ExceptionUtils.getStackTraceAsString(ex));
+                log.setTitle(getMenuNamePath(log.getRequestUrl(), null));
+                // 保存日志信息
+                logMapper.insert(log);
             });
         }
     }
@@ -97,31 +95,28 @@ public class LogUtils {
                 log.setRequestUrl(request.getRequestURI());
                 log.setParams(getParams(request.getParameterMap()));
                 // 将开启线程改为线程池方式
-                pool.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        //不是登陆日志，需要添加其他信息，标题
-                        String titleSuffix = null;
-                        if (handler instanceof HandlerMethod){
-                            Method m = ((HandlerMethod)handler).getMethod();
-                            RequestMapping rm = m.getAnnotation(RequestMapping.class);
-                            titleSuffix = rm.name();
-                        }
-                        // 如果有异常，设置异常信息
-                        log.setExceptions(ExceptionUtils.getStackTraceAsString(ex));
-                        // 如果无标题并无异常日志，则不保存信息
-                        if (StringUtils.isBlank(titleSuffix) && StringUtils.isBlank(log.getExceptions())){
-                            return;
-                        }else if (StringUtils.isNotBlank(log.getExceptions())){
-                            log.setLogType(Log.ERROR_LOG);
-                        }else {
-                            log.setLogType(Log.OPERATE_LOG);
-                        }
-                        //设置标题
-                        log.setTitle(getMenuNamePath(log.getRequestUrl(), titleSuffix));
-                        // 保存日志信息
-                        logMapper.insert(log);
+                pool.execute(() -> {
+                    //不是登陆日志，需要添加其他信息，标题
+                    String titleSuffix = null;
+                    if (handler instanceof HandlerMethod){
+                        Method m = ((HandlerMethod)handler).getMethod();
+                        RequestMapping rm = m.getAnnotation(RequestMapping.class);
+                        titleSuffix = rm.name();
                     }
+                    // 如果有异常，设置异常信息
+                    log.setExceptions(ExceptionUtils.getStackTraceAsString(ex));
+                    // 如果无标题并无异常日志，则不保存信息
+                    if (StringUtils.isBlank(titleSuffix) && StringUtils.isBlank(log.getExceptions())){
+                        return;
+                    }else if (StringUtils.isNotBlank(log.getExceptions())){
+                        log.setLogType(Log.ERROR_LOG);
+                    }else {
+                        log.setLogType(Log.OPERATE_LOG);
+                    }
+                    //设置标题
+                    log.setTitle(getMenuNamePath(log.getRequestUrl(), titleSuffix));
+                    // 保存日志信息
+                    logMapper.insert(log);
                 });
             }
         }
@@ -165,14 +160,37 @@ public class LogUtils {
         return params.toString();
     }
 
-    //TODO 暂时不清楚ThreadFactory的作用，明天再整
-    public static class LoggingThreadFactory implements java.util.concurrent.ThreadFactory{
-        private AtomicInteger atomicInteger = new AtomicInteger();
+    /**
+     * 自定义日志线程工厂
+     */
+    static class LoggingThreadFactory implements java.util.concurrent.ThreadFactory{
+
+        private static final AtomicInteger POOL_NUMBER = new AtomicInteger(1);
+        private final ThreadGroup group;
+        private final AtomicInteger threadNumber = new AtomicInteger(1);
+        private final String namePrefix;
+
+        LoggingThreadFactory() {
+            SecurityManager s = System.getSecurityManager();
+            group = (s != null) ? s.getThreadGroup() :
+                    Thread.currentThread().getThreadGroup();
+            namePrefix = "pool-logging-" +
+                    POOL_NUMBER.getAndIncrement() +
+                    "-thread-";
+        }
 
         @Override
         public Thread newThread(Runnable r) {
-            int index = atomicInteger.incrementAndGet();
-            return new Thread("logging-" + index);
+            Thread t = new Thread(group, r,
+                    namePrefix + threadNumber.getAndIncrement(),
+                    0);
+            if (t.isDaemon()) {
+                t.setDaemon(false);
+            }
+            if (t.getPriority() != Thread.NORM_PRIORITY) {
+                t.setPriority(Thread.NORM_PRIORITY);
+            }
+            return t;
         }
     }
 }
