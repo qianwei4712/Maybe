@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class IpUtils {
 
-	private static final String error_ip = "0.0.0.0.0.1";
+	private static final String ERROR_IP = "0.0.0.0.0.1";
 
 	/**
 	 * 获取客户端IP地址
@@ -27,7 +27,7 @@ public class IpUtils {
 			return remoteAddr != null ? remoteAddr : request.getRemoteAddr();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return error_ip;
+			return ERROR_IP;
 		}
 	}
 	
@@ -78,8 +78,7 @@ public class IpUtils {
 				return true;
 			}
 		case SECTION_5:
-			switch (b1) {
-			case SECTION_6:
+			if (b1 == SECTION_6) {
 				return true;
 			}
 		default:
