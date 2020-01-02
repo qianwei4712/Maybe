@@ -24,6 +24,14 @@ import java.util.Map;
 public class LoginController extends BaseController{
 
     /**
+     * 访问根路径
+     */
+    @RequestMapping(value= {""})
+    public String root(){
+        return "redirect:/login";
+    }
+
+    /**
      * 登陆
      */
     @RequestMapping(value= {"/login"})
