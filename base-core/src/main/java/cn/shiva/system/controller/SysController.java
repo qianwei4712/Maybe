@@ -3,6 +3,7 @@ package cn.shiva.system.controller;
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.constant.BaseConstant;
 import cn.shiva.core.utils.SysUtils;
+import cn.shiva.core.utils.properties.PropUtil;
 import cn.shiva.system.entity.Menu;
 import cn.shiva.system.entity.Role;
 import cn.shiva.system.entity.User;
@@ -44,6 +45,7 @@ public class SysController extends BaseController {
 			model.addAttribute("menus",adminMenu());
 		}
 		model.addAttribute("user",user);
+		model.addAttribute("console", PropUtil.get("maybe.consolePath"));
 		return "system/sysIndex";
 	}
 

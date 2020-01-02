@@ -71,7 +71,7 @@
 			<!-- 侧边菜单 -->
 			<div class="layui-side layui-side-menu">
 				<div class="layui-side-scroll">
-					<div class="layui-logo"  th:lay-href="${adminPath} + '/console'">
+					<div class="layui-logo read-only">
 						<span>路的尽头在哪</span>
 					</div>
 
@@ -137,7 +137,7 @@
 			<!-- 主体内容 -->
 			<div class="layui-body" id="LAY_app_body">
 				<div class="layadmin-tabsbody-item layui-show">
-					<iframe th:src="${adminPath} + '/console'" frameborder="0" class="layadmin-iframe"></iframe>
+					<iframe th:src="${adminPath} + ${console}" frameborder="0" class="layadmin-iframe"></iframe>
 				</div>
 			</div>
 
@@ -151,9 +151,9 @@
 
 
 
-<script th:inline="javascript">
+<!--<script th:inline="javascript">
   	// 默认打开第一个菜单
     $(".port-menu-item:eq(0)").addClass('layui-nav-itemed');
-</script>
+</script>-->
 </body>
 </html>
