@@ -49,16 +49,6 @@ public class SysController extends BaseController {
 		return "system/sysIndex";
 	}
 
-	/**
-	 * 控制台页面
-	* @return String  
-	* @author shiva
-	 */
-	@RequestMapping(value= "/console")
-	public String console() {
-		return "system/console";
-	}
-
 
 	@RequestMapping(value = "/iconSelect")
 	public String iconSelect() {

@@ -28,4 +28,4 @@ spring:
 # 系统自定义参数配置
 maybe:
   # 控制台主页路径
-  consolePath: /console
+  consolePath: /overall/console

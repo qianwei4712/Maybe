@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 31/12/2019 19:19:27
+ Date: 04/01/2020 16:56:58
 */
 
 SET NAMES utf8mb4;
@@ -3839,7 +3839,32 @@ CREATE TABLE `sys_log`  (
   `exceptions` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '异常信息',
   `create_date` datetime(0) NULL DEFAULT NULL COMMENT '时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-登陆日志' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 101 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-登陆日志' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sys_log
+-- ----------------------------
+INSERT INTO `sys_log` VALUES (80, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2019-12-31 11:56:16');
+INSERT INTO `sys_log` VALUES (81, NULL, 1, '超级管理员', 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2019-12-31 14:41:14');
+INSERT INTO `sys_log` VALUES (82, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2019-12-31 15:46:18');
+INSERT INTO `sys_log` VALUES (83, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2019-12-31 15:50:21');
+INSERT INTO `sys_log` VALUES (84, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2019-12-31 15:55:02');
+INSERT INTO `sys_log` VALUES (85, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2019-12-31 15:58:48');
+INSERT INTO `sys_log` VALUES (86, '基础设置-组织架构-部门管理-编辑部门', 1, '超级管理员', 1, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '/manage/office/save', 'id=7&pid=5&name=奉化市领导小组&grade=2&telephone=', NULL, '2019-12-31 15:59:01');
+INSERT INTO `sys_log` VALUES (87, '基础设置-组织架构-用户管理', 1, '超级管理员', 2, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '/manage/user/save', 'id=6&username=test&name=测试姓名&mobile=110&status=0&telephone=&email=&birthday=2019-12-10&sex=1&officeId=7&roleIds=1', 'java.lang.ArithmeticException: / by zero\r\n	at cn.shiva.system.controller.UserController.save(UserController.java:91)\r\n	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n	at java.lang.reflect.Method.invoke(Method.java:483)\r\n	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)\r\n	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)\r\n	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)\r\n	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)\r\n	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)\r\n	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\r\n	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)\r\n	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)\r\n	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)\r\n	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)\r\n	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)\r\n	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)\r\n	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)\r\n	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)\r\n	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)\r\n	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)\r\n	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)\r\n	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)\r\n	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)\r\n	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)\r\n	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)\r\n	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387)\r\n	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)\r\n	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)\r\n	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)\r\n	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)\r\n	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)\r\n	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\r\n	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\r\n	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\r\n	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)\r\n	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\r\n	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)\r\n	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)\r\n	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\r\n	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\r\n	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\r\n	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)\r\n	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\r\n	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)\r\n	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)\r\n	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\r\n	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\r\n	at java.lang.Thread.run(Thread.java:745)\r\n', '2019-12-31 15:59:28');
+INSERT INTO `sys_log` VALUES (88, '基础设置-组织架构-用户管理-编辑用户', 1, '超级管理员', 1, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '/manage/user/save', 'id=6&username=test&name=测试姓名&mobile=110&status=0&telephone=&email=&birthday=2019-12-10&sex=1&officeId=7&roleIds=1', NULL, '2019-12-31 15:59:33');
+INSERT INTO `sys_log` VALUES (89, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-01 02:44:40');
+INSERT INTO `sys_log` VALUES (90, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-01 04:34:23');
+INSERT INTO `sys_log` VALUES (91, '基础设置-组织架构-用户管理-编辑用户', 1, '超级管理员', 1, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '/manage/user/save', 'id=6&username=test&name=测试姓名&mobile=110&status=0&telephone=&email=&birthday=2019-12-10&sex=1&officeId=7&roleIds=1', NULL, '2020-01-01 04:34:33');
+INSERT INTO `sys_log` VALUES (92, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-01 05:03:02');
+INSERT INTO `sys_log` VALUES (93, '基础设置-组织架构-用户管理-编辑用户', 1, '超级管理员', 1, NULL, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', '/manage/user/save', 'id=1&username=admin&name=超级管理员&mobile=15888888888&status=0&telephone=0574-8888888&email=qianwei4712@163.com&birthday=1994-01-05&sex=0&officeId=1&roleIds=1', NULL, '2020-01-01 05:08:41');
+INSERT INTO `sys_log` VALUES (94, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-02 11:42:49');
+INSERT INTO `sys_log` VALUES (95, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-02 11:45:13');
+INSERT INTO `sys_log` VALUES (96, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-02 11:46:23');
+INSERT INTO `sys_log` VALUES (97, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-02 11:54:12');
+INSERT INTO `sys_log` VALUES (98, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-04 08:53:14');
+INSERT INTO `sys_log` VALUES (99, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-04 08:53:57');
+INSERT INTO `sys_log` VALUES (100, NULL, 1, '超级管理员', 0, '0:0:0:0:0:0:0:1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36', NULL, NULL, NULL, '2020-01-04 08:55:18');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -3865,8 +3890,6 @@ CREATE TABLE `sys_menu`  (
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES (1, -1, '-1,', '主页', 0, '', 'layui-icon-home', 1, NULL, 0, '2019-12-12 23:32:45', 1, NULL);
-INSERT INTO `sys_menu` VALUES (2, 1, '-1,1,', '控制台', 0, '/manage/console', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (7, -1, '-1,', '基础设置', 999, '', 'layui-icon-set', 1, NULL, 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (8, 16, '-1,7,16,', '用户管理', 30, '/manage/user', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_menu` VALUES (9, 16, '-1,7,16,', '部门管理', 60, '/manage/office', '', 1, '', 0, '2019-12-12 23:32:45', 1, NULL);
@@ -3900,7 +3923,7 @@ CREATE TABLE `sys_office`  (
   `create_by` int(10) UNSIGNED NULL DEFAULT NULL COMMENT '创建对象',
   `remarks` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-部门表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统-部门表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_office
@@ -3945,8 +3968,6 @@ CREATE TABLE `sys_role_menu`  (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES (1, 1);
-INSERT INTO `sys_role_menu` VALUES (1, 2);
 INSERT INTO `sys_role_menu` VALUES (1, 7);
 INSERT INTO `sys_role_menu` VALUES (1, 8);
 INSERT INTO `sys_role_menu` VALUES (1, 9);
@@ -3986,7 +4007,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, '超级管理员', 1, '1,', 'admin', '8c024c73f7111c6124dbabe5edd1cd40', '15088888888', '0574-8888888', 'qianwei4712@163.com', '1994-01-04 16:00:00', '0', NULL, '0', 0, '2019-12-12 23:32:45', 1, NULL);
+INSERT INTO `sys_user` VALUES (1, '超级管理员', 1, '1,', 'admin', '8c024c73f7111c6124dbabe5edd1cd40', '15888888888', '0574-8888888', 'qianwei4712@163.com', '1994-01-04 16:00:00', '0', NULL, '0', 0, '2019-12-12 23:32:45', 1, NULL);
 INSERT INTO `sys_user` VALUES (6, '测试姓名', 7, NULL, 'test', 'a2d00b3586063e91b5986781cf7a6dea', '110', '', '', '2019-12-09 16:00:00', '1', NULL, '0', 0, '2019-12-12 23:32:45', 1, NULL);
 
 -- ----------------------------

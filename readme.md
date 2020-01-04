@@ -18,7 +18,7 @@
   - 基于SpringBoot 2进行开发
   - mybatis，基础CRUD方法，PageHelper分页插件
   - shiro权限系统，照例使用用户，角色，权限这一套
-  - 后台管理界面使用`layuiadmin`
+  - 后台管理界面使用`layui`
   - 涉及到的插件和服务包括：`javamail`，`ztree`
   
   

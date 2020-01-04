@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>控制台主页</title>
+    <link rel="stylesheet" type="text/css" th:href="@{~/plugins/ztree/css/metroStyle/metroStyle.css}" media="all">
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            控制台页面
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+
+<script type="text/javascript" th:inline="none">
+
+
+</script>
+
+</body>
+</html>

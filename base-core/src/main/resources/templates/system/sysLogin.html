@@ -63,7 +63,7 @@
             var slider = sliderVerify.render({
                 elem: '#slider',
                 onOk: function(){//当验证通过回调
-                    layer.msg("验证通过");
+                    layer.msg("验证通过",{time : 1000});
                 }
             });
 
@@ -73,7 +73,7 @@
             //监听提交
             form.on('submit(login-submit)', function(data){
                 if(!slider.isOk()){
-                    layer.msg("请先通过滑块验证");
+                    layer.msg("请先通过滑块验证",{time : 1500});
                     return false;
                 }
                 return true;
