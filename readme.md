@@ -12,6 +12,7 @@
   ### 开始使用
   1. 创建数据库，sql位于doc文件下，更改 maybe-web/application.yml 数据库名
   2. 后台访问链接：localhost/manage
+  3. 账号密码： admin / 123456
 
   
   ### 项目简介：

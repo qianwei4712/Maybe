@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/web/OverallController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/overall/console.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/SysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/system/controller/SysController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-core/src/main/resources/templates/system/console.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-core/src/main/resources/templates/system/sysLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/resources/templates/system/sysLogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,19 +89,33 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\HolyShit\openSources\maybe\doc\sql" />
       <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\templates\modules\overall" />
       <recent name="E:\HolyShit\openSources\maybe\base-generate\src\main\resources\freemakerTpl" />
       <recent name="E:\HolyShit\openSources\maybe\base-core\src\main\resources\static\images" />
-      <recent name="E:\HolyShit\openSources\maybe\doc\sql" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CommonUtils">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
       <method />
+    </configuration>
+    <configuration name="CommonUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.shiva.common.others.CommonUtils" />
+      <module name="base-core" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.shiva.common.others.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -148,6 +156,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CommonUtils" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -185,7 +198,8 @@
       <workItem from="1577962013508" duration="4035000" />
       <workItem from="1577970891542" duration="75000" />
       <workItem from="1578066605132" duration="965000" />
-      <workItem from="1578124247367" duration="1285000" />
+      <workItem from="1578124247367" duration="1445000" />
+      <workItem from="1578128426235" duration="144000" />
     </task>
     <task id="LOCAL-00001" summary="更改包名">
       <created>1577791332330</created>
@@ -278,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577966592938</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="移除默认控制台页面，改为web模块配置路径">
+      <created>1578128291950</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1578128291950</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +318,8 @@
     <MESSAGE value="完善readme" />
     <MESSAGE value="添加业务模块yml读取为key-value，将console路径改为yml配置方式" />
     <MESSAGE value="添加根路径访问重定向登陆界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加根路径访问重定向登陆界面" />
+    <MESSAGE value="移除默认控制台页面，改为web模块配置路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="移除默认控制台页面，改为web模块配置路径" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577790311719">
@@ -328,54 +350,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577966112238" />
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1578128069742">
+    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1578128547536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069742" />
-    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1578128069741">
+    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547536" />
+    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1578128547536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069741" />
-    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1578128069741">
+    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547536" />
+    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1578128547535">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069741" />
-    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1578128069742">
+    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547535" />
+    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1578128547536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069742" />
-    <state width="1877" height="292" key="GridCell.Tab.1.bottom" timestamp="1578128069550">
+    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547536" />
+    <state width="1877" height="292" key="GridCell.Tab.1.bottom" timestamp="1578128547344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069550" />
-    <state width="1877" height="292" key="GridCell.Tab.1.center" timestamp="1578128069549">
+    <state width="1877" height="292" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547344" />
+    <state width="1877" height="292" key="GridCell.Tab.1.center" timestamp="1578128547343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069549" />
-    <state width="1877" height="292" key="GridCell.Tab.1.left" timestamp="1578128069549">
+    <state width="1877" height="292" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547343" />
+    <state width="1877" height="292" key="GridCell.Tab.1.left" timestamp="1578128547343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069549" />
-    <state width="1877" height="292" key="GridCell.Tab.1.right" timestamp="1578128069550">
+    <state width="1877" height="292" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547343" />
+    <state width="1877" height="292" key="GridCell.Tab.1.right" timestamp="1578128547344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069550" />
-    <state width="1877" height="292" key="GridCell.Tab.2.bottom" timestamp="1578128069550">
+    <state width="1877" height="292" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128547344" />
+    <state width="1877" height="292" key="GridCell.Tab.2.bottom" timestamp="1578128356443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069550" />
-    <state width="1877" height="292" key="GridCell.Tab.2.center" timestamp="1578128069550">
+    <state width="1877" height="292" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
+    <state width="1877" height="292" key="GridCell.Tab.2.center" timestamp="1578128356443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069550" />
-    <state width="1877" height="292" key="GridCell.Tab.2.left" timestamp="1578128069550">
+    <state width="1877" height="292" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
+    <state width="1877" height="292" key="GridCell.Tab.2.left" timestamp="1578128356443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069550" />
-    <state width="1877" height="292" key="GridCell.Tab.2.right" timestamp="1578128069550">
+    <state width="1877" height="292" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
+    <state width="1877" height="292" key="GridCell.Tab.2.right" timestamp="1578128356443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128069550" />
+    <state width="1877" height="292" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
     <state x="490" y="178" key="Maven.ArtifactSearchDialog" timestamp="1577806441187">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -385,18 +407,18 @@
     </state>
     <state x="481" y="236" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577927117435" />
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577794158698" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1577966594328">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1578128293911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577966594328" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578128293911" />
     <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1577803151401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577803151401" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578128140291">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578128451445">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577954148598" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578128140291" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578128451445" />
   </component>
 </project>
