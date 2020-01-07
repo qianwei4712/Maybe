@@ -21,6 +21,20 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/shiva-maybe?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  # javamail配置
+  mail:
+    # 配置一个邮箱，username表示发送人
+    host: smtp.qq.com
+    port: 465
+    username: 506230116@qq.com
+    password:
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true #一定要开启ssl,不然会503 验证失败的
+
+
 #======================================#
 #========== project settings ==========#
 #======================================#
