@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author shiva   2020/1/7 16:34
@@ -73,7 +75,7 @@ public class MailServiceImpl implements MailService {
     }
 
     @Override
-    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException {
+    public void sendResourceMail(String to, String subject, String content, Map<String, String> rscMap, String... cc) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -84,9 +86,12 @@ public class MailServiceImpl implements MailService {
         if (ArrayUtils.isNotEmpty(cc)) {
             helper.setCc(cc);
         }
-        FileSystemResource res = new FileSystemResource(new File(rscPath));
-        helper.addInline(rscId, res);
+        for (Map.Entry<String, String> entry : rscMap.entrySet()) {
+            FileSystemResource res = new FileSystemResource(new File(entry.getValue()));
+            helper.addInline(entry.getKey(), res);
+        }
 
         mailSender.send(message);
     }
+
 }

@@ -1,6 +1,7 @@
 package cn.shiva.modules.overall.service;
 
 import javax.mail.MessagingException;
+import java.util.Map;
 
 /**
  * @author shiva   2020/1/7 19:32
@@ -45,11 +46,10 @@ public interface MailService {
      * @param to      收件人地址
      * @param subject 邮件主题
      * @param content 邮件内容
-     * @param rscPath 静态资源地址
-     * @param rscId   静态资源id
+     * @param rscMap  静态资源Map<静态资源id, 静态资源地址>
      * @param cc      抄送地址
      * @throws MessagingException 邮件发送异常
      */
-    void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException;
+    void sendResourceMail(String to, String subject, String content, Map<String, String> rscMap, String... cc) throws MessagingException;
 
 }
