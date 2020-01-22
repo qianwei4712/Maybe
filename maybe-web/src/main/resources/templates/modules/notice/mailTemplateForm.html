@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>邮件模板编辑</title>
+</head>
+
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+                            <ul class="layui-tab-title">
+                                <li>
+                                    <a th:href="${adminPath} + '/notice/mailTemplate/list'" >邮件模板列表</a>
+                                </li>
+                                <li class="layui-this">
+                                    <a href="javascript:void(0);">邮件模板编辑</a>
+                                </li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+
+                                    <form class="layui-form layui-form-pane" th:action="${adminPath} + '/notice/mailTemplate/save'">
+                                        <input name="id" th:value="${mailTemplate.id}" type="hidden"/>
+                                        <div class="layui-form">
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label"><em class="gg-star">* </em>模板编号:</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" name="no" th:value="${mailTemplate.no}" lay-verify="required" readonly class="layui-input" autocomplete="off" />
+                                                    </div>
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label"><em class="gg-star">* </em>模板名称:</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" name="name" th:value="${mailTemplate.name}" lay-verify="required" class="layui-input" autocomplete="off" />
+                                                    </div>
+                                                </div>
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label"><em class="gg-star">* </em>模板类型:</label>
+                                                    <div class="layui-input-inline">
+                                                        <select name="msgType" lay-verify="required" th:value="${mailTemplate.msgType}">
+                                                            <option value="">请选择邮件模板类型</option>
+                                                            <option value="0" th:selected="${mailTemplate.msgType == 0}">简单文本邮件</option>
+                                                            <option value="1" th:selected="${mailTemplate.msgType == 1}">HTML邮件</option>
+                                                            <option value="2" th:selected="${mailTemplate.msgType == 2}">带附件的邮件</option>
+                                                            <option value="3" th:selected="${mailTemplate.msgType == 3}">静态资源邮件</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <textarea id="content" name="content" th:text="${mailTemplate.content}" style="display: none;"></textarea>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label">附件上传:</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" readonly id="filepath" name="filepath" class="layui-input" th:value="${mailTemplate.name}"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="layui-form-item layui-layout-admin">
+                                            <div class="layui-input-block">
+                                                <div class="layui-footer" style="left: 0;">
+                                                    <button class="layui-btn" lay-submit lay-filter="port-form-submit">立即提交</button>
+                                                    <input type="button" class="layui-btn  layui-btn-primary" onclick="history.go(-1)" value="返回">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+<script th:inline="javascript">
+    layui.use(['layer','upload', 'form','layedit'], function(){
+        const layer = layui.layer,
+              upload = layui.upload,
+              layedit = layui.layedit,
+              form = layui.form;
+
+        //建立编辑器
+        layedit.build('content');
+        //表单验证
+        form.verify();
+        //附件上传
+        var uploadInst = upload.render({
+            elem: '#filepath' //绑定元素
+            ,url: adminPath + '/overall/uploadFile' //上传接口
+            ,done: function(res){
+            }
+            ,error: function(){
+                layer.msg("上传失败，请联系管理管");
+            }
+        });
+        //监听提交
+        form.on('submit(port-form-submit)', function(data){
+            layer.confirm('确认提交数据？', function(index){
+                layer.close(index);
+                $('.layui-form').submit();
+            });
+            return false;
+        });
+    });
+
+</script>
+
+</body>
+</html>

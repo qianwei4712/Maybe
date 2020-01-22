@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.shiva.modules.notice.mapper.MailTemplateMapper">
+
+    <resultMap id="BaseResultMap" type="cn.shiva.modules.notice.entity.MailTemplate" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="no" property="no" jdbcType="VARCHAR" />
+        <result column="msg_type" property="msgType" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="filepath" property="filepath" jdbcType="VARCHAR" />
+        <result column="rscPath" property="rscPath" jdbcType="VARCHAR" />
+        <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="create_by" property="createBy" jdbcType="BIGINT" />
+        <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+    <insert id="insert" parameterType="cn.shiva.modules.notice.entity.MailTemplate" >
+        insert into notice_mail_template (id,
+            no,
+            msg_type,
+            name,
+            content,
+            filepath,
+            rscPath,
+            del_flag, create_date, create_by, remarks)
+        values (#{id,jdbcType=BIGINT},
+            #{no,jdbcType=VARCHAR},
+            #{msgType,jdbcType=BIGINT},
+            #{name,jdbcType=VARCHAR},
+            #{content,jdbcType=VARCHAR},
+            #{filepath,jdbcType=VARCHAR},
+            #{rscPath,jdbcType=VARCHAR},
+            #{delFlag,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=BIGINT}, #{remarks,jdbcType=VARCHAR})
+    </insert>
+
+    <!--根据ID更新-->
+    <update id="updateById" parameterType="cn.shiva.modules.notice.entity.MailTemplate" >
+        update notice_mail_template
+        set
+            no = #{no,jdbcType=VARCHAR},
+            msg_type = #{msgType,jdbcType=BIGINT},
+            name = #{name,jdbcType=VARCHAR},
+            content = #{content,jdbcType=VARCHAR},
+            filepath = #{filepath,jdbcType=VARCHAR},
+            rscPath = #{rscPath,jdbcType=VARCHAR},
+            del_flag = #{delFlag,jdbcType=INTEGER},
+            create_date = #{createDate,jdbcType=TIMESTAMP},
+            create_by = #{createBy,jdbcType=BIGINT},
+            remarks = #{remarks,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+
+    <!--根据主键ID选择-->
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        SELECT * FROM notice_mail_template WHERE id = #{id}
+    </select>
+
+
+    <!--分页查询默认使用接口，条件查询语句-->
+    <select id="findList" resultType="cn.shiva.modules.notice.entity.MailTemplate">
+        SELECT *
+        FROM notice_mail_template opt
+        <where>
+            and opt.del_flag = #{DELFLAG_NORMAL}
+        </where>
+    </select>
+
+
+    <!--根据主键ID逻辑删除-->
+    <update id="deleteLogic">
+        UPDATE notice_mail_template SET del_flag = 1 WHERE id = #{id}
+    </update>
+
+
+</mapper>

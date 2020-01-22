@@ -15,19 +15,19 @@ public class Generate {
     /**
      * 包名，例如：cn.shiva.modules
      */
-    public static String packageName = "cn.shiva.system";
+    public static String packageName = "cn.shiva.modules";
     /**
      * 模块名，例：sys
      */
-    public static String  moduleName = "sys";
+    public static String  moduleName = "notice";
     /**
      * 类名，例：User
      */
-    public static String  className = "Log";
+    public static String  className = "MailTemplate";
     /**
      * 模块名称，例：用户
      */
-    public static String  functionName = "系统日志";
+    public static String  functionName = "邮件模板";
     /**
      * 类作者，例：shiva
      */
@@ -55,7 +55,7 @@ public class Generate {
     /**
      * 表明，例：sys_user
      */
-    public static String  tableName = "sys_log";
+    public static String  tableName = "notice_mail_template";
     /**
      * 表明，例：sys_user
      */

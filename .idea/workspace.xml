@@ -5,15 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/2020/1/22/temp/476e1eea-4e19-4bd5-b01a-4db89576623b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2020/1/22/temp/915c5f28-2858-4d4b-a76d-2207e1cf108d.file" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-common/src/main/java/cn/shiva/common/io/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/controller/MailTemplateController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/entity/MailTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/mapper/MailTemplateMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/service/MailTemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/mappings/notice/MailTemplateMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailTemplateForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailTemplateList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/service/MailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/service/impl/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/service/impl/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-common/base-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/base-common/base-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/base-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/base-core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-generate/base-generate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/base-generate/base-generate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-generate/src/main/java/Generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-generate/src/main/java/Generate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe-web/maybe-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/maybe-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/web/OverallController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/web/OverallController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" beforeDir="false" afterPath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -83,21 +104,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/Project/singlewindow" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/base-common/src/main/java/cn/shiva/common/io" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.shiva" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\HolyShit\openSources\maybe\doc\sql" />
-      <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\templates\modules\overall" />
-      <recent name="E:\HolyShit\openSources\maybe\base-generate\src\main\resources\freemakerTpl" />
-      <recent name="E:\HolyShit\openSources\maybe\base-core\src\main\resources\static\images" />
+      <recent name="E:\HolyShit\openSources\maybe\base-common\src\main\java\cn\shiva\common\io" />
+      <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\mappings\notice" />
+      <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\java\cn\shiva\modules\notice" />
+      <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\templates\modules\notice" />
+      <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\java\cn\shiva\modules\notice\mapper" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.maybe">
@@ -107,6 +129,14 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
       <method />
+    </configuration>
+    <configuration name="Generate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Generate" />
+      <module name="base-generate" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -158,6 +188,8 @@
       <module name="maybe-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.shiva.Application" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,8 +212,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Generate" />
+      <item itemvalue="JUnit.JavaMailTest" />
+      <item itemvalue="JUnit.JavaMailTest.simpleMailMessage" />
+      <item itemvalue="Spring Boot.maybe" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Generate" />
         <item itemvalue="JUnit.JavaMailTest.simpleMailMessage" />
         <item itemvalue="JUnit.JavaMailTest" />
       </list>
@@ -241,7 +280,19 @@
       <workItem from="1578469748895" duration="45000" />
       <workItem from="1578483358079" duration="618000" />
       <workItem from="1578540594929" duration="3033000" />
-      <workItem from="1578578508930" duration="3438000" />
+      <workItem from="1578578508930" duration="3553000" />
+      <workItem from="1578617147466" duration="1042000" />
+      <workItem from="1578638702416" duration="6249000" />
+      <workItem from="1578658376812" duration="5078000" />
+      <workItem from="1578712025240" duration="877000" />
+      <workItem from="1578737352527" duration="29000" />
+      <workItem from="1579051641566" duration="1964000" />
+      <workItem from="1579345749586" duration="2840000" />
+      <workItem from="1579410423793" duration="3339000" />
+      <workItem from="1579494305744" duration="1366000" />
+      <workItem from="1579606822417" duration="675000" />
+      <workItem from="1579611598217" duration="2082000" />
+      <workItem from="1579696958159" duration="8542000" />
     </task>
     <task id="LOCAL-00001" summary="更改包名">
       <created>1577791332330</created>
@@ -355,7 +406,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578391829691</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="发送静态资源邮件改为多个">
+      <created>1578582460734</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1578582460735</updated>
+    </task>
+    <task id="LOCAL-00018" summary="添加热部署pom">
+      <created>1578666806265</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1578666806265</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,13 +442,15 @@
     <MESSAGE value="移除默认控制台页面，改为web模块配置路径" />
     <MESSAGE value="readme忘了写账号密码了" />
     <MESSAGE value="添加邮件发送接口，删除演示模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加邮件发送接口，删除演示模块" />
+    <MESSAGE value="发送静态资源邮件改为多个" />
+    <MESSAGE value="添加热部署pom" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加热部署pom" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578199569431">
+    <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578665538956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578199569431" />
+    <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578665538956" />
     <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1578582060577">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -406,97 +473,121 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578066688092" />
-    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1578391828039">
+    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1579708218395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1578391828039" />
-    <state x="71" y="86" key="DiffContextDialog" timestamp="1577966112238">
+    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1579708218395" />
+    <state x="71" y="86" key="DiffContextDialog" timestamp="1578666749752">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577966112238" />
+    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578666749752" />
     <state x="2659" y="264" key="FileChooserDialogImpl" timestamp="1578381636605">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2659" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1578381636605" />
     <state x="739" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578319095075" />
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom" timestamp="1578391845143">
+    <state width="1877" height="354" key="GridCell.Tab.0.bottom" timestamp="1579707910877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845143" />
-    <state width="1877" height="292" key="GridCell.Tab.0.center" timestamp="1578391845143">
+    <state width="1877" height="95" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
+    <state width="1877" height="354" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579707910877" />
+    <state width="1877" height="354" key="GridCell.Tab.0.center" timestamp="1579707910876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845143" />
-    <state width="1877" height="292" key="GridCell.Tab.0.left" timestamp="1578391845143">
+    <state width="1877" height="95" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
+    <state width="1877" height="354" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579707910876" />
+    <state width="1877" height="354" key="GridCell.Tab.0.left" timestamp="1579707910876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845143" />
-    <state width="1877" height="292" key="GridCell.Tab.0.right" timestamp="1578391845143">
+    <state width="1877" height="95" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
+    <state width="1877" height="354" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579707910876" />
+    <state width="1877" height="354" key="GridCell.Tab.0.right" timestamp="1579707910876">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845143" />
-    <state width="1877" height="292" key="GridCell.Tab.1.bottom" timestamp="1578391845144">
+    <state width="1877" height="95" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
+    <state width="1877" height="354" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579707910876" />
+    <state width="1877" height="130" key="GridCell.Tab.1.bottom" timestamp="1579706533686">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845144" />
-    <state width="1877" height="292" key="GridCell.Tab.1.center" timestamp="1578391845144">
+    <state width="1877" height="95" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579706533686" />
+    <state width="1877" height="130" key="GridCell.Tab.1.center" timestamp="1579706533685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845144" />
-    <state width="1877" height="292" key="GridCell.Tab.1.left" timestamp="1578391845144">
+    <state width="1877" height="95" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579706533685" />
+    <state width="1877" height="130" key="GridCell.Tab.1.left" timestamp="1579706533685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845144" />
-    <state width="1877" height="292" key="GridCell.Tab.1.right" timestamp="1578391845144">
+    <state width="1877" height="95" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579706533685" />
+    <state width="1877" height="130" key="GridCell.Tab.1.right" timestamp="1579706533685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578389697210" />
-    <state width="1877" height="292" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578391845144" />
-    <state width="1877" height="292" key="GridCell.Tab.2.bottom" timestamp="1578128356443">
+    <state width="1877" height="95" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579706533685" />
+    <state width="1877" height="130" key="GridCell.Tab.2.bottom" timestamp="1579706504453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
-    <state width="1877" height="292" key="GridCell.Tab.2.center" timestamp="1578128356443">
+    <state width="1877" height="95" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579706504453" />
+    <state width="1877" height="130" key="GridCell.Tab.2.center" timestamp="1579706504453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
-    <state width="1877" height="292" key="GridCell.Tab.2.left" timestamp="1578128356443">
+    <state width="1877" height="95" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579706504453" />
+    <state width="1877" height="130" key="GridCell.Tab.2.left" timestamp="1579706504453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
-    <state width="1877" height="292" key="GridCell.Tab.2.right" timestamp="1578128356443">
+    <state width="1877" height="95" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579706504453" />
+    <state width="1877" height="130" key="GridCell.Tab.2.right" timestamp="1579706504453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="292" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578128356443" />
-    <state x="490" y="178" key="Maven.ArtifactSearchDialog" timestamp="1577806441187">
+    <state width="1877" height="95" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
+    <state width="1877" height="130" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579706504453" />
+    <state x="490" y="178" key="Maven.ArtifactSearchDialog" timestamp="1579705705089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="490" y="178" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577806441187" />
-    <state x="481" y="195" key="SettingsEditor" timestamp="1578388914244">
+    <state x="490" y="178" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579705705089" />
+    <state x="531" y="185" key="Registry" timestamp="1578665569056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="531" y="185" key="Registry/0.0.1920.1040@0.0.1920.1040" timestamp="1578665569056" />
+    <state x="463" y="165" key="SettingsEditor" timestamp="1578665395068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="481" y="195" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578388914244" />
-    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577794158698" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1578391831646">
+    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578665395068" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1578666809089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578391831646" />
-    <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1578359074340">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578666809089" />
+    <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1578665346899">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578359074340" />
-    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577803151401" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578129327452">
+    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578665346899" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1579705712862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577954148598" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578129327452" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578643541649" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579705712862" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/base-common/src/main/java/cn/shiva/common/io/FileUtil.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/overall/web/OverallController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
