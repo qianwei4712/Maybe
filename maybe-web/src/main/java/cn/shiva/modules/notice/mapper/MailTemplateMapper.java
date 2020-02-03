@@ -13,4 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public interface MailTemplateMapper extends BaseMapper<MailTemplate> {
 
+    /**
+     * @param param 查询参数，no内日期字符yyMMdd
+     * @return 获得当天最新流水号
+     */
+    public String getLatestNo(String param);
+
 }

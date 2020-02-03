@@ -7,6 +7,7 @@ import cn.shiva.core.utils.LogUtils;
 import cn.shiva.core.utils.properties.PropUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,7 @@ public class OverallController extends BaseController {
     /**
      * 上传文件，并返回链接
      */
+    @ResponseBody
     @RequestMapping(value = "uploadFile")
     public Resp uploadFile(HttpServletRequest request, MultipartFile file){
         try {

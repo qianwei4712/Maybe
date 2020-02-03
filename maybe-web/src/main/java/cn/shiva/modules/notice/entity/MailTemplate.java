@@ -28,6 +28,11 @@ public class MailTemplate extends BaseEntity<MailTemplate> {
     private String name;
 
     /**
+     *邮件主题
+     */
+    private String subject;
+
+    /**
      *模板内容
      */
     private String content;

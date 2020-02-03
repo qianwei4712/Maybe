@@ -46,6 +46,7 @@
 
                                         <script type="text/html" id="table-operate-bar">
                                             <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                                            <a class="layui-btn layui-btn-xs" lay-event="send"><i class="layui-icon layui-icon-release"></i>发送</a>
                                             <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
                                         </script>
                                     </div>
@@ -95,8 +96,13 @@
         //初始化表格列
         MailTemplate.InitColumn = function(){
             return [[
-                {type: 'numbers', title: '序号'}
-                ,{align:'center', title: '操作', fixed: 'right', width:'20%' , toolbar: '#table-operate-bar'}
+                {type: 'numbers', title: '序号'},
+                {field: 'no', title: '模板编号'},
+                {field: 'name', title: '模板名称'},
+                {field: 'subject', title: '邮件主题'},
+                {field: 'msgType', title: '模板类型'},
+                {field: 'content', title: '模板内容', width: 300},
+                {align:'center', title: '操作', fixed: 'right', width:'20%' , toolbar: '#table-operate-bar'}
             ]];
         };
 
@@ -129,6 +135,8 @@
                 MailTemplate.Delete(data);
             } else if(obj.event === 'edit'){
                 window.location.href= adminPath + '/notice/mailTemplate/form?id='+data.id;
+            }else if (obj.event === 'send'){
+                //发送邮件
             }
         });
 

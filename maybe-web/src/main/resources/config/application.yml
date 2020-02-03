@@ -44,4 +44,4 @@ maybe:
   # 控制台主页路径
   consolePath: /overall/console
   # 文件上传路径
-  uploadFilePath: /maybe/upload/
+  uploadFilePath: maybe/upload/

@@ -8,6 +8,7 @@
         <result column="no" property="no" jdbcType="VARCHAR" />
         <result column="msg_type" property="msgType" jdbcType="INTEGER" />
         <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="subject" property="subject" jdbcType="VARCHAR" />
         <result column="content" property="content" jdbcType="VARCHAR" />
         <result column="filepath" property="filepath" jdbcType="VARCHAR" />
         <result column="rscPath" property="rscPath" jdbcType="VARCHAR" />
@@ -23,6 +24,7 @@
             no,
             msg_type,
             name,
+            subject,
             content,
             filepath,
             rscPath,
@@ -31,6 +33,7 @@
             #{no,jdbcType=VARCHAR},
             #{msgType,jdbcType=BIGINT},
             #{name,jdbcType=VARCHAR},
+            #{subject,jdbcType=VARCHAR},
             #{content,jdbcType=VARCHAR},
             #{filepath,jdbcType=VARCHAR},
             #{rscPath,jdbcType=VARCHAR},
@@ -44,6 +47,7 @@
             no = #{no,jdbcType=VARCHAR},
             msg_type = #{msgType,jdbcType=BIGINT},
             name = #{name,jdbcType=VARCHAR},
+            subject = #{subject,jdbcType=VARCHAR},
             content = #{content,jdbcType=VARCHAR},
             filepath = #{filepath,jdbcType=VARCHAR},
             rscPath = #{rscPath,jdbcType=VARCHAR},
@@ -75,6 +79,17 @@
     <update id="deleteLogic">
         UPDATE notice_mail_template SET del_flag = 1 WHERE id = #{id}
     </update>
+
+    <!-- 获得当天最新流水号 -->
+    <select id="getLatestNo" parameterType="String" resultType="String">
+        SELECT
+            SUBSTRING( NO, 10, 3 ) AS r
+        FROM notice_mail_template
+        WHERE
+            SUBSTRING( NO, 4, 6 ) = #{param}
+        ORDER BY r DESC
+        LIMIT 1
+    </select>
 
 
 </mapper>

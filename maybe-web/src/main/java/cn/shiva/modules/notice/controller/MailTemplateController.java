@@ -57,6 +57,7 @@ public class MailTemplateController extends BaseController {
 
     @RequestMapping(value = "form")
     public String form(MailTemplate mailTemplate, Model model){
+        mailTemplateService.judgeNoIsExist(mailTemplate);
         model.addAttribute("mailTemplate",mailTemplate);
         return "modules/notice/mailTemplateForm";
     }
@@ -87,5 +88,7 @@ public class MailTemplateController extends BaseController {
         }
         return Resp.error();
     }
+
+    //TODO 发送测试，窗口以及后台
 
 }

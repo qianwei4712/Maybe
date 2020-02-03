@@ -25,7 +25,7 @@
                             <div class="layui-tab-content">
                                 <div class="layui-tab-item layui-show">
 
-                                    <form class="layui-form layui-form-pane" th:action="${adminPath} + '/notice/mailTemplate/save'">
+                                    <form id="inputForm" class="layui-form layui-form-pane" th:action="${adminPath} + '/notice/mailTemplate/save'">
                                         <input name="id" th:value="${mailTemplate.id}" type="hidden"/>
                                         <div class="layui-form">
                                             <div class="layui-form-item">
@@ -55,13 +55,21 @@
                                                 </div>
                                             </div>
                                             <div class="layui-form-item">
+                                                <div class="layui-inline">
+                                                    <label class="layui-form-label">邮件主题:</label>
+                                                    <div class="layui-input-inline">
+                                                        <input type="text" name="subject" class="layui-input input-width836" th:value="${mailTemplate.subject}"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
                                                 <textarea id="content" name="content" th:text="${mailTemplate.content}" style="display: none;"></textarea>
                                             </div>
                                             <div class="layui-form-item">
                                                 <div class="layui-inline">
                                                     <label class="layui-form-label">附件上传:</label>
                                                     <div class="layui-input-inline">
-                                                        <input type="text" readonly id="filepath" name="filepath" class="layui-input" th:value="${mailTemplate.name}"/>
+                                                        <input type="text" readonly id="filepath" name="filepath" class="layui-input" th:value="${mailTemplate.filepath}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,8 +111,15 @@
         //附件上传
         var uploadInst = upload.render({
             elem: '#filepath' //绑定元素
+            ,accept: 'file'
             ,url: adminPath + '/overall/uploadFile' //上传接口
             ,done: function(res){
+                if (res.code === 0){
+                    //上传成功
+                    $('#filepath').val(res.data);
+                }else {
+                    layer.msg(res.msg);
+                }
             }
             ,error: function(){
                 layer.msg("上传失败，请联系管理管");
