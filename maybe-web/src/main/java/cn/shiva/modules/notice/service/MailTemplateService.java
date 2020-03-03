@@ -17,15 +17,27 @@ import java.util.Date;
 @Service
 public class MailTemplateService extends BaseService<MailTemplate, MailTemplateMapper> {
 
-    //前缀
+    /**
+     * 模板编号前缀前缀
+     */
     private static final String PRE_FIX_STR = "MSG";
-    //流水号
+    /**
+     * 流水号
+     */
     private static Integer SERIAL_NUM = -1;
-    //日期字符串
+    /**
+     * 日期字符串
+     */
     private static String YY_MM_DD = "";
 
     @Autowired
     private MailTemplateMapper mailTemplateMapper;
+
+
+
+
+
+
 
     /**
      * 为模板生成编号

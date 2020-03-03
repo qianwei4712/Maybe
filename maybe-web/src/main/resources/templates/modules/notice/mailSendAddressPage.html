@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="incloude/common::common_header(~{::meta},~{::link})"></head>
+<head>
+    <title>填写邮件发送地址</title>
+</head>
+<body>
+
+<div>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-tab layui-tab-brief" lay-filter="component-tabs-brief">
+
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <input id="id" th:value="${id}" type="hidden" >
+                                    <div>
+                                        <textarea id="address" placeholder="请输入邮箱地址，多个用分号（;）分隔" class="layui-textarea"></textarea>
+                                    </div>
+
+                                    <div class="layui-form-item layui-layout-admin">
+                                        <div class="layui-input-block">
+                                            <div class="layui-footer" style="left: 0;">
+                                                <button class="layui-btn" data-type="submit">确定</button>
+                                                <button class="layui-btn layui-btn-primary" data-type="close">关闭</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="incloude/common::common_js"></div>
+<div th:replace="incloude/common::layui_config"></div>
+<script th:inline="javascript">
+    layui.use(['layer'], function(){
+        const layer = layui.layer
+        ,index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+        const $ = layui.$, active = {
+            submit: function(){
+                //TODO 判断写入的内容，格式是否正确，是否为空
+                $.ajax({
+                    url: adminPath + "/notice/mailTemplate/mailTemplateSend",
+                    async: false,
+                    data: { "id": $('#id').val(), "address": $('#address').val() },
+                    success: function(res){
+                        if(res.code === 0){
+                            layer.msg('发送成功');
+                            parent.layer.close(index);
+                        }else{
+                            layer.msg('发送失败,请联系管理员。');
+                        }
+                    }
+                });
+            },
+            close: function(){
+                parent.layer.close(index);
+            }
+        };
+
+        $('.layui-btn').on('click', function(){
+            var othis = $(this),type = othis.data('type');
+            active[type] && active[type].call(this);
+        });
+    });
+
+</script>
+
+</body>
+</html>

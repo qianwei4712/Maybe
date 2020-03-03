@@ -1,5 +1,6 @@
 package cn.shiva.modules.notice.controller;
 
+import cn.shiva.common.lang.StringUtils;
 import cn.shiva.core.base.BaseController;
 import cn.shiva.core.basic.Page;
 import cn.shiva.core.basic.Resp;
@@ -89,6 +90,29 @@ public class MailTemplateController extends BaseController {
         return Resp.error();
     }
 
-    //TODO 发送测试，窗口以及后台
+    /**
+     * 填写收件箱以及发送页面
+     */
+    @RequestMapping(value = "mailSendAddressPage")
+    public String mailSendAddressPage(Integer id, Model model){
+        model.addAttribute("id", id);
+        return "modules/notice/mailSendAddressPage";
+    }
+
+
+    /**
+     * 模板发送控制器
+     * @param mailTemplate 模板，传入id，ModelAttribute自动获取
+     * @param address 收件地址
+     */
+    @ResponseBody
+    @RequestMapping(value = "mailTemplateSend")
+    public Resp mailTemplateSend(MailTemplate mailTemplate, String address){
+        //TODO 发送邮件，先判断发送地址
+//        mailTemplateService.mailTemplateSend(mailTemplate, address);
+        return RESP_MSG_SUCCESS;
+    }
+
+
 
 }
