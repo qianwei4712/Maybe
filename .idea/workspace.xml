@@ -4,19 +4,9 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="邮件编号流水号">
-      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/timer/ResetTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailSendAddressPage.html" afterDir="false" />
+    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="功能小改动">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-core/src/main/resources/templates/incloude/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/resources/templates/incloude/common.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/maybe/ehcache/.ehcache-diskstore.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/maybe/ehcache/sys%0043ache.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/controller/MailTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/controller/MailTemplateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/service/MailTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/service/MailTemplateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailTemplateList.html" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailTemplateList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/overall/console.html" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/overall/console.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" beforeDir="false" afterPath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +331,11 @@
       <workItem from="1582349144190" duration="68000" />
       <workItem from="1582357307128" duration="612000" />
       <workItem from="1583231063302" duration="4285000" />
-      <workItem from="1583241155059" duration="413000" />
+      <workItem from="1583241155059" duration="504000" />
+      <workItem from="1583244271483" duration="20000" />
+      <workItem from="1583301095926" duration="360000" />
+      <workItem from="1583326375581" duration="720000" />
+      <workItem from="1583576231570" duration="1004000" />
     </task>
     <task id="LOCAL-00001" summary="更改包名">
       <created>1577791332330</created>
@@ -483,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580711225067</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="功能小改动">
+      <created>1583241649219</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1583241649219</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +510,8 @@
     <MESSAGE value="添加热部署pom" />
     <MESSAGE value="简单完成邮件发送模板，以及文件上传" />
     <MESSAGE value="邮件编号流水号" />
-    <option name="LAST_COMMIT_MESSAGE" value="邮件编号流水号" />
+    <MESSAGE value="功能小改动" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能小改动" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578665538956">
@@ -538,14 +540,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578066688092" />
-    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1583241107715">
+    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1583576268035">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583241107715" />
-    <state x="71" y="86" key="DiffContextDialog" timestamp="1580711179573">
+    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583576268035" />
+    <state x="71" y="86" key="DiffContextDialog" timestamp="1583576266123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580711179573" />
+    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583576266123" />
     <state x="739" y="264" key="FileChooserDialogImpl" timestamp="1583232073933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -624,10 +626,10 @@
     </state>
     <state x="481" y="195" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578388914244" />
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578665395068" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1578666809089">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1583576300615">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1578666809089" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583576300615" />
     <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1583239654997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
