@@ -107,7 +107,7 @@ public class MailTemplateController extends BaseController {
      */
     @ResponseBody
     @RequestMapping(value = "mailTemplateSend")
-    public Resp mailTemplateSend(MailTemplate mailTemplate, String address){
+    public Resp mailTemplateSend(MailTemplate mailTemplate, String[] address){
         //TODO 发送邮件，先判断发送地址
 //        mailTemplateService.mailTemplateSend(mailTemplate, address);
         return RESP_MSG_SUCCESS;

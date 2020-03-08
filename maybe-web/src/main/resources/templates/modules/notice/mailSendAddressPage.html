@@ -49,22 +49,42 @@
 
         const $ = layui.$, active = {
             submit: function(){
-                //TODO 判断写入的内容，格式是否正确，是否为空
-                $.ajax({
-                    url: adminPath + "/notice/mailTemplate/mailTemplateSend",
-                    async: false,
-                    data: { "id": $('#id').val(), "address": $('#address').val() },
-                    success: function(res){
-                        if(res.code === 0){
-                            layer.msg('发送成功');
-                            parent.layer.close(index);
-                        }else{
-                            layer.msg('发送失败,请联系管理员。');
+                const address = $('#address').val();
+                if (!isBlank(address)){
+                    var addressList = address.split(';');
+                    for (let i = 0; i < addressList.length; i++) {
+                        addressList[i] = addressList[i].trim();
+                        if (isBlank(addressList[i]) || !reg_email.test(addressList[i])){
+                            //如果元素为空，或者不是邮箱格式
+                            //删除从索引i开始1个元素
+                            addressList.splice(i, 1);
+                            i--;
                         }
                     }
-                });
+                    if (addressList.length > 0){
+                        //最后整理完的邮箱地址可用
+                        $.ajax({
+                            url: adminPath + "/notice/mailTemplate/mailTemplateSend",
+                            async: false,
+                            traditional: true,
+                            data: { "id": $('#id').val(), "address": addressList },
+                            success: function(res){
+                                if(res.code === 0){
+                                    parent.layer.msg('发送成功');
+                                    parent.layer.close(index);
+                                }else{
+                                    layer.msg('发送失败,请联系管理员', {icon: 5,time:1500});
+                                }
+                            }
+                        });
+                    }else {
+                        layer.msg('输入有误，请检查后重新输入', {icon: 5,time:1500});
+                    }
+                }else{
+                    layer.msg('请输入发送地址', {icon: 5,time:1500});
+                }
             },
-            close: function(){
+            close:function () {
                 parent.layer.close(index);
             }
         };
