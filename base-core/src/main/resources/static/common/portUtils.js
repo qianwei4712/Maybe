@@ -3,14 +3,17 @@
  */
 
 /**
+ * 正则表达式预设
+ */
+var reg_email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+
+/**
  * 判断数据是否为Null或者undefined或者为空字符串
  * 为空返回true,不为空为false
  */
 function isBlank(value) {
-    if (!value || value.trim() == ''){
-        return true;
-    }
-    return false;
+    return !value || value.trim() === '';
 }
 
 /**
@@ -31,7 +34,7 @@ Date.prototype.format = function(fmt) {
     }
     for(var k in o) {
         if(new RegExp("("+ k +")").test(fmt)){
-            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length===1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
         }
     }
     return fmt;
