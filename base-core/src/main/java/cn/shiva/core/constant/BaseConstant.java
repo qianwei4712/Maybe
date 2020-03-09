@@ -31,9 +31,19 @@ public class BaseConstant {
     public static final String SUPER_TREE_IDS = "-1,";
 
     /**
-     * 拼接符号
+     * 拼接符号"-"
      */
     public static final String SPLIT_SYMBOL_DASH = "-";
+
+    /**
+     * 拼接符号";"
+     */
+    public static final String SPLIT_SYMBOL_SEMICOLON = ";";
+
+    /**
+     * 拼接符号":"
+     */
+    public static final String SPLIT_SYMBOL_COLON = ":";
 
     /**
      * url上下文分割符号

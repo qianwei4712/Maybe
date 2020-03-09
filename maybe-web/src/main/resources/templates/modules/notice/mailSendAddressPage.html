@@ -17,12 +17,20 @@
                             <div class="layui-tab-content">
                                 <div class="layui-tab-item layui-show">
                                     <input id="id" th:value="${id}" type="hidden" >
-                                    <div>
-                                        <textarea id="address" placeholder="请输入邮箱地址，多个用分号（;）分隔" class="layui-textarea"></textarea>
+                                    <div style="margin-bottom: 30px">
+                                        <label for="address"></label>
+                                        <textarea id="address" placeholder="请输入邮箱地址" class="layui-textarea"></textarea>
+                                        <div class="layui-form-mid layui-word-aux">请输入邮箱地址，多个用分号（;）分隔</div>
                                     </div>
 
-                                    <div class="layui-form-item layui-layout-admin">
-                                        <div class="layui-input-block">
+                                    <div>
+                                        <label for="properties"></label>
+                                        <textarea id="properties" placeholder="请输入需要参数值" class="layui-textarea"></textarea>
+                                        <div class="layui-form-mid layui-word-aux">请输入需要参数值，多个用分号（;）分隔，例如： person:许乐;age:24 。若无请忽略</div>
+                                    </div>
+
+                                    <div class="layui-form-item layui-layout-admin" >
+                                        <div class="layui-input-block" style="min-height: 0">
                                             <div class="layui-footer" style="left: 0;">
                                                 <button class="layui-btn" data-type="submit">确定</button>
                                                 <button class="layui-btn layui-btn-primary" data-type="close">关闭</button>
@@ -67,7 +75,7 @@
                             url: adminPath + "/notice/mailTemplate/mailTemplateSend",
                             async: false,
                             traditional: true,
-                            data: { "id": $('#id').val(), "address": addressList },
+                            data: { "id": $('#id').val(), "address": addressList, "properties": $('#properties').val() },
                             success: function(res){
                                 if(res.code === 0){
                                     parent.layer.msg('发送成功');

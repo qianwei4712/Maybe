@@ -152,7 +152,8 @@
                 layer.open({
                     type: 2,
                     title:'填写收件地址',
-                    area: ['600px', '400px'],
+                    area: ['700px', '500px'],
+                    offset: [ 80, ($(window).width()-700)/2 ],//位置左右居中，距离上方80px
                     shadeClose: true, //点击遮罩关闭
                     content: adminPath + '/notice/mailTemplate/mailSendAddressPage?id='+data.id
                 });

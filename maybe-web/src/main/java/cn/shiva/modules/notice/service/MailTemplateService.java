@@ -3,12 +3,16 @@ package cn.shiva.modules.notice.service;
 import cn.shiva.common.lang.DateUtils;
 import cn.shiva.common.lang.StringUtils;
 import cn.shiva.core.base.BaseService;
+import cn.shiva.core.constant.BaseConstant;
 import cn.shiva.modules.notice.entity.MailTemplate;
 import cn.shiva.modules.notice.mapper.MailTemplateMapper;
+import cn.shiva.modules.overall.service.impl.MailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
 * 邮件模板服务
@@ -32,9 +36,21 @@ public class MailTemplateService extends BaseService<MailTemplate, MailTemplateM
 
     @Autowired
     private MailTemplateMapper mailTemplateMapper;
+    @Autowired
+    private MailServiceImpl mailService;
 
 
-
+    /**
+     * 模板发送控制器
+     * @param mailTemplate 邮件发送模板
+     * @param address 收件地址数组
+     * @param properties 参数字符串 例如 person:许乐;age:24
+     */
+    public void mailTemplateSend(MailTemplate mailTemplate, String[] address, String properties) {
+        //对模板的发送内容，进行参数替换
+        mailTemplate = replaceMailByProperites(mailTemplate, properties);
+        //判断模板类型，进行发送
+    }
 
 
 
@@ -47,6 +63,48 @@ public class MailTemplateService extends BaseService<MailTemplate, MailTemplateM
             mailTemplate.setNo(seriaNumGenerator());
         }
     }
+
+
+    /**
+     * 每日凌晨，定时器调用重置流水号参数
+     */
+    public void resetSerialParams(){
+        SERIAL_NUM = 0;
+        YY_MM_DD = DateUtils.formatDate(new Date(), "yyMMdd");
+    }
+
+    /////////////////*********************************/////////////////
+    /////////////////           private 方法           /////////////////
+    /////////////////*********************************/////////////////
+
+    /**
+     * 根据参数，对模板进行参数替换。
+     */
+    private MailTemplate replaceMailByProperites(MailTemplate mailTemplate, String properties){
+        //处理参数，进行替换
+        List<String[]> propertiesList = new ArrayList<>();
+        if (StringUtils.isNotBlank(properties)){
+            String[] properties_kv = properties.split(BaseConstant.SPLIT_SYMBOL_SEMICOLON);
+            for (int i = 0; i < properties_kv.length; i++) {
+                //根据：分割,最多2个字符串
+                String[] kv = properties_kv[i].split(BaseConstant.SPLIT_SYMBOL_COLON, 2);
+                if (kv.length > 1){
+                    //若确实根据：分割了，那个加入到列表
+                    propertiesList.add(kv);
+                }
+            }
+        }
+        //第一个循环结束后，存在符合规范的键值对
+        if (propertiesList.size() > 0){
+            String content = mailTemplate.getContent();
+            for (String[] item : propertiesList ) {
+                content = content.replace("${" + item[0] + "}", item[1]);
+            }
+            mailTemplate.setContent(content);
+        }
+        return mailTemplate;
+    }
+
 
     /**
      * 生成模板编号: MSG + YYMMDD + 三位流水号
@@ -69,16 +127,5 @@ public class MailTemplateService extends BaseService<MailTemplate, MailTemplateM
         //拼接，integer转string，前面补0三位,先加1再拼接
         return StringUtils.appends(PRE_FIX_STR, YY_MM_DD, String.format("%03d", ++SERIAL_NUM));
     }
-
-    /**
-     * 每日凌晨，定时器调用重置流水号参数
-     */
-    public void resetSerialParams(){
-        SERIAL_NUM = 0;
-        YY_MM_DD = DateUtils.formatDate(new Date(), "yyMMdd");
-    }
-
-
-
 
 }

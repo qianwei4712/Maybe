@@ -4,12 +4,14 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="gong'g">
+    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-core/src/main/resources/static/common/portUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/resources/static/common/portUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/core/constant/BaseConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/java/cn/shiva/core/constant/BaseConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/controller/MailTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/controller/MailTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/service/MailTemplateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/java/cn/shiva/modules/notice/service/MailTemplateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailSendAddressPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailSendAddressPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/overall/console.html" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/overall/console.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailTemplateList.html" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/templates/modules/notice/mailTemplateList.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +342,9 @@
       <workItem from="1583326375581" duration="720000" />
       <workItem from="1583576231570" duration="1004000" />
       <workItem from="1583577723845" duration="724000" />
-      <workItem from="1583641672800" duration="7508000" />
+      <workItem from="1583641672800" duration="7682000" />
+      <workItem from="1583674000244" duration="599000" />
+      <workItem from="1583751364302" duration="9723000" />
     </task>
     <task id="LOCAL-00001" summary="更改包名">
       <created>1577791332330</created>
@@ -496,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583577826730</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="公用js内加入正则表达式">
+      <created>1583673375963</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1583673375963</updated>
+    </task>
+    <task id="LOCAL-00024" summary="完成邮箱输入前端验证和筛选工作">
+      <created>1583673419313</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1583673419313</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +542,9 @@
     <MESSAGE value="邮件编号流水号" />
     <MESSAGE value="功能小改动" />
     <MESSAGE value="项目迁移至github" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目迁移至github" />
+    <MESSAGE value="公用js内加入正则表达式" />
+    <MESSAGE value="完成邮箱输入前端验证和筛选工作" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成邮箱输入前端验证和筛选工作" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="178" width="1165" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578665538956">
@@ -553,79 +573,79 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578066688092" />
-    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1583673374828">
+    <state x="429" y="116" key="CommitChangelistDialog2" timestamp="1583673418439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583673374828" />
-    <state x="71" y="86" key="DiffContextDialog" timestamp="1583673234239">
+    <state x="429" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583673418439" />
+    <state x="71" y="86" key="DiffContextDialog" timestamp="1583673390881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583673234239" />
+    <state x="71" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583673390881" />
     <state x="739" y="264" key="FileChooserDialogImpl" timestamp="1583232073933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2659" y="264" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1578381636605" />
     <state x="739" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583232073933" />
-    <state width="1877" height="262" key="GridCell.Tab.0.bottom" timestamp="1583672555427">
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom" timestamp="1583760609447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
-    <state width="1877" height="262" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555427" />
-    <state width="1877" height="262" key="GridCell.Tab.0.center" timestamp="1583672555427">
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609447" />
+    <state width="1877" height="340" key="GridCell.Tab.0.center" timestamp="1583760609447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
-    <state width="1877" height="262" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555427" />
-    <state width="1877" height="262" key="GridCell.Tab.0.left" timestamp="1583672555427">
+    <state width="1877" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609447" />
+    <state width="1877" height="340" key="GridCell.Tab.0.left" timestamp="1583760609447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
-    <state width="1877" height="262" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555427" />
-    <state width="1877" height="262" key="GridCell.Tab.0.right" timestamp="1583672555427">
+    <state width="1877" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609447" />
+    <state width="1877" height="340" key="GridCell.Tab.0.right" timestamp="1583760609447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764705" />
-    <state width="1877" height="262" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555427" />
-    <state width="1877" height="262" key="GridCell.Tab.1.bottom" timestamp="1583672948680">
+    <state width="1877" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609447" />
+    <state width="1877" height="340" key="GridCell.Tab.1.bottom" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583672948680" />
-    <state width="1877" height="262" key="GridCell.Tab.1.center" timestamp="1583672948680">
+    <state width="1877" height="340" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
+    <state width="1877" height="340" key="GridCell.Tab.1.center" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583672948680" />
-    <state width="1877" height="262" key="GridCell.Tab.1.left" timestamp="1583672948680">
+    <state width="1877" height="340" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
+    <state width="1877" height="340" key="GridCell.Tab.1.left" timestamp="1583760609318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583672948680" />
-    <state width="1877" height="262" key="GridCell.Tab.1.right" timestamp="1583672948680">
+    <state width="1877" height="340" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609318" />
+    <state width="1877" height="340" key="GridCell.Tab.1.right" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583672948680" />
-    <state width="1877" height="262" key="GridCell.Tab.2.bottom" timestamp="1583672555205">
+    <state width="1877" height="340" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
+    <state width="1877" height="340" key="GridCell.Tab.2.bottom" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555205" />
-    <state width="1877" height="262" key="GridCell.Tab.2.center" timestamp="1583672555205">
+    <state width="1877" height="340" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
+    <state width="1877" height="340" key="GridCell.Tab.2.center" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.2.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555205" />
-    <state width="1877" height="262" key="GridCell.Tab.2.left" timestamp="1583672555205">
+    <state width="1877" height="340" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
+    <state width="1877" height="340" key="GridCell.Tab.2.left" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.2.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555205" />
-    <state width="1877" height="262" key="GridCell.Tab.2.right" timestamp="1583672555205">
+    <state width="1877" height="340" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
+    <state width="1877" height="340" key="GridCell.Tab.2.right" timestamp="1583760609319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="95" key="GridCell.Tab.2.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578648764706" />
-    <state width="1877" height="262" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583672555205" />
+    <state width="1877" height="340" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583760609319" />
     <state x="490" y="178" key="Maven.ArtifactSearchDialog" timestamp="1579705705089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -639,20 +659,20 @@
     </state>
     <state x="481" y="195" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578388914244" />
     <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578665395068" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1583577840967">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1583673421416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583577840967" />
-    <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1583669379995">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583673421416" />
+    <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1583755064173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578359074340" />
-    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583669379995" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583669576237">
+    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583755064173" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583763148811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1578643541649" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583669576237" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583763148811" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/maybe$maybe.ic" NAME="maybe Coverage Results" MODIFIED="1581147540334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -103,13 +103,13 @@ public class MailTemplateController extends BaseController {
     /**
      * 模板发送控制器
      * @param mailTemplate 模板，传入id，ModelAttribute自动获取
-     * @param address 收件地址
+     * @param address 收件地址数组
+     * @param properties 参数字符串 例如 person:许乐;age:24
      */
     @ResponseBody
     @RequestMapping(value = "mailTemplateSend")
-    public Resp mailTemplateSend(MailTemplate mailTemplate, String[] address){
-        //TODO 发送邮件，先判断发送地址
-//        mailTemplateService.mailTemplateSend(mailTemplate, address);
+    public Resp mailTemplateSend(MailTemplate mailTemplate, String[] address, String properties){
+        mailTemplateService.mailTemplateSend(mailTemplate, address, properties);
         return RESP_MSG_SUCCESS;
     }
 
