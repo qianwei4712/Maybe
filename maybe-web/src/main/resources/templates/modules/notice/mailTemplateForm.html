@@ -63,7 +63,9 @@
                                                 </div>
                                             </div>
                                             <div class="layui-form-item">
+                                                <label for="content"></label>
                                                 <textarea id="content" name="content" th:text="${mailTemplate.content}" style="display: none;"></textarea>
+                                                <div class="layui-form-mid layui-word-aux">若需采用动态参数值，请参考：${person}</div>
                                             </div>
                                             <div class="layui-form-item">
                                                 <div class="layui-inline">
