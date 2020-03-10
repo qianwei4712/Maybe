@@ -46,10 +46,28 @@ public class MailTemplateService extends BaseService<MailTemplate, MailTemplateM
      * @param address 收件地址数组
      * @param properties 参数字符串 例如 person:许乐;age:24
      */
-    public void mailTemplateSend(MailTemplate mailTemplate, String[] address, String properties) {
+    public void mailTemplateSend(MailTemplate mailTemplate, String[] address, String properties) throws Exception {
         //对模板的发送内容，进行参数替换
-        mailTemplate = replaceMailByProperites(mailTemplate, properties);
+        replaceMailByProperites(mailTemplate, properties);
         //判断模板类型，进行发送
+        switch (mailTemplate.getMsgType()){
+            case 0:
+                for (String s : address) {
+                    mailService.sendSimpleMail(s, mailTemplate.getSubject(), mailTemplate.getContent());
+                }
+                break;
+            case 1:
+                for (String s : address) {
+                    mailService.sendHtmlMail(s, mailTemplate.getSubject(), mailTemplate.getContent());
+                }
+                break;
+            case 2:
+                for (String s : address) {
+                    mailService.sendAttachmentsMail(s, mailTemplate.getSubject(), mailTemplate.getContent(), mailTemplate.getRscPath());
+                }
+                break;
+            default: break;
+        }
     }
 
 
@@ -80,15 +98,15 @@ public class MailTemplateService extends BaseService<MailTemplate, MailTemplateM
     /**
      * 根据参数，对模板进行参数替换。
      */
-    private MailTemplate replaceMailByProperites(MailTemplate mailTemplate, String properties){
+    private void replaceMailByProperites(MailTemplate mailTemplate, String properties){
         //处理参数，进行替换
         List<String[]> propertiesList = new ArrayList<>();
         if (StringUtils.isNotBlank(properties)){
             String[] properties_kv = properties.split(BaseConstant.SPLIT_SYMBOL_SEMICOLON);
-            for (int i = 0; i < properties_kv.length; i++) {
+            for (String s : properties_kv) {
                 //根据：分割,最多2个字符串
-                String[] kv = properties_kv[i].split(BaseConstant.SPLIT_SYMBOL_COLON, 2);
-                if (kv.length > 1){
+                String[] kv = s.split(BaseConstant.SPLIT_SYMBOL_COLON, 2);
+                if (kv.length > 1) {
                     //若确实根据：分割了，那个加入到列表
                     propertiesList.add(kv);
                 }
@@ -102,7 +120,6 @@ public class MailTemplateService extends BaseService<MailTemplate, MailTemplateM
             }
             mailTemplate.setContent(content);
         }
-        return mailTemplate;
     }
 
 

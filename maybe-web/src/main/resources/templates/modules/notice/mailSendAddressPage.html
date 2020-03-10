@@ -70,6 +70,7 @@
                         }
                     }
                     if (addressList.length > 0){
+                        layer.msg('邮件发送中', { icon: 16, shade: 0.01 });
                         //最后整理完的邮箱地址可用
                         $.ajax({
                             url: adminPath + "/notice/mailTemplate/mailTemplateSend",

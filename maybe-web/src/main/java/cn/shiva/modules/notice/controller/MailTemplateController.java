@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -109,8 +110,13 @@ public class MailTemplateController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "mailTemplateSend")
     public Resp mailTemplateSend(MailTemplate mailTemplate, String[] address, String properties){
-        mailTemplateService.mailTemplateSend(mailTemplate, address, properties);
-        return RESP_MSG_SUCCESS;
+        try {
+            mailTemplateService.mailTemplateSend(mailTemplate, address, properties);
+            return RESP_MSG_SUCCESS;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return RESP_MSG_ERROR;
+        }
     }
 
 
