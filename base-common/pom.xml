@@ -17,7 +17,7 @@
         <!-- 工具版本 -->
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-codec.version>1.9</commons-codec.version>
-        <commons-beanutils.version>1.9.1</commons-beanutils.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-text.version>1.3</commons-text.version>
         <fst.version>2.57</fst.version><!-- java序列化 -->
         <UserAgentUtils.version>1.21</UserAgentUtils.version>
