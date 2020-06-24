@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="base-core" />
+        <module name="maybe-restapi" />
         <module name="base-common" />
         <module name="maybe-web" />
         <module name="base-generate" />
@@ -18,6 +19,7 @@
       <module name="base-core" target="1.8" />
       <module name="base-generate" target="1.8" />
       <module name="maybe" target="1.8" />
+      <module name="maybe-restapi" target="1.7" />
       <module name="maybe-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -26,6 +28,7 @@
       <module name="base-common" options="-parameters" />
       <module name="base-core" options="-parameters" />
       <module name="base-generate" options="-parameters" />
+      <module name="maybe-restapi" options="" />
       <module name="maybe-web" options="-parameters" />
     </option>
   </component>
