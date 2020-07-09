@@ -5,8 +5,8 @@ package cn.shiva.core.basic;
  */
 public class Resp {
 
-    private static final int SUCCESS = 0;
-    private static final int ERROR = 1;
+    public static final int SUCCESS = 0;
+    public static final int ERROR = 1;
 
     public static Resp success() {
         return RespSingleton.RESP_COMMON_SUCCESS;
@@ -38,6 +38,13 @@ public class Resp {
         response.code = ERROR;
         response.msg = msg;
         response.data = data;
+        return response;
+    }
+
+    public static Resp error(String msg) {
+        Resp response = new Resp();
+        response.code = ERROR;
+        response.msg = msg;
         return response;
     }
 

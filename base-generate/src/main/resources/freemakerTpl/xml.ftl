@@ -73,4 +73,10 @@
     </update>
 
 
+    <!-- 获得全部记录 -->
+    <select id="findAll" resultType="${packageName}.${moduleName}.entity.${ClassName}">
+        SELECT * FROM ${tableName} WHERE del_flag = 0
+    </select>
+
+
 </mapper>
