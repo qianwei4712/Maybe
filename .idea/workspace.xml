@@ -4,21 +4,17 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="">
+    <list default="true" id="72250d94-706c-42a6-81a1-8cc8986ba1b9" name="Default Changelist" comment="环境文件也传了算了">
+      <change afterPath="$PROJECT_DIR$/base-common/src/main/java/cn/shiva/common/utils/RandomUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base-common/src/main/java/cn/shiva/common/utils/RegexVerify.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application-local.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application-pord.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-common/base-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/base-common/base-common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-core/base-core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/base-core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-generate/base-generate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/base-generate/base-generate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-generate/src/main/resources/freemakerTpl/xml.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/base-generate/src/main/resources/freemakerTpl/xml.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe-web/maybe-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/maybe-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/resources/static/layuiadmin/plugins/treeTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/resources/static/layuiadmin/plugins/treetable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-core/src/main/resources/static/layuiadmin/plugins/treeTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/base-core/src/main/resources/static/layuiadmin/plugins/treetable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maybe-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/maybe-web/src/main/resources/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" beforeDir="false" afterPath="$PROJECT_DIR$/maybe/ehcache/sys%0043ache.data" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +95,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc/sql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/base-core/src/main/resources/static/layuiadmin/plugins" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -109,12 +105,15 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.shiva" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.shiva.common.utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\HolyShit\openSources\maybe\base-core\src\main\resources\static\layuiadmin\plugins" />
       <recent name="E:\HolyShit\openSources\maybe\doc\sql" />
       <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\config" />
       <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\templates\modules\notice" />
       <recent name="E:\HolyShit\openSources\maybe\base-common\src\main\java\cn\shiva\common\io" />
-      <recent name="E:\HolyShit\openSources\maybe\maybe-web\src\main\resources\mappings\notice" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.maybe">
@@ -383,7 +382,15 @@
       <workItem from="1591435252823" duration="735000" />
       <workItem from="1592981542315" duration="1223000" />
       <workItem from="1592983177688" duration="142000" />
-      <workItem from="1592986913302" duration="61000" />
+      <workItem from="1592986913302" duration="379000" />
+      <workItem from="1592987545602" duration="295000" />
+      <workItem from="1594275527380" duration="1147000" />
+      <workItem from="1594285101852" duration="609000" />
+      <workItem from="1594341750375" duration="57000" />
+      <workItem from="1595427478459" duration="35000" />
+      <workItem from="1595430991236" duration="614000" />
+      <workItem from="1595464453461" duration="438000" />
+      <workItem from="1595840431125" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="更改包名">
       <created>1577791332330</created>
@@ -595,7 +602,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592983298182</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="环境文件也传了算了">
+      <created>1592987126414</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1592987126415</updated>
+    </task>
+    <task id="LOCAL-00032" summary="小修改">
+      <created>1594275722269</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1594275722269</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,8 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="修改readme" />
-    <MESSAGE value="控制器catch异常后添加日志记录" />
     <MESSAGE value="将插入日志创建线程改为线程池方式" />
     <MESSAGE value="清理target\classes" />
     <MESSAGE value="根据阿里巴巴规约，线程池添加线程工厂" />
@@ -628,18 +647,21 @@
     <MESSAGE value="初步完成邮件发送模板功能" />
     <MESSAGE value="优化填写菜单，将前缀配置路径去除" />
     <MESSAGE value="更新依赖，修复安全漏洞" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新依赖，修复安全漏洞" />
+    <MESSAGE value="环境文件也传了算了" />
+    <MESSAGE value="小修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="小修改" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="149" key="CommitChangelistDialog2" timestamp="1592987024000">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2478" y="149" key="CommitChangelistDialog2" timestamp="1594275719990">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="149" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592987024000" />
-    <state x="558" y="149" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585386397370" />
-    <state x="179" y="119" key="DiffContextDialog" timestamp="1592983270284">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="558" y="149" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592987143249" />
+    <state x="2478" y="149" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594275719990" />
+    <state x="2099" y="119" key="DiffContextDialog" timestamp="1594275697061">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="179" y="119" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592983270284" />
+    <state x="2099" y="119" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594275697061" />
     <state x="739" y="264" key="FileChooserDialogImpl" timestamp="1589858335905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -649,22 +671,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="134" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592982768522" />
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585390149054" />
     <state width="1877" height="134" key="GridCell.Tab.0.center" timestamp="1592982768522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="134" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592982768522" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585390149054" />
     <state width="1877" height="134" key="GridCell.Tab.0.left" timestamp="1592982768522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="134" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592982768522" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585390149054" />
     <state width="1877" height="134" key="GridCell.Tab.0.right" timestamp="1592982768522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="134" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592982768522" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585390149054" />
     <state width="1877" height="134" key="GridCell.Tab.1.bottom" timestamp="1592982768522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -685,21 +703,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592983300368" />
-    <state x="406" y="124" width="981" height="791" key="find.popup" timestamp="1592983219884">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2326" y="124" width="981" height="791" key="find.popup" timestamp="1595841520175">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592983219884" />
+    <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594341805520" />
+    <state x="2326" y="124" width="981" height="791" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595841520175" />
     <state x="406" y="124" width="981" height="791" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589438939326" />
     <state x="334" y="224" key="new project wizard" timestamp="1589381026913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="334" y="224" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589381026913" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592981706706">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595840787308">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592981706706" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589947029279" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589438944937" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594341766268" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1595840787308" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595430998621" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/maybe$maybe.ic" NAME="maybe Coverage Results" MODIFIED="1581147540334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
